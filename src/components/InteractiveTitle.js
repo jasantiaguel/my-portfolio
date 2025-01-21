@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import styles from "./InteractiveTitle.module.css";
 
 export default function InteractiveTitle() {
@@ -12,21 +13,45 @@ export default function InteractiveTitle() {
     );
   };
 
+  const textRiseVariants = {
+    hidden: { y: "160%", opacity: 1 },
+    visible: { y: 0, opacity: 1 },
+  };
+
   return (
     <div className={styles.titleContainer}>
       <div className={styles.mainText}>
         {selectedText === "INTERACTIVE" ? (
-          <>
-            <span className={styles.interactiveText} onClick={handleTextClick}>
+          <div className="masking-container">
+            <motion.div
+              key={selectedText}
+              className={styles.interactiveText}
+              onClick={handleTextClick}
+              initial="hidden"
+              animate="visible"
+              variants={textRiseVariants}
+              transition={{ duration: 1.6, ease: [0.1, 0.8, 0.2, 1] }}
+            >
               INTERACTIVE
-            </span>
-          </>
+            </motion.div>
+          </div>
         ) : (
-          <>
-            <span className={styles.graphicText} onClick={handleTextClick}>
+          <div className="masking-container">
+            <motion.div
+              key={selectedText}
+              className={styles.graphicText}
+              onClick={handleTextClick}
+              initial="hidden"
+              animate="visible"
+              variants={textRiseVariants}
+              transition={{
+                duration: 1.6,
+                ease: [0.1, 0.8, 0.2, 1],
+                delay: 0.1,
+              }}            >
               GRAPHIC
-            </span>
-          </>
+            </motion.div>
+          </div>
         )}
       </div>
       <div className={styles.secondaryText} onClick={handleTextClick}>
@@ -47,9 +72,9 @@ export default function InteractiveTitle() {
           </p>
         ) : (
           <p className={`${styles.descriptionText} stacked`}>
-            Stories expressed through art—
+            Stories told through art—
             <br />
-            messages felt through design.
+            messages shaped by design.
           </p>
         )}
       </div>

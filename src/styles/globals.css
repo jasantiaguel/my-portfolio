@@ -96,11 +96,15 @@ body {
   min-height: 100vh;
 }
 
+.masking-container {
+  overflow: hidden;
+}
+
 .stacked {
   display: flex;
   flex-direction: column;
 }
 
-.stacked-top {
+/* .stacked-top {
   margin-bottom: -0.25rem;
-}
+} */

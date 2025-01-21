@@ -11,6 +11,7 @@
   font-weight: 600;
   z-index: 0;
   user-select: none;
+  align-items: center;
 }
 
 .secondaryText {
@@ -18,7 +19,7 @@
   font-weight: 600;
   color: rgba(0, 0, 0, 0.075);
   position: relative;
-  top: -8.25rem;
+  top: -3.75rem;
   left: 4rem;
   z-index: 1;
   user-select: none;
@@ -27,11 +28,13 @@
 .interactiveText {
   color: black;
   cursor: pointer;
+  line-height: 0.78;
 }
 
 .graphicText {
   color: black;
   cursor: pointer;
+  line-height: 0.78;
 }
 
 .interactiveSecondaryText {
@@ -48,7 +51,7 @@
   align-items: center;
   gap: 2rem;
   position: relative;
-  top: -10rem;
+  top: -6rem;
 }
 
 .designText {

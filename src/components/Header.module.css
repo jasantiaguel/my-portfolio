@@ -19,6 +19,10 @@
   gap: 4rem;
 }
 
+.navText {
+  line-height: 1.2;
+}
+
 .logo {
   display: flex;
   align-items: center;
