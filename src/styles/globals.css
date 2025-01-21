@@ -87,13 +87,19 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: "Helvetica Neue", sans-serif;
-  padding: 0 2rem;
+  padding: 0 4rem;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 .page-container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 160vh;
 }
 
 .masking-container {
