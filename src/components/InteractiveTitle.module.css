@@ -7,23 +7,21 @@
 }
 
 .mainText {
-  font-family: 'Helvetica Neue', sans-serif;
   font-size: 12rem;
-  font-weight: 400;
-
+  font-weight: 600;
   z-index: 0;
+  user-select: none;
 }
 
 .secondaryText {
-  font-family: 'Helvetica Neue', sans-serif;
-  font-weight: 400;
   font-size: 6rem;
-  color: rgba(0, 0, 0, 0.1);
-
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.075);
   position: relative;
   top: -8.25rem;
   left: 4rem;
   z-index: 1;
+  user-select: none;
 }
 
 .interactiveText {
@@ -50,24 +48,22 @@
   align-items: center;
   gap: 2rem;
   position: relative;
-  top: -8rem;
+  top: -10rem;
 }
 
 .designText {
-  font-family: 'Helvetica Neue', sans-serif;
-  font-weight: 600;
   font-size: 4rem;
+  font-weight: 600;
 }
 
 .slash {
-  font-weight: 200;
   font-size: 5rem;
+  font-weight: 200;
 }
 
 .descriptionText {
-  font-family: 'Helvetica Neue', sans-serif;
-  font-weight: 200;
   font-size: 1.5rem;
+  font-weight: 200;
   color: rgba(0, 0, 0, 0.75);
   line-height: 1.75rem;
 }
