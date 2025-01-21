@@ -30,7 +30,10 @@ export default function InteractiveTitle() {
               initial="hidden"
               animate="visible"
               variants={textRiseVariants}
-              transition={{ duration: 1.6, ease: [0.1, 0.8, 0.2, 1] }}
+              transition={{
+                duration: 1.6,
+                ease: [0.1, 0.8, 0.2, 1],
+              }}
             >
               INTERACTIVE
             </motion.div>

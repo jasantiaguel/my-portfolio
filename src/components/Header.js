@@ -133,8 +133,8 @@ export default function Header() {
                     ease: [0.1, 0.8, 0.2, 1],
                     delay: 1,
                   }}                >
-                  <Link href="/" className="stacked-top">
-                    GET IN TOUCH
+              <Link href="/" className={`${styles.contactText} stacked`}>
+              GET IN TOUCH
                   </Link>
                 </motion.div>
               </div>
