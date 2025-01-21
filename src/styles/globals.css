@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Heavy */
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/public/fonts/Helvetica_Neue/HelveticaNeueHeavy.otf")
+    format("opentype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/public/fonts/Helvetica_Neue/HelveticaNeueHeavyItalic.otf")
+    format("opentype");
+  font-weight: 800;
+  font-style: italic;
+}
+
+/* Medium */
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/public/fonts/Helvetica_Neue/HelveticaNeueMedium.otf")
+    format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/public/fonts/Helvetica_Neue/HelveticaNeueMediumItalic.otf")
+    format("opentype");
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* Regular */
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/public/fonts/Helvetica_Neue/HelveticaNeueRoman.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/public/fonts/Helvetica_Neue/HelveticaNeueRoman.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Thin */
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/public/fonts/Helvetica_Neue/HelveticaNeueThin.otf")
+    format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/public/fonts/Helvetica_Neue/HelveticaNeueThinItalic.otf")
+    format("opentype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+:root {
+  --background: #faf1e1;
+  --foreground: #171717;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: "Helvetica Neue", sans-serif;
+  padding: 0 2rem;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.stacked {
+  display: flex;
+  flex-direction: column;
+}
+
+.stacked-top {
+  margin-bottom: -0.25rem;
+}

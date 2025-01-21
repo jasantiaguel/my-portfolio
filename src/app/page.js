@@ -1,10 +1,11 @@
-import Image from "next/image";
+// Components
+import InteractiveTitle from "@/components/InteractiveTitle";
 
 export default function Home() {
   return (
-    <div>
-      <main>
-        
+    <div className="page-container">
+      <main className="main">
+        <InteractiveTitle />
       </main>
     </div>
   );

@@ -1,15 +1,16 @@
 .header {
   background-color: none;
   color: var(--foreground);
-  font-weight: 300;
+  
+  font-weight: 400;
   font-size: 1rem;
+
   letter-spacing: 0.05rem;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
-  padding: 1.75rem 2rem 0;
+  padding: 1.75rem 0 0;
 }
 
 .navBar {
-  font-family: 'Helvetica Neue', sans-serif;
   display: flex;
   justify-content: space-between;
 }
@@ -17,11 +18,15 @@
 .navList {
   display: flex;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 4rem;
 }
 
 .logo {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+.logoText {
+  font-weight: 600;
 }
