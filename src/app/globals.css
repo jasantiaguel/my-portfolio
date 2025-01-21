@@ -2,9 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Helvetica Neue';
+  src:  url('/public/fonts/Helvetica_Neue/HelveticaNeueBlack.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src:  url('/public/fonts/Helvetica_Neue/HelveticaNeueBold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src:  url('/public/fonts/Helvetica_Neue/HelveticaNeueMedium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src:  url('/public/fonts/Helvetica_Neue/HelveticaNeueLight.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src:  url('/public/fonts/Helvetica_Neue/HelveticaNeueUltraLight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src:  url('/public/fonts/Helvetica_Neue/HelveticaNeueUltraLightItalic.otf') format('opentype');
+  font-weight: 200;
+  font-style: italic;
+}
+
 :root {
-  --background: #ffffff;
+  --background: #f5edde;
   --foreground: #171717;
+  --font-helvetica-neue: 'Helvetica Neue', sans-serif;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -17,5 +60,14 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.stacked {
+  display: flex;
+  flex-direction: column;
+}
+
+.stacked-top {
+  margin-bottom: -0.25rem;
 }

@@ -1,0 +1,27 @@
+.header {
+  background-color: none;
+  color: var(--foreground);
+  font-weight: 300;
+  font-size: 1rem;
+  letter-spacing: 0.05rem;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  padding: 1.75rem 2rem 0;
+}
+
+.navBar {
+  font-family: 'Helvetica Neue', sans-serif;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navList {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
