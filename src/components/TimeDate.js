@@ -37,9 +37,9 @@ export default function TimeDate() {
   return (
     <div className="time stacked">
       <div className="masking-container">
-        <AnimationRiseUp className={styles.navText} delay={0.4}>
+        <AnimationRiseUp className={styles.navText} delay={2.4}>
           <div
-            className={`${styles.text} stacked-top`}
+            className={styles.text}
             suppressHydrationWarning
           >
             GREATER VANCOUVER
@@ -47,7 +47,7 @@ export default function TimeDate() {
         </AnimationRiseUp>
       </div>
       <div className="masking-container">
-        <AnimationRiseUp className={styles.navText} delay={0.5}>
+        <AnimationRiseUp className={styles.navText} delay={2.5}>
           <div className={styles.text} suppressHydrationWarning>
             {formatTime(currentTime)}
           </div>

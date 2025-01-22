@@ -46,7 +46,8 @@ export default function InteractiveTitle() {
           <AnimationRiseUp
             key={selectedText}
             className={styles.graphicSecondaryText}
-            delay={0.3}
+            duration={2}
+            delay={0.8}
           >
             GRAPHIC
           </AnimationRiseUp>
@@ -54,17 +55,18 @@ export default function InteractiveTitle() {
           <AnimationRiseUp
             key={selectedText}
             className={styles.interactiveSecondaryText}
-            delay={0.3}
+            duration={2}
+            delay={0.8}
           >
             INTERACTIVE
           </AnimationRiseUp>
         )}
       </div>
       <div className={styles.subTextContainer}>
-        <AnimationRiseUp className={styles.designText} delay={0.1}>
+        <AnimationRiseUp className={styles.designText} delay={0.2}>
           DESIGN
         </AnimationRiseUp>
-        <AnimationRiseUp className={styles.slash} delay={0.2}>
+        <AnimationRiseUp className={styles.slash} delay={0.4}>
           //
         </AnimationRiseUp>
         {selectedText === "INTERACTIVE" ? (
@@ -79,7 +81,7 @@ export default function InteractiveTitle() {
                 transition={{
                   duration: 1.6,
                   ease: [0.1, 0.8, 0.2, 1],
-                  delay: 0.3,
+                  delay: 0.6,
                 }}
               >
                 Innovative and efficient digital experiences
@@ -95,7 +97,7 @@ export default function InteractiveTitle() {
                 transition={{
                   duration: 1.6,
                   ease: [0.1, 0.8, 0.2, 1],
-                  delay: 0.4,
+                  delay: 0.7,
                 }}
               >
                 that leave a memorable impact.
@@ -114,7 +116,7 @@ export default function InteractiveTitle() {
                 transition={{
                   duration: 1.6,
                   ease: [0.1, 0.8, 0.2, 1],
-                  delay: 0.3,
+                  delay: 0.6,
                 }}
               >
                 Stories told through art—
@@ -130,7 +132,7 @@ export default function InteractiveTitle() {
                 transition={{
                   duration: 1.6,
                   ease: [0.1, 0.8, 0.2, 1],
-                  delay: 0.4,
+                  delay: 0.7,
                 }}
               >
                 messages shaped by design.

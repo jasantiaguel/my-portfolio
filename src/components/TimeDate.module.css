@@ -1,4 +1,6 @@
 .text {
+  position: relative;
+  top: 0.15rem;
   font-size: 1rem;
   font-weight: 200;
   font-style: italic;
