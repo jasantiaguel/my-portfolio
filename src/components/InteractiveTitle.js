@@ -51,7 +51,8 @@ export default function InteractiveTitle() {
             key={selectedText}
             className={styles.graphicSecondaryText}
             duration={1.8}
-            delay={0.8}
+            ease={[0.6, 0.8, 0.2, 1]}
+            delay={1.1}
           >
             GRAPHIC
           </AnimationRiseUp>
@@ -60,7 +61,8 @@ export default function InteractiveTitle() {
             key={selectedText}
             className={styles.interactiveSecondaryText}
             duration={1.8}
-            delay={0.8}
+            ease={[0.6, 0.8, 0.2, 1]}
+            delay={1.1}
           >
             INTERACTIVE
           </AnimationRiseUp>
@@ -74,7 +76,7 @@ export default function InteractiveTitle() {
           //
         </AnimationRiseUp>
         {selectedText === "INTERACTIVE" ? (
-          <div className="stacked">
+          <div className="stacked-desc">
             <div className="masking-container">
               <motion.div
                 key={selectedText}
@@ -110,7 +112,7 @@ export default function InteractiveTitle() {
             </div>
           </div>
         ) : (
-          <div className="stacked">
+          <div className="stacked-desc">
             <div className="masking-container">
               <motion.div
                 key={selectedText}

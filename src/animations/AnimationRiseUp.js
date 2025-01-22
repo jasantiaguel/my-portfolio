@@ -6,7 +6,15 @@ const textRiseVariants = {
   visible: { y: 0, opacity: 1 },
 };
 
-export default function AnimationRiseUp({ uniqueKey, className, duration = 1.6, delay = 0, onClick, children }) {
+export default function AnimationRiseUp({
+  uniqueKey,
+  className,
+  duration = 1.6,
+  delay = 0,
+  ease = [0.2, 0.8, 0.2, 1],
+  onClick,
+  children,
+}) {
   return (
     <div className="masking-container">
       <motion.div
@@ -17,7 +25,7 @@ export default function AnimationRiseUp({ uniqueKey, className, duration = 1.6, 
         variants={textRiseVariants}
         transition={{
           duration: duration,
-          ease: [0.1, 0.8, 0.2, 1],
+          ease: ease,
           delay: delay,
         }}
         onClick={onClick}

@@ -113,6 +113,8 @@ body::-webkit-scrollbar {
   gap: 0.2rem;
 }
 
-/* .stacked-top {
-  margin-bottom: -0.25rem;
-} */
+.stacked-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
