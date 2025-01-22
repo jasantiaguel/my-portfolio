@@ -6,6 +6,10 @@ import styles from "./InteractiveTitle.module.css";
 // Components
 import AnimationRiseUp from "../animations/AnimationRiseUp";
 
+const BoldText = ({ children }) => {
+  return <span className={styles.boldText}>{children}</span>;
+};
+
 export default function InteractiveTitle() {
   const [selectedText, setSelectedText] = useState("INTERACTIVE");
 
@@ -46,7 +50,7 @@ export default function InteractiveTitle() {
           <AnimationRiseUp
             key={selectedText}
             className={styles.graphicSecondaryText}
-            duration={2}
+            duration={1.8}
             delay={0.8}
           >
             GRAPHIC
@@ -55,7 +59,7 @@ export default function InteractiveTitle() {
           <AnimationRiseUp
             key={selectedText}
             className={styles.interactiveSecondaryText}
-            duration={2}
+            duration={1.8}
             delay={0.8}
           >
             INTERACTIVE
@@ -84,7 +88,8 @@ export default function InteractiveTitle() {
                   delay: 0.6,
                 }}
               >
-                Innovative and efficient digital experiences
+                <BoldText>Innovative</BoldText> and <BoldText>efficient</BoldText> digital
+                experiences
               </motion.div>
             </div>
             <div className="masking-container">
@@ -100,7 +105,7 @@ export default function InteractiveTitle() {
                   delay: 0.7,
                 }}
               >
-                that leave a memorable impact.
+                that leave a <BoldText>memorable</BoldText> impact.
               </motion.div>
             </div>
           </div>
@@ -119,7 +124,7 @@ export default function InteractiveTitle() {
                   delay: 0.6,
                 }}
               >
-                Stories told through art—
+                <BoldText>Stories</BoldText> told through art—
               </motion.div>
             </div>
             <div className="masking-container">
@@ -135,7 +140,7 @@ export default function InteractiveTitle() {
                   delay: 0.7,
                 }}
               >
-                messages shaped by design.
+                <BoldText>messages</BoldText> shaped by design.
               </motion.div>
             </div>
           </div>

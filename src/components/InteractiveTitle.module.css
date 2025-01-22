@@ -2,12 +2,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 12rem;
+  margin-left: 10%;
   height: 100vh;
 }
 
 .mainText {
-  font-size: 12rem;
+  /* font-size: 12rem; */
+  font-size: 9rem; /* 0.75 of 12rem */
   font-weight: 600;
   z-index: 0;
   user-select: none;
@@ -15,59 +16,69 @@
 }
 
 .secondaryText {
-  font-size: 6rem;
+  /* font-size: 6rem; */
+  font-size: 4.5rem; /* 0.75 of 6rem */
   font-weight: 600;
   color: rgba(0, 0, 0, 0.075);
   position: relative;
-  top: -1.5rem;
-  left: 4rem;
+  /* top: -1.5rem;
+  left: 4rem; */
+  top: -1.125rem; /* 0.75 of 1.5rem */
+  left: 3rem; /* 0.75 of 4rem */
   z-index: 1;
   user-select: none;
 }
 
-.interactiveText {
+.interactiveText, .graphicText {
   color: black;
   line-height: 0.78;
+  /* line-height: 0.585; */
 }
 
-.graphicText {
-  color: black;
+
+.interactiveSecondaryText, .graphicSecondaryText {
   line-height: 0.78;
-}
-
-.interactiveSecondaryText {
-  line-height: 0.82;
-}
-
-.graphicSecondaryText {
-  line-height: 0.82;
+  /* line-height: 0.615; */
 }
 
 .subTextContainer {
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 8rem;
-  gap: 2rem;
   position: relative;
-  top: -2rem;
+  /* height: 8rem;
+  gap: 2rem;
+  top: -2rem; */
+  height: 6rem;
+  gap: 1.5rem; /* 0.75 of 2rem */
+  top: -1.5rem; /* 0.75 of 2rem */
 }
 
 .designText {
-  font-size: 4rem;
   font-weight: 600;
+  /* font-size: 4rem; */
   line-height: 0.85;
+  font-size: 3rem; /* 0.75 of 4rem */
+  /* line-height: 0.6375; */
 }
 
 .slash {
-  font-size: 4rem;
   font-weight: 200;
+  /* font-size: 4rem; */
   line-height: 0.85;
+  font-size: 3rem; /* 0.75 of 4rem */
+  /* line-height: 0.6375; */
 }
 
 .descriptionText {
-  font-size: 1.5rem;
-  font-weight: 200;
   color: rgba(0, 0, 0, 0.75);
-  line-height: 1.75rem;
+  font-weight: 200;
+  /* font-size: 1.5rem; */
+  /* line-height: 1.75rem; */
+  font-size: 1.125rem;
+  line-height: 1.3125rem;
+}
+
+.boldText {
+  font-weight: 600;
 }

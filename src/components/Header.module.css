@@ -2,7 +2,8 @@
   background-color: none;
   color: var(--foreground);
   font-weight: 400;
-  font-size: 1rem;
+  /* font-size: 1rem; */
+  font-size: 0.75rem;
   letter-spacing: 0.05rem;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
   position: sticky;
@@ -22,16 +23,19 @@
 }
 
 .navText {
-  line-height: 1.2;
+  line-height: 1;
 }
 
 .logo {
   display: flex;
-  align-items: center;
   gap: 0.25rem;
 }
 
-.logoText, .contactText {
-  position: relative;
+.logoIcon {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.logoText {
   font-weight: 600;
 }

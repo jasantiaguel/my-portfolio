@@ -17,7 +17,7 @@ export default function Header() {
                 <img
                   src="/icons/ja-icon.svg"
                   alt="JA Logo Icon"
-                  className="w-10 h-10"
+                  className={styles.logoIcon}
                 />
               </Link>
               <div className={`${styles.logoText} stacked`}>
