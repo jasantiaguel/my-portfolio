@@ -2,7 +2,10 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import classNames from "classnames";
 import styles from "./InteractiveTitle.module.css";
+// Components
+import AnimationRiseUp from "../animations/AnimationRiseUp";
 
 export default function InteractiveTitle() {
   const [selectedText, setSelectedText] = useState("INTERACTIVE");
@@ -22,63 +25,119 @@ export default function InteractiveTitle() {
     <div className={styles.titleContainer}>
       <div className={styles.mainText}>
         {selectedText === "INTERACTIVE" ? (
-          <div className="masking-container">
-            <motion.div
-              key={selectedText}
-              className={styles.interactiveText}
-              onClick={handleTextClick}
-              initial="hidden"
-              animate="visible"
-              variants={textRiseVariants}
-              transition={{
-                duration: 1.6,
-                ease: [0.1, 0.8, 0.2, 1],
-              }}
-            >
-              INTERACTIVE
-            </motion.div>
-          </div>
+          <AnimationRiseUp
+            key={selectedText}
+            onClick={handleTextClick}
+            className={styles.interactiveText}
+          >
+            INTERACTIVE
+          </AnimationRiseUp>
         ) : (
-          <div className="masking-container">
-            <motion.div
-              key={selectedText}
-              className={styles.graphicText}
-              onClick={handleTextClick}
-              initial="hidden"
-              animate="visible"
-              variants={textRiseVariants}
-              transition={{
-                duration: 1.6,
-                ease: [0.1, 0.8, 0.2, 1],
-              }}
-            >
-              GRAPHIC
-            </motion.div>
-          </div>
+          <AnimationRiseUp
+            key={selectedText}
+            onClick={handleTextClick}
+            className={styles.graphicText}
+          >
+            GRAPHIC
+          </AnimationRiseUp>
         )}
       </div>
       <div className={styles.secondaryText} onClick={handleTextClick}>
         {selectedText === "INTERACTIVE" ? (
-          <span className={styles.graphicSecondaryText}>GRAPHIC</span>
+          <AnimationRiseUp
+            key={selectedText}
+            className={styles.graphicSecondaryText}
+            delay={0.3}
+          >
+            GRAPHIC
+          </AnimationRiseUp>
         ) : (
-          <span className={styles.interactiveSecondaryText}>INTERACTIVE</span>
+          <AnimationRiseUp
+            key={selectedText}
+            className={styles.interactiveSecondaryText}
+            delay={0.3}
+          >
+            INTERACTIVE
+          </AnimationRiseUp>
         )}
       </div>
       <div className={styles.subTextContainer}>
-        <p className={styles.designText}>DESIGN</p>
-        <span className={styles.slash}>//</span>
+        <AnimationRiseUp className={styles.designText} delay={0.1}>
+          DESIGN
+        </AnimationRiseUp>
+        <AnimationRiseUp className={styles.slash} delay={0.2}>
+          //
+        </AnimationRiseUp>
         {selectedText === "INTERACTIVE" ? (
-          <p className={`${styles.descriptionText} stacked`}>
-            Innovative and efficient digital experiences
-            <br />
-            that leave a memorable impact.
-          </p>
+          <div className="stacked">
+            <div className="masking-container">
+              <motion.div
+                key={selectedText}
+                className={styles.descriptionText}
+                initial="hidden"
+                animate="visible"
+                variants={textRiseVariants}
+                transition={{
+                  duration: 1.6,
+                  ease: [0.1, 0.8, 0.2, 1],
+                  delay: 0.3,
+                }}
+              >
+                Innovative and efficient digital experiences
+              </motion.div>
+            </div>
+            <div className="masking-container">
+              <motion.div
+                key={selectedText}
+                className={styles.descriptionText}
+                initial="hidden"
+                animate="visible"
+                variants={textRiseVariants}
+                transition={{
+                  duration: 1.6,
+                  ease: [0.1, 0.8, 0.2, 1],
+                  delay: 0.4,
+                }}
+              >
+                that leave a memorable impact.
+              </motion.div>
+            </div>
+          </div>
         ) : (
-          <p className={`${styles.descriptionText} stacked`}>
-            Stories told through art—
-            <br />
-            messages shaped by design.
-          </p>
+          <div className="stacked">
+            <div className="masking-container">
+              <motion.div
+                key={selectedText}
+                className={styles.descriptionText}
+                initial="hidden"
+                animate="visible"
+                variants={textRiseVariants}
+                transition={{
+                  duration: 1.6,
+                  ease: [0.1, 0.8, 0.2, 1],
+                  delay: 0.3,
+                }}
+              >
+                Stories told through art—
+              </motion.div>
+            </div>
+            <div className="masking-container">
+              <motion.div
+                key={selectedText}
+                className={styles.descriptionText}
+                initial="hidden"
+                animate="visible"
+                variants={textRiseVariants}
+                transition={{
+                  duration: 1.6,
+                  ease: [0.1, 0.8, 0.2, 1],
+                  delay: 0.4,
+                }}
+              >
+                messages shaped by design.
+              </motion.div>
+            </div>
+          </div>
         )}
       </div>
     </div>

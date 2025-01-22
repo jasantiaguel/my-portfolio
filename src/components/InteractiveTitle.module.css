@@ -19,7 +19,7 @@
   font-weight: 600;
   color: rgba(0, 0, 0, 0.075);
   position: relative;
-  top: -3.75rem;
+  top: -1.5rem;
   left: 4rem;
   z-index: 1;
   user-select: none;
@@ -27,41 +27,42 @@
 
 .interactiveText {
   color: black;
-  cursor: pointer;
   line-height: 0.78;
 }
 
 .graphicText {
   color: black;
-  cursor: pointer;
   line-height: 0.78;
 }
 
 .interactiveSecondaryText {
-  cursor: pointer;
+  line-height: 0.82;
 }
 
 .graphicSecondaryText {
-  cursor: pointer;
+  line-height: 0.82;
 }
 
 .subTextContainer {
   display: flex;
   flex-direction: row;
   align-items: center;
+  height: 8rem;
   gap: 2rem;
   position: relative;
-  top: -6rem;
+  top: -2rem;
 }
 
 .designText {
   font-size: 4rem;
   font-weight: 600;
+  line-height: 0.85;
 }
 
 .slash {
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: 200;
+  line-height: 0.85;
 }
 
 .descriptionText {

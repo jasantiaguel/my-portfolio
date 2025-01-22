@@ -1,8 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 import styles from "./TimeDate.module.css";
+// Components
+import AnimationRiseUp from "../animations/AnimationRiseUp";
 
 export default function TimeDate() {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -36,41 +37,21 @@ export default function TimeDate() {
   return (
     <div className="time stacked">
       <div className="masking-container">
-        <motion.div
-          className={styles.navText}
-          initial="hidden"
-          animate="visible"
-          variants={textRiseVariants}
-          transition={{
-            duration: 1.6,
-            ease: [0.1, 0.8, 0.2, 1],
-            delay: 0.4,
-          }}
-        >
+        <AnimationRiseUp className={styles.navText} delay={0.4}>
           <div
             className={`${styles.text} stacked-top`}
             suppressHydrationWarning
           >
             GREATER VANCOUVER
           </div>
-        </motion.div>
+        </AnimationRiseUp>
       </div>
       <div className="masking-container">
-        <motion.div
-          className={styles.navText}
-          initial="hidden"
-          animate="visible"
-          variants={textRiseVariants}
-          transition={{
-            duration: 1.6,
-            ease: [0.1, 0.8, 0.2, 1],
-            delay: 0.5,
-          }}
-        >
+        <AnimationRiseUp className={styles.navText} delay={0.5}>
           <div className={styles.text} suppressHydrationWarning>
             {formatTime(currentTime)}
           </div>
-        </motion.div>
+        </AnimationRiseUp>
       </div>
     </div>
   );
