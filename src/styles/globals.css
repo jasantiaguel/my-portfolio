@@ -90,6 +90,7 @@ body {
   padding: 0 4rem;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  scroll-behavior: smooth;
 }
 
 body::-webkit-scrollbar {

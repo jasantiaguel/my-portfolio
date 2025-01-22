@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import classNames from "classnames";
 import styles from "./InteractiveTitle.module.css";
 // Components
 import AnimationRiseUp from "../animations/AnimationRiseUp";
