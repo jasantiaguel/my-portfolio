@@ -65,8 +65,8 @@ export default function InteractiveTitle() {
             ease={[0.6, 0.8, 0.2, 1]}
             delay={1.1}
           >
-            GRAPHIC
-          </AnimationRiseUp>
+            {wrapLettersWithSpans("GRAPHIC", "graphicLetterSecondary")}
+            </AnimationRiseUp>
         ) : (
           <AnimationRiseUp
             key={selectedText}

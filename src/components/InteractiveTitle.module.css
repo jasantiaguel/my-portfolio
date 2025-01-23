@@ -65,6 +65,14 @@
   /* C */
 }
 
+.graphicLetterSecondary2 {
+  /* A */
+  font-family: "Hydrogenous";
+  font-weight: normal;
+  font-size: 5rem;
+  line-height: 0.5;
+}
+
 .subTextContainer {
   display: flex;
   flex-direction: row;
