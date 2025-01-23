@@ -73,18 +73,10 @@
 /* Hydrogenous */
 @font-face {
   font-family: "Hydrogenous";
-  src: url("/public/fonts/Hydrogenous/hydrogenous.regular.ttf") 
+  src: url("/public/fonts/Hydrogenous/Hydrogenous.ttf") 
     format("opentype");
   font-weight: normal;
   font-style: normal;
-}
-
-@font-face {
-  font-family: "Hydrogenous";
-  src: url("/public/fonts/Hydrogenous/hydrogenous.regular.ttf") 
-    format("opentype");
-  font-weight: normal;
-  font-style: italic;
 }
 
 :root {
