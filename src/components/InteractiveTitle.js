@@ -11,14 +11,6 @@ const BoldText = ({ children }) => {
   return <span className={styles.boldText}>{children}</span>;
 };
 
-const wrapLettersWithSpans = (text, baseClass) => {
-  return text.split("").map((letter, index) => (
-    <span key={index} className={styles[`${baseClass}${index}`]}>
-      {letter}
-    </span>
-  ));
-};
-
 export default function InteractiveTitle() {
   const [selectedText, setSelectedText] = useState("INTERACTIVE");
 
@@ -52,7 +44,6 @@ export default function InteractiveTitle() {
             className={styles.graphicText}
             duration={1.8}
           >
-            {/* {wrapLettersWithSpans("GRAPHIC", "graphicLetter")} */}
             GR<span className={styles.cursiveText}>A</span>PHIC
           </AnimationRiseUp>
         )}
@@ -63,10 +54,8 @@ export default function InteractiveTitle() {
             key={selectedText}
             className={styles.graphicSecondaryText}
             duration={1.8}
-            // ease={[0.6, 0.8, 0.2, 1]}
             delay={0.8}
           >
-            {/* {wrapLettersWithSpans("GRAPHIC", "graphicLetterSecondary")} */}
             GR<span className={styles.cursiveTextSecondary}>A</span>PHIC
           </AnimationRiseUp>
         ) : (
@@ -74,7 +63,6 @@ export default function InteractiveTitle() {
             key={selectedText}
             className={styles.interactiveSecondaryText}
             duration={1.8}
-            // ease={[0.6, 0.8, 0.2, 1]}
             delay={0.8}
           >
             INTER<span className={styles.cursiveTextSecondary}>A</span>CTIVE

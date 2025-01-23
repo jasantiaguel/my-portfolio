@@ -30,19 +30,11 @@ export default function TimeDate() {
     return `${timeString} ${timeZoneAbbr}`;
   };
 
-  const textRiseVariants = {
-    hidden: { y: "160%", opacity: 1 },
-    visible: { y: 0, opacity: 1 },
-  };
-
   return (
     <div className="time stacked">
       <div className="masking-container">
         <AnimationRiseUp className={styles.navText} delay={2.4}>
-          <div
-            className={styles.text}
-            suppressHydrationWarning
-          >
+          <div className={styles.text} suppressHydrationWarning>
             GREATER VANCOUVER
           </div>
         </AnimationRiseUp>

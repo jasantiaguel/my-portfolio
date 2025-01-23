@@ -3,7 +3,7 @@
 // Imports
 import Link from "next/link";
 import styles from "./Header.module.css";
-import { MdArrowForward, MdOutlineTrendingFlat } from "react-icons/md";
+import { MdOutlineTrendingFlat } from "react-icons/md";
 // Components
 import TimeDate from "./TimeDate";
 import AnimationRiseUp from "../animations/AnimationRiseUp";
