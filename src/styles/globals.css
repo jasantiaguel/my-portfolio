@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* Custom Fonts */
-@import url('https://fonts.googleapis.com/css2?family=My+Soul&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=My+Soul&display=swap");
 
 /* Heavy */
 @font-face {
@@ -74,8 +74,8 @@
 }
 
 :root {
-  --background: #faf1e1;
-  --foreground: #171717;
+  --background: #f9f4eb;
+  --foreground: #212121;
   font-family: "Helvetica Neue", sans-serif;
 }
 
@@ -90,24 +90,33 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: "Helvetica Neue", sans-serif;
-  padding: 0 4rem;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
 }
 
 body::-webkit-scrollbar {
   display: none;
 }
 
-.page-container {
+.main {
   display: flex;
   flex-direction: column;
   min-height: 160vh;
+  padding: 0 1.75rem;
+  margin: 0;
 }
 
 .masking-container {
   overflow: hidden;
+}
+
+.grid-8-column {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 1rem;
+  width: 100%;
 }
 
 .row {

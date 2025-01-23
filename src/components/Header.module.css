@@ -7,18 +7,7 @@
   text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 0;
-  padding: 1.75rem 0 0;
-}
-
-.navBar {
-  display: flex;
-  justify-content: space-between;
-}
-
-.navList {
-  display: flex;
-  flex-direction: row;
-  gap: 4rem;
+  padding: 1.75rem;
 }
 
 .navText {

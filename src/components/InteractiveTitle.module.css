@@ -1,13 +1,11 @@
 .titleContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-left: 10%;
-  height: 100vh;
+  height: 90vh;
+  align-items: center;
+  overflow: hidden;
 }
 
 .mainText {
-  font-size: 9rem;
+  font-size: 10rem;
   font-weight: 600;
   z-index: 0;
   user-select: none;
@@ -27,7 +25,6 @@
 
 .interactiveText,
 .graphicText {
-  color: black;
   line-height: 0.78;
 }
 
@@ -52,8 +49,6 @@
 }
 
 .subTextContainer {
-  display: flex;
-  flex-direction: row;
   align-items: center;
   position: relative;
   height: 6rem;
