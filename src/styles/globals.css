@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom Fonts */
+@import url('https://fonts.googleapis.com/css2?family=My+Soul&display=swap');
+
 /* Heavy */
 @font-face {
   font-family: "Helvetica Neue";
@@ -68,15 +71,6 @@
     format("opentype");
   font-weight: 300;
   font-style: italic;
-}
-
-/* Hydrogenous */
-@font-face {
-  font-family: "Hydrogenous";
-  src: url("/public/fonts/Hydrogenous/Hydrogenous.woff2") 
-    format("woff2");
-  font-weight: normal;
-  font-style: normal;
 }
 
 :root {

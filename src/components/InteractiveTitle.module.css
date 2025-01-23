@@ -45,18 +45,15 @@
 }
 .graphicLetter2 {
   /* A */
-  font-family: "Hydrogenous";
+  font-family: 'My Soul';
   font-weight: normal;
-  font-size: 10rem;
-  line-height: 0.5;
+  letter-spacing: 1rem;
 }
 .graphicLetter3 {
   /* P */
-  /* font-weight: 400; */
 }
 .graphicLetter4 {
   /* H */
-  /* font-weight: 400; */
 }
 .graphicLetter5 {
   /* I */
@@ -67,10 +64,9 @@
 
 .graphicLetterSecondary2 {
   /* A */
-  font-family: "Hydrogenous";
+  font-family: 'My Soul';
   font-weight: normal;
-  font-size: 5rem;
-  line-height: 0.5;
+  letter-spacing: 0.6rem;
 }
 
 .subTextContainer {

@@ -12,6 +12,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <link
+        href="https://fonts.googleapis.com/css2?family=My+Soul&display=swap"
+        rel="stylesheet"
+      />
       <body className="antialiased">
         <Header />
         {children}
