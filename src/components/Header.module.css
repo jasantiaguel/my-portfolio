@@ -29,13 +29,13 @@
   opacity: 0;
   margin-top: -0.05rem;
   margin-right: 0.3rem;
-  transition: opacity 0.3s ease, transform 0.3s ease; /* Add transform transition */
-  transform: translateX(-10px); /* Initial position for smooth transition */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateX(-10px);
 }
 
 .navText:hover .icon {
   opacity: 1;
-  transform: translateX(0); /* Move to original position */
+  transform: translateX(0);
 }
 
 .logo {
