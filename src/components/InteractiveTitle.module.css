@@ -34,6 +34,7 @@
 .interactiveSecondaryText,
 .graphicSecondaryText {
   line-height: 0.78;
+  filter: blur(0.2rem);
 }
 
 .graphicLetter0 {
@@ -48,6 +49,7 @@
   font-family: 'My Soul';
   font-weight: normal;
   letter-spacing: 1rem;
+  line-height: 0.1;
 }
 .graphicLetter3 {
   /* P */
@@ -67,6 +69,7 @@
   font-family: 'My Soul';
   font-weight: normal;
   letter-spacing: 0.6rem;
+  line-height: 0.1;
 }
 
 .subTextContainer {

@@ -15,13 +15,15 @@ export default function Header() {
         <div className={styles.leftSection}>
           <ul className={styles.navList}>
             <div className={styles.logo}>
-              <Link href="/">
-                <img
-                  src="/icons/ja-icon.svg"
-                  alt="JA Logo Icon"
-                  className={styles.logoIcon}
-                />
-              </Link>
+              <AnimationRiseUp className={styles.navText} delay={2.2}>
+                <Link href="/">
+                  <img
+                    src="/icons/ja-icon.svg"
+                    alt="JA Logo Icon"
+                    className={styles.logoIcon}
+                  />
+                </Link>
+              </AnimationRiseUp>
               <div className={`${styles.logoText} stacked`}>
                 <AnimationRiseUp className={styles.navText} delay={2.2}>
                   <Link href="/">JONATHAN</Link>
