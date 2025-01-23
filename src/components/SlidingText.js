@@ -50,7 +50,7 @@ export default function SlidingText() {
     }
     gsap.set(firstText.current, { xPercent: xPercent });
     gsap.set(secondText.current, { xPercent: xPercent });
-    xPercent += 0.035 * direction;
+    xPercent += 0.025 * direction;
     requestAnimationFrame(animation);
   };
 
