@@ -25,14 +25,44 @@
   user-select: none;
 }
 
-.interactiveText, .graphicText {
+.interactiveText,
+.graphicText {
   color: black;
   line-height: 0.78;
 }
 
-
-.interactiveSecondaryText, .graphicSecondaryText {
+.interactiveSecondaryText,
+.graphicSecondaryText {
   line-height: 0.78;
+}
+
+.graphicLetter0 {
+  /* G */
+}
+.graphicLetter1 {
+  /* R */
+  /* font-weight: 400; */
+}
+.graphicLetter2 {
+  /* A */
+  font-family: "Hydrogenous";
+  font-weight: normal;
+  font-size: 10rem;
+  line-height: 0.5;
+}
+.graphicLetter3 {
+  /* P */
+  /* font-weight: 400; */
+}
+.graphicLetter4 {
+  /* H */
+  /* font-weight: 400; */
+}
+.graphicLetter5 {
+  /* I */
+}
+.graphicLetter6 {
+  /* C */
 }
 
 .subTextContainer {
@@ -58,7 +88,6 @@
 }
 
 .descriptionText {
-  color: rgba(0, 0, 0, 0.75);
   font-weight: 200;
   font-size: 1.125rem;
   line-height: 1.3125rem;

@@ -70,10 +70,27 @@
   font-style: italic;
 }
 
+/* Hydrogenous */
+@font-face {
+  font-family: "Hydrogenous";
+  src: url("/public/fonts/Hydrogenous/Hydrogenous.otf") 
+    format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Hydrogenous";
+  src: url("/public/fonts/Hydrogenous/Hydrogenous.otf") 
+    format("opentype");
+  font-weight: normal;
+  font-style: italic;
+}
+
 :root {
   --background: #faf1e1;
   --foreground: #171717;
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: "Helvetica Neue", sans-serif;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -105,6 +122,11 @@ body::-webkit-scrollbar {
 
 .masking-container {
   overflow: hidden;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
 }
 
 .stacked {

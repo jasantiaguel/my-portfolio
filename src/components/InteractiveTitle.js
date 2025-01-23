@@ -1,5 +1,6 @@
 "use client";
 
+// Imports
 import { useState } from "react";
 import { motion } from "framer-motion";
 import styles from "./InteractiveTitle.module.css";
@@ -8,6 +9,14 @@ import AnimationRiseUp from "../animations/AnimationRiseUp";
 
 const BoldText = ({ children }) => {
   return <span className={styles.boldText}>{children}</span>;
+};
+
+const wrapLettersWithSpans = (text, baseClass) => {
+  return text.split("").map((letter, index) => (
+    <span key={index} className={styles[`${baseClass}${index}`]}>
+      {letter}
+    </span>
+  ));
 };
 
 export default function InteractiveTitle() {
@@ -32,6 +41,7 @@ export default function InteractiveTitle() {
             key={selectedText}
             onClick={handleTextClick}
             className={styles.interactiveText}
+            duration={1.6}
           >
             INTERACTIVE
           </AnimationRiseUp>
@@ -40,9 +50,10 @@ export default function InteractiveTitle() {
             key={selectedText}
             onClick={handleTextClick}
             className={styles.graphicText}
+            duration={1.6}
           >
-            GRAPHIC
-          </AnimationRiseUp>
+            {wrapLettersWithSpans("GRAPHIC", "graphicLetter")}
+            </AnimationRiseUp>
         )}
       </div>
       <div className={styles.secondaryText} onClick={handleTextClick}>
@@ -69,10 +80,12 @@ export default function InteractiveTitle() {
         )}
       </div>
       <div className={styles.subTextContainer}>
-        <AnimationRiseUp className={styles.designText} delay={0.2}>
+        <AnimationRiseUp className={styles.designText} delay={0.2}            duration={1.6}
+        >
           DESIGN
         </AnimationRiseUp>
-        <AnimationRiseUp className={styles.slash} delay={0.4}>
+        <AnimationRiseUp className={styles.slash} delay={0.4}            duration={1.6}
+        >
           //
         </AnimationRiseUp>
         {selectedText === "INTERACTIVE" ? (

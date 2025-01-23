@@ -1,3 +1,4 @@
+// Imports
 import "@/styles/globals.css";
 // Components
 import Header from "../components/Header";

@@ -1,3 +1,4 @@
+// Imports
 import { motion } from "framer-motion";
 import classNames from "classnames";
 
@@ -9,7 +10,7 @@ const textRiseVariants = {
 export default function AnimationRiseUp({
   uniqueKey,
   className,
-  duration = 1.6,
+  duration = 1.4,
   delay = 0,
   ease = [0.2, 0.8, 0.2, 1],
   onClick,
