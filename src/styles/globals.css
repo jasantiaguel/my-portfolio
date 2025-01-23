@@ -74,7 +74,7 @@
 @font-face {
   font-family: "Hydrogenous";
   src: url("/public/fonts/Hydrogenous/Hydrogenous.woff2") 
-    format("opentype");
+    format("woff2");
   font-weight: normal;
   font-style: normal;
 }
