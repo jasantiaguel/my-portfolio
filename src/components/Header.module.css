@@ -4,7 +4,7 @@
   font-weight: 400;
   font-size: 0.75rem;
   letter-spacing: 0.05rem;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 0;
   padding: 1.75rem 0 0;
@@ -27,7 +27,7 @@
 
 .navText .icon {
   opacity: 0;
-  margin-top: -0.05rem;
+  margin-top: -0.025rem;
   margin-right: 0.3rem;
   transition: opacity 0.3s ease, transform 0.3s ease;
   transform: translateX(-10px);
@@ -40,7 +40,9 @@
 
 .logo {
   display: flex;
+  align-items: center;
   gap: 0.5rem;
+  margin-top: 0.025rem;
 }
 
 .logoIcon {
@@ -48,6 +50,7 @@
   height: 1.75rem;
 }
 
-.logoText, .contactText {
+.logoText,
+.contactText {
   font-weight: 600;
 }

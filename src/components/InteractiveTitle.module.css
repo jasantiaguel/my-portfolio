@@ -37,35 +37,14 @@
   filter: blur(0.2rem);
 }
 
-.graphicLetter0 {
-  /* G */
-}
-.graphicLetter1 {
-  /* R */
-  /* font-weight: 400; */
-}
-.graphicLetter2 {
-  /* A */
+.cursiveText {
   font-family: 'My Soul';
   font-weight: normal;
-  letter-spacing: 1rem;
+  letter-spacing: 0.9rem;
   line-height: 0.1;
 }
-.graphicLetter3 {
-  /* P */
-}
-.graphicLetter4 {
-  /* H */
-}
-.graphicLetter5 {
-  /* I */
-}
-.graphicLetter6 {
-  /* C */
-}
 
-.graphicLetterSecondary2 {
-  /* A */
+.cursiveTextSecondary {
   font-family: 'My Soul';
   font-weight: normal;
   letter-spacing: 0.6rem;

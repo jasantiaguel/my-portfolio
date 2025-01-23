@@ -41,19 +41,20 @@ export default function InteractiveTitle() {
             key={selectedText}
             onClick={handleTextClick}
             className={styles.interactiveText}
-            duration={1.6}
+            duration={1.8}
           >
-            INTERACTIVE
+            INTER<span className={styles.cursiveText}>A</span>CTIVE
           </AnimationRiseUp>
         ) : (
           <AnimationRiseUp
             key={selectedText}
             onClick={handleTextClick}
             className={styles.graphicText}
-            duration={1.6}
+            duration={1.8}
           >
-            {wrapLettersWithSpans("GRAPHIC", "graphicLetter")}
-            </AnimationRiseUp>
+            {/* {wrapLettersWithSpans("GRAPHIC", "graphicLetter")} */}
+            GR<span className={styles.cursiveText}>A</span>PHIC
+          </AnimationRiseUp>
         )}
       </div>
       <div className={styles.secondaryText} onClick={handleTextClick}>
@@ -62,30 +63,33 @@ export default function InteractiveTitle() {
             key={selectedText}
             className={styles.graphicSecondaryText}
             duration={1.8}
-            ease={[0.6, 0.8, 0.2, 1]}
-            delay={1.1}
+            // ease={[0.6, 0.8, 0.2, 1]}
+            delay={0.8}
           >
-            {wrapLettersWithSpans("GRAPHIC", "graphicLetterSecondary")}
-            </AnimationRiseUp>
+            {/* {wrapLettersWithSpans("GRAPHIC", "graphicLetterSecondary")} */}
+            GR<span className={styles.cursiveTextSecondary}>A</span>PHIC
+          </AnimationRiseUp>
         ) : (
           <AnimationRiseUp
             key={selectedText}
             className={styles.interactiveSecondaryText}
             duration={1.8}
-            ease={[0.6, 0.8, 0.2, 1]}
-            delay={1.1}
+            // ease={[0.6, 0.8, 0.2, 1]}
+            delay={0.8}
           >
-            INTERACTIVE
+            INTER<span className={styles.cursiveTextSecondary}>A</span>CTIVE
           </AnimationRiseUp>
         )}
       </div>
       <div className={styles.subTextContainer}>
-        <AnimationRiseUp className={styles.designText} delay={0.2}            duration={1.6}
+        <AnimationRiseUp
+          className={styles.designText}
+          delay={0.2}
+          duration={1.6}
         >
           DESIGN
         </AnimationRiseUp>
-        <AnimationRiseUp className={styles.slash} delay={0.4}            duration={1.6}
-        >
+        <AnimationRiseUp className={styles.slash} delay={0.4} duration={1.6}>
           //
         </AnimationRiseUp>
         {selectedText === "INTERACTIVE" ? (
@@ -103,8 +107,8 @@ export default function InteractiveTitle() {
                   delay: 0.6,
                 }}
               >
-                <BoldText>Innovative</BoldText> and <BoldText>efficient</BoldText> digital
-                experiences
+                <BoldText>Innovative</BoldText> and{" "}
+                <BoldText>efficient</BoldText> digital experiences
               </motion.div>
             </div>
             <div className="masking-container">
