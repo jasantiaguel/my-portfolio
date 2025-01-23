@@ -1,7 +1,7 @@
 // Imports
 import "@/styles/globals.css";
 // Components
-import Header from "../components/Header";
+import Header from "@/components/Header";
 
 export const metadata = {
   title: "Jonathan Andrew - Interactive & Graphic Designer",
