@@ -3,12 +3,13 @@
   overflow: hidden;
   height: 80%;
   top: 12.5%;
-  left: -39rem;
+  left: -34.5rem;
 }
 
 .slider {
   position: relative;
-  top: 50%;
+  top: 53%;
+  /* left: 50%; */
   white-space: nowrap;
   display: flex;
   transform: rotate(-90deg);

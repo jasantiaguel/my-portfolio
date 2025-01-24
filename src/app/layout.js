@@ -2,6 +2,8 @@
 import "@/styles/globals.css";
 // Components
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import SlidingText from "@/components/SlidingText";
 
 export const metadata = {
   title: "Jonathan Andrew - Interactive & Graphic Designer",
@@ -19,8 +21,10 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="antialiased">
+      <SlidingText />
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

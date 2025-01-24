@@ -28,6 +28,16 @@
   line-height: 0.78;
 }
 
+.interactiveText {
+  position: relative;
+  left: -0.35rem;
+}
+
+.graphicText {
+  position: relative;
+  left: -0.25rem;
+}
+
 .interactiveSecondaryText,
 .graphicSecondaryText {
   line-height: 0.78;

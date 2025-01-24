@@ -19,10 +19,12 @@ export default function SlidingText() {
     gsap.fromTo(
       sliderContainer.current,
       { opacity: 0 },
-      { opacity: 1, 
-        duration: 2,
-        delay: 3.6,
-        ease: "power2.out" }
+      { 
+        opacity: 1, 
+        duration: 1.8,
+        delay: 4,
+        ease: "sine.out" 
+      }
     );
 
     requestAnimationFrame(animation);
@@ -60,8 +62,7 @@ export default function SlidingText() {
         <p ref={firstText}>
           PORTFOLIO 2025
           &nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;
-          JONATHAN ANDREW
-          SANTIAGUEL Y.1997
+          JONATHAN ANDREW &nbsp;Y.1997
           &nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;
           INNOVATION · EFFICIENCY · CREATIVITY
           &nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;
@@ -69,8 +70,7 @@ export default function SlidingText() {
         <p ref={secondText}>
           PORTFOLIO 2025
           &nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;
-          JONATHAN ANDREW
-          SANTIAGUEL Y.1997
+          JONATHAN ANDREW &nbsp;Y.1997
           &nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;
           INNOVATION · EFFICIENCY · CREATIVITY
           &nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;
