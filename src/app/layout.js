@@ -19,9 +19,13 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=My+Soul&display=swap"
           rel="stylesheet"
         />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&display=swap"
+          rel="stylesheet"
+        ></link>
       </head>
       <body className="antialiased">
-      <SlidingText />
+        <SlidingText />
         <Header />
         {children}
         <Footer />

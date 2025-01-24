@@ -15,12 +15,12 @@ export default function Footer() {
         <div className="col-start-8">
         <ul className={styles.list}>
             <li className="stacked">
-              <AnimationRiseUp className={styles.footerText} delay={3.2}>
+              <AnimationRiseUp className={styles.footerText} delay={3.3}>
                 <p className={classNames(styles.qText, "row justify-end")}>
-                  CA DEV/ J.A.
+                  CA / DEV J.A.
                 </p>
               </AnimationRiseUp>
-              <AnimationRiseUp className={styles.footerText} delay={3.3}>
+              <AnimationRiseUp className={styles.footerText} delay={3.4}>
                 <p className="row justify-end">
                   SCROLL TO EXPLORE
                 </p>

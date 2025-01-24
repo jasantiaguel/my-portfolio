@@ -11,7 +11,7 @@ export default function SlidingText() {
   const secondText = useRef(null);
   const slider = useRef(null);
   const sliderContainer = useRef(null);
-  let xPercent = 1;
+  let yPercent = 1;
   let direction = -1;
 
   useEffect(() => {
@@ -44,36 +44,36 @@ export default function SlidingText() {
   }, []);
 
   const animation = () => {
-    if (xPercent <= -100) {
-      xPercent = 0;
+    if (yPercent <= -100) {
+      yPercent = 0;
     }
-    if (xPercent > 0) {
-      xPercent = -100;
+    if (yPercent > 0) {
+      yPercent = -100;
     }
-    gsap.set(firstText.current, { xPercent: xPercent });
-    gsap.set(secondText.current, { xPercent: xPercent });
-    xPercent += 0.025 * direction;
+    gsap.set(firstText.current, { yPercent: yPercent });
+    gsap.set(secondText.current, { yPercent: yPercent });
+    yPercent += 0.025 * direction;
     requestAnimationFrame(animation);
   };
+
+  const TextBlock = ({ barcodeText }) => (
+    <>
+      PORTFOLIO &nbsp;&nbsp; 2025 &nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp; JONATHAN &nbsp;&nbsp; ANDREW &nbsp;&nbsp; Y.97 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <span className={styles.barcodeText}>{barcodeText}</span>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </>
+  );
 
   return (
     <div ref={sliderContainer} className={styles.sliderContainer}>
       <div ref={slider} className={styles.slider}>
-        <p ref={firstText}>
-          PORTFOLIO 2025
-          &nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;
-          JONATHAN ANDREW &nbsp;Y.1997
-          &nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;
-          INNOVATION · EFFICIENCY · CREATIVITY
-          &nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;
+      <p ref={firstText}>
+          <TextBlock barcodeText="DEFY YOUR LIMITS" />
+          <TextBlock barcodeText="PURSUE GREATNESS" />
         </p>
         <p ref={secondText}>
-          PORTFOLIO 2025
-          &nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;
-          JONATHAN ANDREW &nbsp;Y.1997
-          &nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;
-          INNOVATION · EFFICIENCY · CREATIVITY
-          &nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;
+          <TextBlock barcodeText="DEFY YOUR LIMITS" />
+          <TextBlock barcodeText="PURSUE GREATNESS" />
         </p>
       </div>
     </div>
