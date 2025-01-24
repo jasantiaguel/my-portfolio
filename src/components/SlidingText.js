@@ -21,7 +21,7 @@ export default function SlidingText() {
       { opacity: 0 },
       { 
         opacity: 1, 
-        duration: 1.8,
+        duration: 1.6,
         delay: 4,
         ease: "sine.out" 
       }
