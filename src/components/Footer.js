@@ -22,7 +22,7 @@ export default function Footer() {
               </AnimationRiseUp>
               <AnimationRiseUp className={styles.footerText} delay={3.4}>
                 <p className="row justify-end">
-                  SCROLL TO EXPLORE ↴
+                  ⬐ SCROLL TO EXPLORE
                 </p>
               </AnimationRiseUp>
             </li>

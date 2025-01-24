@@ -62,7 +62,7 @@
   font-family: "Helvetica Neue";
   src: url("/public/fonts/Helvetica_Neue/HelveticaNeueThin.otf")
     format("opentype");
-  font-weight: 300;
+  font-weight: 200;
   font-style: normal;
 }
 
@@ -70,12 +70,12 @@
   font-family: "Helvetica Neue";
   src: url("/public/fonts/Helvetica_Neue/HelveticaNeueThinItalic.otf")
     format("opentype");
-  font-weight: 300;
+  font-weight: 200;
   font-style: italic;
 }
 
 :root {
-  --background: #f9f4eb;
+  --background: #f3f2f1;
   --foreground: #212121;
   font-family: "Helvetica Neue", sans-serif;
 }
