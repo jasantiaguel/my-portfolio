@@ -25,7 +25,7 @@
 
 .interactiveText,
 .graphicText {
-  line-height: 0.78;
+  line-height: 0.8;
 }
 
 .interactiveText {
@@ -59,21 +59,14 @@
 }
 
 .subTextContainer {
+  display: flex;
   align-items: center;
   position: relative;
-  height: 6rem;
   gap: 1.5rem;
-  top: -1.75rem;
 }
 
 .designText {
   font-weight: 600;
-  line-height: 0.85;
-  font-size: 3.5rem;
-}
-
-.slash {
-  font-weight: 200;
   line-height: 0.85;
   font-size: 3.5rem;
 }

@@ -3,6 +3,7 @@
 // Imports
 import { useState, useEffect } from "react";
 import styles from "./TimeDate.module.css";
+import classNames from "classnames";
 // Components
 import AnimationRiseUp from "../animations/AnimationRiseUp";
 
@@ -32,20 +33,22 @@ export default function TimeDate() {
 
   return (
     <div className="time stacked">
-      <div className="masking-container">
-        <AnimationRiseUp className={styles.navText} delay={2.4}>
-          <div className={styles.text} suppressHydrationWarning>
-            GREATER VANCOUVER
-          </div>
-        </AnimationRiseUp>
-      </div>
-      <div className="masking-container">
-        <AnimationRiseUp className={styles.navText} delay={2.5}>
-          <div className={styles.text} suppressHydrationWarning>
-            {formatTime(currentTime)}
-          </div>
-        </AnimationRiseUp>
-      </div>
+      <ul className={classNames(styles.list, "stacked")}>
+        <li>
+          <AnimationRiseUp className={styles.navText} delay={2.4}>
+            <div className={styles.text} suppressHydrationWarning>
+              GREATER VANCOUVER
+            </div>
+          </AnimationRiseUp>
+        </li>
+        <li>
+          <AnimationRiseUp className={styles.navText} delay={2.5}>
+            <div className={styles.text} suppressHydrationWarning>
+              {formatTime(currentTime)}
+            </div>
+          </AnimationRiseUp>
+        </li>
+      </ul>
     </div>
   );
 }

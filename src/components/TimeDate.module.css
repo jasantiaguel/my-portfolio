@@ -9,3 +9,7 @@
 .navText {
   line-height: 1;
 }
+
+.list {
+  gap: 0.2rem;
+}

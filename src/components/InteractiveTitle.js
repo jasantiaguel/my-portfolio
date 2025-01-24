@@ -46,7 +46,7 @@ export default function InteractiveTitle() {
               className={styles.graphicText}
               duration={1.8}
             >
-              GR<span className={styles.cursiveText}>A</span>PHIC
+              GRAPHIC
             </AnimationRiseUp>
           )}
         </div>
@@ -58,7 +58,7 @@ export default function InteractiveTitle() {
               duration={1.8}
               delay={0.8}
             >
-              GR<span className={styles.cursiveTextSecondary}>A</span>PHIC
+              GRAPHIC
             </AnimationRiseUp>
           ) : (
             <AnimationRiseUp
@@ -79,12 +79,9 @@ export default function InteractiveTitle() {
           >
             DESIGN
           </AnimationRiseUp>
-          <AnimationRiseUp className={styles.slash} delay={0.4} duration={1.6}>
-            //
-          </AnimationRiseUp>
           {selectedText === "INTERACTIVE" ? (
-            <div className="stacked-desc">
-              <div className="masking-container">
+            <ul className={classNames(styles.list, "stacked")}>
+              <li className="masking-container">
                 <motion.div
                   key={selectedText}
                   className={styles.descriptionText}
@@ -100,8 +97,8 @@ export default function InteractiveTitle() {
                   <BoldText>Innovative</BoldText> and{" "}
                   <BoldText>efficient</BoldText> digital experiences
                 </motion.div>
-              </div>
-              <div className="masking-container">
+              </li>
+              <li className="masking-container">
                 <motion.div
                   key={selectedText}
                   className={styles.descriptionText}
@@ -116,11 +113,11 @@ export default function InteractiveTitle() {
                 >
                   that leave a <BoldText>memorable</BoldText> impact.
                 </motion.div>
-              </div>
-            </div>
+              </li>
+            </ul>
           ) : (
-            <div className="stacked-desc">
-              <div className="masking-container">
+            <ul className={classNames(styles.list, "stacked")}>
+              <li className="masking-container">
                 <motion.div
                   key={selectedText}
                   className={styles.descriptionText}
@@ -135,8 +132,8 @@ export default function InteractiveTitle() {
                 >
                   <BoldText>Stories</BoldText> told through art—
                 </motion.div>
-              </div>
-              <div className="masking-container">
+              </li>
+              <li className="masking-container">
                 <motion.div
                   key={selectedText}
                   className={styles.descriptionText}
@@ -151,8 +148,8 @@ export default function InteractiveTitle() {
                 >
                   <BoldText>messages</BoldText> shaped by design.
                 </motion.div>
-              </div>
-            </div>
+              </li>
+            </ul>
           )}
         </div>
       </div>

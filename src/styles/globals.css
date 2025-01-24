@@ -105,8 +105,7 @@ body::-webkit-scrollbar {
 .main {
   display: flex;
   flex-direction: column;
-  min-height: 160vh;
-  padding: 0 1.75rem;
+  padding: 0 3rem;
   margin: 0;
 }
 
@@ -129,11 +128,4 @@ body::-webkit-scrollbar {
 .stacked {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
-}
-
-.stacked-desc {
-  display: flex;
-  flex-direction: column;
-  gap: 0.1rem;
 }

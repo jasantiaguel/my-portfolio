@@ -14,41 +14,44 @@ export default function Header() {
     <header className={styles.header}>
       <nav className="grid-8-column">
         <div className="col-span-1">
-          <ul className={styles.list}>
-            <div className={styles.logo}>
-              <AnimationRiseUp className={styles.navText} delay={2.2}>
-                <Link href="/">
-                  <img
-                    src="/icons/ja-icon.svg"
-                    alt="JA Logo Icon"
-                    className={styles.logoIcon}
-                  />
-                </Link>
-              </AnimationRiseUp>
-              <div className={`${styles.logoText} stacked`}>
+          <div className={classNames(styles.logo, "row")}>
+            <AnimationRiseUp className={styles.navText} delay={2.2}>
+              <Link href="/">
+                <img
+                  src="/icons/ja-icon.svg"
+                  alt="JA Logo Icon"
+                  className={styles.logoIcon}
+                />
+              </Link>
+            </AnimationRiseUp>
+            <ul className={classNames(styles.list, "stacked")}>
+              <li className={styles.logoText}>
                 <AnimationRiseUp className={styles.navText} delay={2.2}>
                   <Link href="/">JONATHAN</Link>
                 </AnimationRiseUp>
+              </li>
+              <li className={styles.logoText}>
                 <AnimationRiseUp className={styles.navText} delay={2.3}>
                   <Link href="/">ANDREW</Link>
                 </AnimationRiseUp>
-              </div>
-            </div>
-          </ul>
+              </li>
+            </ul>
+          </div>
         </div>
         <div className="col-span-3">
           <TimeDate />
         </div>
-
         <div className="col-span-2">
-          <ul className={styles.list}>
-            <li className="stacked">
+          <ul className={classNames(styles.list, "stacked")}>
+            <li>
               <AnimationRiseUp className={styles.navText} delay={2.6}>
                 <Link href="/" className="row">
                   <MdArrowRightAlt className={styles.icon} />
                   INTERACTIVE DESIGN
                 </Link>
               </AnimationRiseUp>
+            </li>
+            <li>
               <AnimationRiseUp className={styles.navText} delay={2.7}>
                 <Link href="/" className="row">
                   <MdArrowRightAlt className={styles.icon} />
@@ -59,8 +62,8 @@ export default function Header() {
           </ul>
         </div>
         <div className="col-span-1">
-          <ul className={styles.list}>
-            <li className="stacked">
+          <ul className={classNames(styles.list, "stacked")}>
+            <li>
               <AnimationRiseUp className={styles.navText} delay={2.8}>
                 <Link href="/" className="row">
                   <MdArrowRightAlt className={styles.icon} />
@@ -71,14 +74,23 @@ export default function Header() {
           </ul>
         </div>
         <div className="col-span-1">
-          <ul className={styles.list}>
-            <li className="stacked">
+          <ul className={classNames(styles.list, "stacked")}>
+            <li>
               <AnimationRiseUp className={styles.navText} delay={3.0}>
-                <Link href="/" className={classNames(styles.contactText, "row", "justify-end")}>
+                <Link
+                  href="/"
+                  className={classNames(
+                    styles.contactText,
+                    "row",
+                    "justify-end"
+                  )}
+                >
                   <MdArrowRightAlt className={styles.icon} />
                   GET IN TOUCH
                 </Link>
               </AnimationRiseUp>
+            </li>
+            <li>
               <AnimationRiseUp className={styles.navText} delay={3.1}>
                 <Link href="/" className="row justify-end">
                   <MdArrowRightAlt className={styles.icon} />

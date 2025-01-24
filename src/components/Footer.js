@@ -12,7 +12,7 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className="grid-8-column">
-        <div className="col-start-8">
+        <div className="col-start-7 col-span-2">
         <ul className={styles.list}>
             <li className="stacked">
               <AnimationRiseUp className={styles.footerText} delay={3.3}>
