@@ -68,11 +68,11 @@ export default function SlidingText() {
     <div ref={sliderContainer} className={styles.sliderContainer}>
       <div ref={slider} className={styles.slider}>
       <p ref={firstText}>
-          <TextBlock barcodeText="DEFY YOUR LIMITS" />
+          <TextBlock barcodeText="SURPASS YOUR LIMITS" />
           <TextBlock barcodeText="PURSUE GREATNESS" />
         </p>
         <p ref={secondText}>
-          <TextBlock barcodeText="DEFY YOUR LIMITS" />
+          <TextBlock barcodeText="SURPASS YOUR LIMITS" />
           <TextBlock barcodeText="PURSUE GREATNESS" />
         </p>
       </div>
