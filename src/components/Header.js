@@ -24,7 +24,7 @@ export default function Header() {
                 />
               </Link>
             </AnimationRiseUp>
-            <ul className={classNames(styles.list, "stacked")}>
+            <ul className={classNames(styles.logoWordmark, "stacked")}>
               <li className={styles.logoText}>
                 <AnimationRiseUp className={styles.navText} delay={2.2}>
                   <Link href="/">JONATHAN</Link>

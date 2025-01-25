@@ -1,7 +1,8 @@
-.titleContainer {
-  height: 89.5vh;
+.pageContainer {
+  height: 100%;
   align-items: end;
   overflow: hidden;
+  padding: 1.75rem 0;
 }
 
 .title {
@@ -11,20 +12,27 @@
   font-family: 'Geologica';
   letter-spacing: -0.05rem;
   font-size: 12rem;
-  font-weight: 600;
+  font-weight: 800;
   line-height: 0.8;
   user-select: none;
   align-items: center;
+  position: relative;
+  bottom: -0.5rem;
 }
 
-.text {
+.titleLetter {
   transition: opacity 0.3s ease-out;
   width: min-content;
 }
 
-.text:hover {
+.titleLetter:hover {
   opacity: 0.4;
   cursor: pointer;
+}
+
+.titleAdjusted {
+  position: relative;
+  left: -1rem;
 }
 
 .slash {
@@ -32,4 +40,13 @@
   top: 0.75rem;
   font-size: 10rem;
   font-weight: 400;
+}
+
+.descriptionContainer {
+  margin-bottom: 1rem;
+}
+
+.descriptionText {
+  font-size: 1.5rem;
+  font-weight: 200;
 }
