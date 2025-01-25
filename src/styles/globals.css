@@ -1,17 +1,9 @@
-/* Custom Fonts */
-@import url("https://fonts.googleapis.com/css2?family=My+Soul&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "Bergen Mono";
-  src: url("/fonts/Bergen_Mono/BergenMono-Bold.otf") format("opentype");
-  font-weight: 800;
-  font-style: normal;
-}
+/* Custom Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&display=swap");
 
 /* Heavy */
 @font-face {
@@ -21,7 +13,6 @@
   font-style: normal;
   letter-spacing: 0.05rem;
 }
-
 @font-face {
   font-family: "Helvetica Neue";
   src: url("/fonts/Helvetica_Neue/HelveticaNeueHeavyItalic.otf")
@@ -39,7 +30,6 @@
   font-style: normal;
   letter-spacing: 0.05rem;
 }
-
 @font-face {
   font-family: "Helvetica Neue";
   src: url("/fonts/Helvetica_Neue/HelveticaNeueMediumItalic.otf")
@@ -57,7 +47,6 @@
   font-style: normal;
   letter-spacing: 0.05rem;
 }
-
 @font-face {
   font-family: "Helvetica Neue";
   src: url("/fonts/Helvetica_Neue/HelveticaNeueRoman.otf") format("opentype");
@@ -74,7 +63,6 @@
   font-style: normal;
   letter-spacing: 0.05rem;
 }
-
 @font-face {
   font-family: "Helvetica Neue";
   src: url("/fonts/Helvetica_Neue/HelveticaNeueThinItalic.otf")
@@ -85,8 +73,8 @@
 }
 
 :root {
-  /* --background: #f9f4eb; */
-  --background: #f0f1f3;
+  --background: #f9f6f1;
+  /* --background: #f0f1f3; */
   --foreground: #151515;
   font-family: "Helvetica Neue", sans-serif;
 }
