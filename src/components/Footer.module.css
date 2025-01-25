@@ -1,5 +1,5 @@
 .footer {
-  position: sticky;
+  position: fixed;
   width: 100%;
   bottom: 0;
   padding: 1.5rem 3rem;
@@ -13,6 +13,10 @@
   line-height: 1;
 }
 
-.qText {
+.primaryText {
   font-weight: 600;
+}
+
+.list {
+  gap: 0.2rem;
 }

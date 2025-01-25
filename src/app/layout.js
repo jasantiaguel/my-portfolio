@@ -22,7 +22,11 @@ export default function RootLayout({ children }) {
         <link
           href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&display=swap"
           rel="stylesheet"
-        ></link>
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Geologica:wght,CRSV@100..900,1&display=swap"
+          rel="stylesheet"
+        />
       </head>
       <body className="antialiased">
         <SlidingText />

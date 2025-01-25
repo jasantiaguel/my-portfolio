@@ -12,7 +12,7 @@ export default function AnimationRiseUp({
   className,
   duration = 1.4,
   delay = 0,
-  ease = [0.2, 0.8, 0.2, 1],
+  ease = [0.2, 0.8, 0.3, 1],
   onClick,
   children,
 }) {

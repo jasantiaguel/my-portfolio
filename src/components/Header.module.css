@@ -2,12 +2,11 @@
   color: var(--foreground);
   font-weight: 400;
   font-size: 0.75rem;
-  letter-spacing: 0.05rem;
   text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.05);
   position: sticky;
   width: 100%;
   top: 0;
-  padding: 1.5rem 3rem;
+  padding: 1.5rem 4rem;
 }
 
 .navText {
