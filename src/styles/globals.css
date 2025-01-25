@@ -73,8 +73,8 @@
 }
 
 :root {
-  --background: #f9f6f1;
-  /* --background: #f0f1f3; */
+  /* --background: #f9f6f1; */
+  --background: #f2f2f3;
   --foreground: #151515;
   font-family: "Helvetica Neue", sans-serif;
 }
