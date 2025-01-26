@@ -3,8 +3,8 @@
 // Imports
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import styles from "./SlidingText.module.css";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import styles from "./SlidingText.module.css";
 
 export default function SlidingText() {
   const firstText = useRef(null);
@@ -19,11 +19,11 @@ export default function SlidingText() {
     gsap.fromTo(
       sliderContainer.current,
       { opacity: 0 },
-      { 
-        opacity: 1, 
+      {
+        opacity: 1,
         duration: 1.6,
         delay: 4,
-        ease: "sine.out" 
+        ease: "sine.out",
       }
     );
 
@@ -33,7 +33,7 @@ export default function SlidingText() {
       scrollTrigger: {
         trigger: document.documentElement,
         start: 0,
-        end: window.innerHeight,
+        end: document.documentElement.scrollHeight,
         scrub: true,
         onUpdate: (e) => {
           direction = e.direction * 1;
@@ -58,7 +58,9 @@ export default function SlidingText() {
 
   const TextBlock = ({ barcodeText }) => (
     <>
-      PORTFOLIO &nbsp;&nbsp; 2025 &nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp; JONATHAN &nbsp;&nbsp; ANDREW &nbsp;&nbsp; Y.97 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      DIGITAL &nbsp;&nbsp; DESIGNER &nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;
+      JONATHAN &nbsp;&nbsp; ANDREW &nbsp;&nbsp; Y.97
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <span className={styles.barcodeText}>{barcodeText}</span>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </>
@@ -67,7 +69,7 @@ export default function SlidingText() {
   return (
     <div ref={sliderContainer} className={styles.sliderContainer}>
       <div ref={slider} className={styles.slider}>
-      <p ref={firstText}>
+        <p ref={firstText}>
           <TextBlock barcodeText="SURPASS YOUR LIMITS" />
           <TextBlock barcodeText="PURSUE GREATNESS" />
         </p>

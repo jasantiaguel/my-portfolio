@@ -3,7 +3,7 @@
 // Imports
 import { useState, useEffect } from "react";
 import classNames from "classnames";
-import styles from "./InteractiveTitle.module.css";
+import styles from "./HeroSection.module.css";
 // Components
 import AnimationRiseUp from "../animations/AnimationRiseUp";
 
@@ -24,7 +24,7 @@ const AnimatedText = ({ text, handleClick, baseDelay = 0, className }) => {
     </div>
   );
 };
-export default function InteractiveTitle() {
+export default function HeroSection() {
   const [mainText, setMainText] = useState("DIGITAL");
   const [subText, setSubText] = useState("DESIGN/R");
   const [isFirstLoad, setIsFirstLoad] = useState(true);
@@ -48,9 +48,9 @@ export default function InteractiveTitle() {
       <div className={classNames("col-start-1 col-span-full", styles.title)}>
         <div className={classNames("col", styles.descriptionContainer)}>
           <AnimationRiseUp className={styles.descriptionText}>
-            DESIGNING WITH PURPOSE—
+            DESIGN WITH PURPOSE—
           </AnimationRiseUp>
-          <AnimationRiseUp className={styles.descriptionText} delay={0.1}>
+          <AnimationRiseUp className={styles.descriptionText} delay={0.2}>
             BRIDGING VISUALS AND FUNCTION.
           </AnimationRiseUp>
         </div>

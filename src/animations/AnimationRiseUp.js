@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import classNames from "classnames";
 
 const textRiseVariants = {
-  hidden: { y: "160%", opacity: 1 },
-  visible: { y: 0, opacity: 1 },
+  hidden: { y: "160%"},
+  visible: { y: 0},
 };
 
 export default function AnimationRiseUp({
