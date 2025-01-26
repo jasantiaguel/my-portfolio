@@ -22,10 +22,10 @@ export default function Home() {
   return (
     <main className="main">
       <HeroSection />
+      {/* <ProjectShowcase />
       <ProjectShowcase />
       <ProjectShowcase />
-      <ProjectShowcase />
-      <ProjectShowcase />
+      <ProjectShowcase /> */}
     </main>
   );
 }
