@@ -51,7 +51,7 @@ export default function HeroSection() {
             DESIGN WITH PURPOSE—
           </AnimationRiseUp>
           <AnimationRiseUp className={styles.descriptionText} delay={0.2}>
-            BRIDGING VISUALS WITH MEANING.
+            BRIDGING VISUALS WITH MEANING AS A
           </AnimationRiseUp>
         </div>
         <div className={classNames("col", styles.titleText)}>

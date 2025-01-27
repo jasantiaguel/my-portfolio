@@ -8,7 +8,10 @@
 .titleText {
   font-family: 'Geologica';
   letter-spacing: -0.05rem;
+  /* > 1470 x 956 */
   font-size: 12rem;
+  /* 1470 x 956 */
+  /* font-size: 10rem; */
   font-weight: 800;
   line-height: 0.8;
   user-select: none;
@@ -44,7 +47,10 @@
 }
 
 .descriptionText {
+  /* > 1470 x 956 */
   font-size: 2rem;
+  /* 1470 x 956 */
+  /* font-size: 1.5rem; */
   font-weight: 200;
   /* opacity: 0.8; */
 }
