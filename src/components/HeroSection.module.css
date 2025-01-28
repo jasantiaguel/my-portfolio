@@ -54,3 +54,23 @@
   font-weight: 200;
   /* opacity: 0.8; */
 }
+
+@media (min-width: 1470px) and (min-height: 956px) {
+  .titleText {
+    font-size: 12rem;
+  }
+
+  .descriptionText {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 1469px) or (max-height: 955px) {
+  .titleText {
+    font-size: 10rem;
+  }
+
+  .descriptionText {
+    font-size: 1.5rem;
+  }
+}
