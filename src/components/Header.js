@@ -18,7 +18,7 @@ export default function Header() {
             <AnimationRiseUp className={styles.navText} delay={2.2}>
               <Link href="/">
                 <img
-                  src="/icons/ja-icon.svg"
+                  src="/favicon-light.svg"
                   alt="JA Logo Icon"
                   className={styles.logoIcon}
                 />

@@ -15,6 +15,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/favicon-light.svg" type="image/svgxml" media="(prefers-color-scheme: light)" />
+        <link rel="icon" href="/favicon-dark.svg" type="image/svgxml" media="(prefers-color-scheme: dark)" />
         <link
           href="https://fonts.googleapis.com/css2?family=My+Soul&display=swap"
           rel="stylesheet"
