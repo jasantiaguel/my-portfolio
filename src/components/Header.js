@@ -74,7 +74,7 @@ export default function Header() {
           </ul>
         </div>
         <div className="col-span-1">
-          <ul className={classNames(styles.list, "stacked")}>
+          <ul className={classNames(styles.endList, "stacked")}>
             <li>
               <AnimationRiseUp className={styles.navText} delay={3.0}>
                 <Link

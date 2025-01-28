@@ -20,6 +20,11 @@
   gap: 0.25rem;
 }
 
+.endList {
+  display: flex;
+  gap: 0.25rem;
+}
+
 .logoWordmark {
   gap: 0.25rem;
 }
