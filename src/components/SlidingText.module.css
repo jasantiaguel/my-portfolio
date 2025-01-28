@@ -6,8 +6,8 @@
 
 .slider {
   white-space: nowrap;
-  opacity: 0.6;
-  filter: blur(1px);
+  opacity: 0.4;
+  /* filter: blur(1px); */
 }
 
 .slider p {
