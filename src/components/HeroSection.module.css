@@ -65,7 +65,7 @@
   transform: translate(0%, -50%);
 } */
 
-@media (min-width: 1470px) and (min-height: 956px) {
+@media (min-width: 1471px) and (min-height: 956px) {
   .titleText, .slash {
     font-size: 12rem;
   }
@@ -80,7 +80,7 @@
   }
 }
 
-@media (max-width: 1469px) or (max-height: 955px) {
+@media (max-width: 1470px) or (max-height: 955px) {
   .titleText {
     font-size: 8rem;
   }
