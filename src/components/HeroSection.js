@@ -1,12 +1,17 @@
 "use client";
 
 // Imports
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import classNames from "classnames";
 import styles from "./HeroSection.module.css";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 // Components
 import AnimationRiseUp from "../animations/AnimationRiseUp";
 import ImageShowcase from "@/components/ImageShowcase";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const AnimatedText = ({ text, handleClick, baseDelay = 0, className }) => {
   const additionalClass = text !== "VISUAL" ? styles.titleAdjusted : "";
@@ -28,7 +33,11 @@ const AnimatedText = ({ text, handleClick, baseDelay = 0, className }) => {
     </div>
   );
 };
+
 export default function HeroSection() {
+  const imagesRef = useRef([]);
+  const scrollRef = useRef(null);
+
   const [mainText, setMainText] = useState("DIGITAL");
   const [subText, setSubText] = useState("DESIGN/R");
   const [isFirstLoad, setIsFirstLoad] = useState(true);
@@ -46,6 +55,34 @@ export default function HeroSection() {
       prevText === "DESIGN/R" ? "ENTHUSIAST" : "DESIGN/R"
     );
   };
+
+  useEffect(() => {
+    if (imagesRef.current.length === 0) return;
+
+    // Create a timeline for progressive unmasking
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: scrollRef.current, // Scrollable container
+        start: "top top",
+        end: "bottom bottom",
+        scrub: true,
+        pin: true,
+      },
+    });
+
+    imagesRef.current.forEach((image, index) => {
+      if (index === 0) {
+        // Start the first image fully revealed
+        gsap.set(image, { clipPath: "inset(0% 0 0 0)" });
+      } else {
+        tl.fromTo(
+          image,
+          { clipPath: "inset(100% 0 0 0)" }, // Start fully masked (hidden)
+          { clipPath: "inset(0% 0 0 0)", duration: 1 } // Reveal image (from bottom up)
+        );
+      }
+    });
+  }, []);
 
   return (
     <>
@@ -74,10 +111,26 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-      <div className={classNames(styles.showcaseContainer, "flex grid-8-column")}>
-        <div className={classNames(styles.imageContainer, "col-start-5 col-span-3")}>
-          <ImageShowcase />
-        </div>
+      <div className={classNames("grid-8-column", styles.showcaseContainer)}>
+        {[
+          "portrait_01.png",
+          "poster_mockup_01.png",
+          "magazine_mockup_01.png",
+        ].map((src, index) => (
+          <div
+            key={index}
+            ref={(el) => (imagesRef.current[index] = el)}
+            className={classNames("col-start-5 col-span-3", styles.maskedImage)}
+          >
+            <Image
+              src={`/images/${src}`}
+              alt={`Masked Image ${index + 1}`}
+              className={styles.image}
+              width={1000}
+              height={1000}
+            />
+          </div>
+        ))}
       </div>
     </>
   );

@@ -1,19 +1,17 @@
 .pageContainer {
-  /* height: 100vh; */
+  position: fixed;
+  top: 0;
+  left: 0;
   min-height: 100vh;
   align-items: end;
   overflow: hidden;
-  padding: 1.75rem 0;
+  padding: 1.75rem 4rem;
   z-index: 1000;
 }
 
 .titleText {
   font-family: 'Geologica';
   letter-spacing: -0.05rem;
-  /* > 1470 x 956 */
-  font-size: 12rem;
-  /* 1470 x 956 */
-  /* font-size: 10rem; */
   font-weight: 800;
   line-height: 0.8;
   user-select: none;
@@ -33,7 +31,7 @@
 
 .titleAdjusted {
   position: relative;
-  left: -1rem;
+  left: -0.5rem;
 }
 
 .slash {
@@ -48,15 +46,6 @@
 .descriptionText {
   font-weight: 400;
   letter-spacing: 0.05rem;
-}
-
-.showcaseContainer {
-  position: absolute;
-  align-items: center;
-  height: 100vh;
-  padding: 0 4rem;
-  top: 0;
-  left: -1rem;
 }
 
 /* .imageContainer {
@@ -93,4 +82,26 @@
   .descriptionText {
     font-size: 1rem;
   }
+}
+
+
+.showcaseContainer {
+  position: fixed;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 4rem;
+  top: 0;
+  left: 0;
+}
+
+.maskedImage {
+  position: absolute;
+  left: -1rem;
+}
+
+.image {
+  min-height: 100vh;
+  width: 100%;
+  object-fit: cover;
+  object-position: center 100%;
 }

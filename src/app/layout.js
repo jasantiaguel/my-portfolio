@@ -6,9 +6,9 @@ import Footer from "@/components/Footer";
 import SlidingText from "@/components/SlidingText";
 
 export const metadata = {
-  title: "Jonathan Andrew - Interactive & Graphic Designer",
+  title: "Jonathan Andrew - Digital Designer",
   description:
-    "Portfolio of Jonathan Andrew, an interactive and graphic designer based in Vancouver, British Columbia.",
+    "Portfolio of Jonathan Andrew, a Digital Designer based in Greater Vancouver, British Columbia.",
 };
 
 export default function RootLayout({ children }) {

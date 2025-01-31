@@ -1,17 +1,17 @@
 "use client";
 
 // Imports
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 import styles from "@/styles/Home.module.css";
-import classNames from "classnames";
 // Components
 import HeroSection from "@/components/HeroSection";
-import ProjectShowcase from "@/components/ProjectShowcase";
 
 export default function Home() {
-  
+  const sectionsRef = useRef([]);
+
   useEffect(() => {
     (async () => {
       const LocomotiveScroll = (await import("locomotive-scroll")).default;
@@ -20,12 +20,9 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="main">
+    <main className={styles.main}>
       <HeroSection />
-      {/* <ProjectShowcase />
-      <ProjectShowcase />
-      <ProjectShowcase />
-      <ProjectShowcase /> */}
+
     </main>
   );
 }
