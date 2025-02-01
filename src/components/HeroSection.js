@@ -111,7 +111,7 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-      <div className={classNames("grid-8-column", styles.showcaseContainer)}>
+      {/* <div className={classNames("grid-8-column", styles.showcaseContainer)}>
         {[
           "portrait_01.png",
           "poster_mockup_01.png",
@@ -131,7 +131,7 @@ export default function HeroSection() {
             />
           </div>
         ))}
-      </div>
+      </div> */}
     </>
   );
 }

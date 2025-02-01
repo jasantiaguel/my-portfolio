@@ -11,7 +11,7 @@
   src: url("/fonts/Helvetica_Neue/HelveticaNeueHeavy.otf") format("opentype");
   font-weight: 800;
   font-style: normal;
-  letter-spacing: 0.05rem;
+  letter-spacing: 0.075rem;
 }
 @font-face {
   font-family: "Helvetica Neue";
@@ -19,7 +19,7 @@
     format("opentype");
   font-weight: 800;
   font-style: italic;
-  letter-spacing: 0.05rem;
+  letter-spacing: 0.075rem;
 }
 
 /* Medium */
@@ -28,7 +28,7 @@
   src: url("/fonts/Helvetica_Neue/HelveticaNeueMedium.otf") format("opentype");
   font-weight: 600;
   font-style: normal;
-  letter-spacing: 0.05rem;
+  letter-spacing: 0.075rem;
 }
 @font-face {
   font-family: "Helvetica Neue";
@@ -36,7 +36,7 @@
     format("opentype");
   font-weight: 600;
   font-style: italic;
-  letter-spacing: 0.05rem;
+  letter-spacing: 0.075rem;
 }
 
 /* Regular */
@@ -45,14 +45,14 @@
   src: url("/fonts/Helvetica_Neue/HelveticaNeueRoman.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
-  letter-spacing: 0.05rem;
+  letter-spacing: 0.075rem;
 }
 @font-face {
   font-family: "Helvetica Neue";
   src: url("/fonts/Helvetica_Neue/HelveticaNeueRoman.otf") format("opentype");
   font-weight: 400;
   font-style: italic;
-  letter-spacing: 0.05rem;
+  letter-spacing: 0.075rem;
 }
 
 /* Thin */
@@ -61,7 +61,7 @@
   src: url("/fonts/Helvetica_Neue/HelveticaNeueThin.otf") format("opentype");
   font-weight: 200;
   font-style: normal;
-  letter-spacing: 0.05rem;
+  letter-spacing: 0.075rem;
 }
 @font-face {
   font-family: "Helvetica Neue";
@@ -69,7 +69,7 @@
     format("opentype");
   font-weight: 200;
   font-style: italic;
-  letter-spacing: 0.05rem;
+  letter-spacing: 0.075rem;
 }
 
 :root {
@@ -94,6 +94,8 @@ body {
   scrollbar-width: none;
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body::-webkit-scrollbar {
