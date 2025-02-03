@@ -111,27 +111,6 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-      {/* <div className={classNames("grid-8-column", styles.showcaseContainer)}>
-        {[
-          "portrait_01.png",
-          "poster_mockup_01.png",
-          "magazine_mockup_01.png",
-        ].map((src, index) => (
-          <div
-            key={index}
-            ref={(el) => (imagesRef.current[index] = el)}
-            className={classNames("col-start-5 col-span-3", styles.maskedImage)}
-          >
-            <Image
-              src={`/images/${src}`}
-              alt={`Masked Image ${index + 1}`}
-              className={styles.image}
-              width={1000}
-              height={1000}
-            />
-          </div>
-        ))}
-      </div> */}
     </>
   );
 }

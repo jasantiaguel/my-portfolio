@@ -48,14 +48,9 @@
   letter-spacing: 0.05rem;
 }
 
-/* .imageContainer {
-  position: relative;
-  top: 50%;
-  transform: translate(0%, -50%);
-} */
 
 @media (min-width: 1471px) and (min-height: 956px) {
-  .titleText, .slash {
+  /* .titleText, .slash {
     font-size: 12rem;
   }
 
@@ -66,6 +61,18 @@
 
   .descriptionText {
     font-size: 2rem;
+  } */
+  .titleText {
+    font-size: 8rem;
+  }
+
+  .slash {
+    font-size: 6.5rem;
+    top: 0.65rem;
+  }
+
+  .descriptionText {
+    font-size: 1rem;
   }
 }
 

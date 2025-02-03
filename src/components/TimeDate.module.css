@@ -4,6 +4,7 @@
   font-size: 0.75rem;
   font-weight: 200;
   font-style: italic;
+  letter-spacing: 0.1rem;
 }
 
 .navText {
@@ -11,5 +12,6 @@
 }
 
 .list {
+  left: 1rem;
   gap: 0.25rem;
 }
