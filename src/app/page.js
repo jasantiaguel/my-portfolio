@@ -16,8 +16,28 @@ const sections = [
     title: "DIGITAL",
     secondTitle: "DESIGN/R",
     description: [
-      { header: "// Design to connect, express, and inspire.", body: "" },
+      { header: "Jonathan Andrew", body: "// Design to connect, express, and inspire." },
       { header: "", body: "" },
+    ],
+  },
+  {
+    src: "/images/mobile_mockup_02.png",
+    title: "AETHER",
+    secondTitle: "",
+    description: [
+      {
+        header: "Project Type:",
+        body: "Compassion-driven Mobile Application to help caregivers simplify their form-filling processes.",
+      },
+      {
+        header: "Involvement (Team):",
+        body: "UX/UI Design & Development\nWireframing & Prototyping",
+      },
+      {
+        header: "Tools Used:",
+        body: "Figma\nVisual Studio Code\nReact / Next.js Framework",
+      },
+      { header: "Timeline:", body: "Sep—Dec 2024" },
     ],
   },
   {
@@ -30,7 +50,7 @@ const sections = [
         body: "Poster Graphic for a dynamic composition using diverse editing techniques.",
       },
       {
-        header: "Involvement:",
+        header: "Involvement (Solo):",
         body: "Art Direction & Concept\nGraphical Editing",
       },
       {
@@ -50,7 +70,7 @@ const sections = [
         body: "Magazine Cover for the architectural showcase of the ARASAKA Estate in Cyberpunk 2077.",
       },
       {
-        header: "Involvement:",
+        header: "Involvement (Solo):",
         body: "Art Direction & Concept\nGraphical Editing",
       },
       { header: "Tools Used:", body: "Adobe Photoshop 2024" },
@@ -58,30 +78,10 @@ const sections = [
     ],
   },
   {
-    src: "/images/mobile_mockup_02.png",
-    title: "AETHER",
-    secondTitle: "",
-    description: [
-      {
-        header: "Project Type:",
-        body: "Compassion-driven Mobile Application to help caregivers simplify their form-filling processes.",
-      },
-      {
-        header: "Involvement:",
-        body: "UX/UI Design & Development\nWireframing & Prototyping",
-      },
-      {
-        header: "Tools Used:",
-        body: "Figma\nVisual Studio Code\nReact / Next.js Framework",
-      },
-      { header: "Timeline:", body: "Sep—Dec 2024" },
-    ],
-  },
-  {
     src: "",
     title: "Website\u00A0currently",
     secondTitle: "in\u00A0development.",
-    description: [{ header: "// More content coming soon!", body: "" }],
+    description: [{ header: "More content coming soon!", body: "// Stayed tuned for updates and development." }],
   },
 ];
 
