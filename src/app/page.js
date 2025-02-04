@@ -17,8 +17,8 @@ const sections = [
     secondTitle: "DESIGN/R",
     description: [
       {
-        header: "// Jonathan Andrew",
-        body: "Design to express, connect, and inspire.",
+        header: "Jonathan Andrew",
+        body: "// Design to express, connect, and inspire.",
       },
       { header: "", body: "" },
     ],
@@ -89,8 +89,8 @@ const sections = [
     secondTitle: "in\u00A0development.",
     description: [
       {
-        header: "// More content coming soon!",
-        body: "Stayed tuned for updates and development.",
+        header: "More content coming soon!",
+        body: "// Stayed tuned for updates and development.",
       },
     ],
   },
