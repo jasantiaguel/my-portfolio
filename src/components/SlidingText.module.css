@@ -2,18 +2,18 @@
   position: fixed;
   overflow: hidden;
   height: 100%;
+  z-index: 1000;
 }
 
 .slider {
   white-space: nowrap;
   opacity: 0.4;
-  /* filter: blur(1px); */
 }
 
 .slider p {
   font-size: 1.25rem;
   font-weight: 200;
-  letter-spacing: 0.05rem;
+  letter-spacing: 0.1rem;
   margin: 0;
   user-select: none;
   writing-mode: vertical-rl;

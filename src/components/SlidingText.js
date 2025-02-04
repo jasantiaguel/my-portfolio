@@ -39,7 +39,7 @@ export default function SlidingText() {
           direction = e.direction * 1;
         },
       },
-      y: "-=200px",
+      y: "-=100px",
     });
   }, []);
 
