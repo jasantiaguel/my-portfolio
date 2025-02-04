@@ -1,6 +1,6 @@
 .header {
   color: var(--foreground);
-  font-weight: 400;
+  font-weight: 600;
   font-size: 0.75rem;
   letter-spacing: 0.05rem;
   text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.05);
@@ -32,7 +32,7 @@
 
 .navText .icon {
   opacity: 0;
-  margin-top: -0.025rem;
+  margin-top: -0.1rem;
   margin-right: 0.3rem;
   transition: opacity 0.3s ease, transform 0.3s ease;
   transform: translateX(-10px);
@@ -54,5 +54,5 @@
 
 .logoText,
 .contactText {
-  font-weight: 600;
+  font-weight: 800;
 }
