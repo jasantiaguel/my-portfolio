@@ -6,17 +6,27 @@ import Footer from "@/components/Footer";
 import SlidingText from "@/components/SlidingText";
 
 export const metadata = {
-  title: "Jonathan Andrew - Interactive & Graphic Designer",
+  title: "Jonathan Andrew - Digital Designer",
   description:
-    "Portfolio of Jonathan Andrew, an interactive and graphic designer based in Vancouver, British Columbia.",
+    "Portfolio of Jonathan Andrew, a Digital Designer based in Greater Vancouver, British Columbia.",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon-light.svg" type="image/svgxml" media="(prefers-color-scheme: light)" />
-        <link rel="icon" href="/favicon-dark.svg" type="image/svgxml" media="(prefers-color-scheme: dark)" />
+        <link
+          rel="icon"
+          href="/favicon-light.svg"
+          type="image/svgxml"
+          media="(prefers-color-scheme: light)"
+        />
+        <link
+          rel="icon"
+          href="/favicon-dark.svg"
+          type="image/svgxml"
+          media="(prefers-color-scheme: dark)"
+        />
         <link
           href="https://fonts.googleapis.com/css2?family=My+Soul&display=swap"
           rel="stylesheet"
@@ -29,6 +39,10 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Geologica:wght,CRSV@100..900,1&display=swap"
           rel="stylesheet"
         />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+          rel="stylesheet"
+        ></link>
       </head>
       <body className="antialiased">
         <SlidingText />

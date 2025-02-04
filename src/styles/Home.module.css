@@ -1,3 +1,71 @@
-.main {
-  position: relative;
+.image {
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.container {
+  background-color: #f3f3f3;
+}
+
+.leftContainer {
+  padding: 1.75rem 0;
+}
+
+.titleContainer {
+  font-family: 'Oswald';
+  font-size: 8rem;
+  font-weight: 800;
+  line-height: 0.95;
+  user-select: none;
+  text-transform: uppercase;
+  /* color: #f3f3f3;
+  mix-blend-mode: difference; */
+}
+
+.endTitle {
+  font-family: 'Oswald';
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 0.95;
+  user-select: none;
+  text-transform: uppercase;
+  white-space: pre-line;
+}
+
+.endSubtitle {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
+
+.titleLetter {
+  margin-left: -0.4rem;
+  transition: opacity 0.3s ease-out;
+}
+
+.titleLetter:hover {
+  opacity: 0.4;
+  cursor: pointer;
+}
+
+.descriptionContainer {
+  justify-self: center;
+}
+
+.descriptionHeader {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
+
+.descriptionBody {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.05rem;
+  white-space: pre-line;
 }
