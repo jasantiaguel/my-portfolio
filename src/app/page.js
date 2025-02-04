@@ -15,42 +15,82 @@ const sections = [
     src: "/images/portrait_01.png",
     title: "DIGITAL",
     secondTitle: "DESIGN/R",
-    description: "Design with purpose—",
-    secondDescription: "Bridging visuals with meaning as a",
+    description: [
+      { header: "// Design to connect, express, and inspire.", body: "" },
+      { header: "", body: "" },
+    ],
   },
   {
     src: "/images/poster_mockup_01.png",
-    title: "POSTER",
-    secondTitle: "DESIGN",
-    description: "This is the description for Poster Mockup 01.",
-    secondDescription: "Exploring the depth of design.",
+    title: "RECKLESS",
+    secondTitle: "",
+    description: [
+      {
+        header: "Project Type:",
+        body: "Poster Graphic for a dynamic composition using diverse editing techniques.",
+      },
+      {
+        header: "Involvement:",
+        body: "Art Direction & Concept\nGraphical Editing",
+      },
+      {
+        header: "Tools Used:",
+        body: "Adobe Photoshop 2024\nAdobe Illustrator 2024",
+      },
+      { header: "Timeline:", body: "—Nov 2024" },
+    ],
   },
   {
     src: "/images/magazine_mockup_01.png",
-    title: "MAGAZINE",
-    secondTitle: "EDITORIAL",
-    description: "This is the description for Magazine Mockup 01.",
-    secondDescription: "A journey through print and media.",
+    title: "ARASAKA",
+    secondTitle: "ESTATE",
+    description: [
+      {
+        header: "Project Type:",
+        body: "Magazine Cover for the architectural showcase of the ARASAKA Estate in Cyberpunk 2077.",
+      },
+      {
+        header: "Involvement:",
+        body: "Art Direction & Concept\nGraphical Editing",
+      },
+      { header: "Tools Used:", body: "Adobe Photoshop 2024" },
+      { header: "Timeline:", body: "—Oct 2024" },
+    ],
   },
   {
-    src: "/images/poster_mockup_01.png",
-    title: "VISUAL",
-    secondTitle: "ENTHUSIAST",
-    description: "This is the description for Poster Mockup 02.",
-    secondDescription: "Emphasizing composition and balance.",
+    src: "/images/mobile_mockup_02.png",
+    title: "AETHER",
+    secondTitle: "",
+    description: [
+      {
+        header: "Project Type:",
+        body: "Compassion-driven Mobile Application to help caregivers simplify their form-filling processes.",
+      },
+      {
+        header: "Involvement:",
+        body: "UX/UI Design & Development\nWireframing & Prototyping",
+      },
+      {
+        header: "Tools Used:",
+        body: "Figma\nVisual Studio Code\nReact / Next.js Framework",
+      },
+      { header: "Timeline:", body: "Sep—Dec 2024" },
+    ],
   },
   {
-    src: "/images/portrait_01.png",
-    title: "PORTRAIT",
-    secondTitle: "FOCUSED",
-    description: "This is the description for Portrait 02.",
-    secondDescription: "Capturing emotion in every frame.",
+    src: "",
+    title: "Website\u00A0currently",
+    secondTitle: "in\u00A0development.",
+    description: [{ header: "// More content coming soon!", body: "" }],
   },
 ];
 
-const AnimatedText = ({ text, handleClick, baseDelay = 0, className }) => {
+const AnimatedText = ({ text, handleClick, baseDelay = 0, className, disablePointerEvents }) => {
   return (
-    <div className={classNames("row", className)} onClick={handleClick}>
+    <div
+      className={classNames("row", className, { "pointer-events-none": disablePointerEvents })}
+      onClick={handleClick}
+    >
       {text.split("").map((letter, index) => (
         <AnimationRiseUp
           key={`${text}-${index}`}
@@ -59,6 +99,23 @@ const AnimatedText = ({ text, handleClick, baseDelay = 0, className }) => {
           delay={baseDelay + index * 0.05}
         >
           {letter}
+        </AnimationRiseUp>
+      ))}
+    </div>
+  );
+};
+
+const AnimatedParagraph = ({ text, baseDelay = 0, className }) => {
+  return (
+    <div className={className}>
+      {text.split("\n").map((line, index) => (
+        <AnimationRiseUp
+          key={`${text}-${index}`}
+          className={styles.line}
+          duration={1.4}
+          delay={baseDelay + index * 0.1}
+        >
+          {line}
         </AnimationRiseUp>
       ))}
     </div>
@@ -75,9 +132,6 @@ export default function Home() {
   const [mainText, setMainText] = useState(sections[0].title);
   const [subText, setSubText] = useState(sections[0].secondTitle);
   const [description, setDescription] = useState(sections[0].description);
-  const [secondDescription, setSecondDescription] = useState(
-    sections[0].secondDescription
-  );
   const [isFirstLoad, setIsFirstLoad] = useState(true);
   const [descKey, setDescKey] = useState(0);
 
@@ -128,7 +182,6 @@ export default function Home() {
     setMainText(sections[index].title);
     setSubText(sections[index].secondTitle);
     setDescription(sections[index].description);
-    setSecondDescription(sections[index].secondDescription);
 
     // Force reanimation of both descriptions
     setDescKey((prevKey) => prevKey + 1);
@@ -170,42 +223,60 @@ export default function Home() {
           }}
         >
           <div className="col-span-3 col-start-5 flex items-center justify-center">
-            <Image
-              className={styles.image}
-              src={section.src}
-              alt={`Section ${index + 1}`}
-              width={1000}
-              height={1000}
-            />
+            {section.src && (
+              <Image
+                className={styles.image}
+                src={section.src}
+                alt={`Section ${index + 1}`}
+                width={1000}
+                height={1000}
+              />
+            )}
           </div>
-          <div className={classNames(styles.leftContainer, "absolute top-0 h-full col-span-4 col-start-1 flex flex-col justify-center")}>
-            <div className={classNames("col-span-3", styles.descriptionContainer)}>
-              <AnimationRiseUp
-                key={`desc-${descKey}`}
-                className={styles.descriptionText}
-              >
-                <p>{description}</p>
-              </AnimationRiseUp>
-              <AnimationRiseUp
-                key={`desc-second-${descKey}`}
-                className={styles.descriptionText}
-                delay={0.2}
-              >
-                <p>{secondDescription}</p>
-              </AnimationRiseUp>
+          <div
+            className={classNames(
+              styles.leftContainer,
+              "absolute top-0 h-full col-span-3 col-start-1 flex flex-grow flex-col justify-center"
+            )}
+          >
+            <div className={styles.descriptionContainer}>
+              {description.map((desc, i) => (
+                <div key={`desc-${descKey}-${i}`} className="mb-4">
+                  <AnimationRiseUp
+                    key={`header-${descKey}-${i}`}
+                    className={styles.descriptionHeader}
+                    delay={i * 0.1}
+                  >
+                    <h3>{desc.header}</h3>
+                  </AnimationRiseUp>
+                  <AnimatedParagraph
+                    key={`body-${descKey}-${i}`}
+                    className={styles.descriptionBody}
+                    text={desc.body}
+                    baseDelay={i * 0.1 + 0.05}
+                  />
+                </div>
+              ))}
             </div>
-            <div className={classNames(styles.titleContainer, "absolute bottom-0 mb-7")}>
-            <AnimatedText
+            <div
+              className={classNames(
+                styles.titleContainer,
+                "absolute bottom-0 mb-7"
+              )}
+            >
+              <AnimatedText
                 text={mainText}
                 handleClick={handleMainTextClick}
                 baseDelay={isFirstLoad ? 0 : 0}
                 className={styles.titleLetter}
+                disablePointerEvents={mainText !== "DIGITAL" && mainText !== "VISUAL"}
               />
               <AnimatedText
                 text={subText}
                 handleClick={handleSubTextClick}
                 baseDelay={isFirstLoad ? 0.2 : 0.2}
                 className={styles.titleLetter}
+                disablePointerEvents={subText !== "DESIGN/R" && subText !== "ENTHUSIAST"}
               />
             </div>
           </div>
