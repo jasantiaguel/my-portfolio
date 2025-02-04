@@ -17,8 +17,8 @@ const sections = [
     secondTitle: "DESIGN/R",
     description: [
       {
-        header: "Jonathan Andrew",
-        body: "// Design to express, connect, and inspire.",
+        header: "// Jonathan Andrew",
+        body: "Design to express, connect, and inspire.",
       },
       { header: "", body: "" },
     ],
@@ -34,17 +34,18 @@ const sections = [
       },
       {
         header: "Involvement (Team):",
-        body: "UX/UI Design & Development\nWireframing & Prototyping",
+        body: "Research & Ideation\nWireframing & Prototyping\nUX/UI Design & Development",
       },
       {
         header: "Tools Used:",
         body: "Figma\nVisual Studio Code\nReact / Next.js Framework",
       },
       { header: "Timeline:", body: "Sep—Dec 2024" },
+      { header: "Learn More ⬎", body: "" },
     ],
   },
   {
-    src: "/images/poster_mockup_01.png",
+    src: "/images/poster_mockup_02.png",
     title: "RECKLESS",
     secondTitle: "",
     description: [
@@ -61,6 +62,7 @@ const sections = [
         body: "Adobe Photoshop 2024\nAdobe Illustrator 2024",
       },
       { header: "Timeline:", body: "—Nov 2024" },
+      { header: "Learn More ⬎", body: "" },
     ],
   },
   {
@@ -78,6 +80,7 @@ const sections = [
       },
       { header: "Tools Used:", body: "Adobe Photoshop 2024" },
       { header: "Timeline:", body: "—Oct 2024" },
+      { header: "Learn More ⬎", body: "" },
     ],
   },
   {
@@ -86,8 +89,8 @@ const sections = [
     secondTitle: "in\u00A0development.",
     description: [
       {
-        header: "More content coming soon!",
-        body: "// Stayed tuned for updates and development.",
+        header: "// More content coming soon!",
+        body: "Stayed tuned for updates and development.",
       },
     ],
   },
@@ -292,7 +295,7 @@ export default function Home() {
               <AnimatedText
                 text={subText}
                 handleClick={handleSubTextClick}
-                baseDelay={isFirstLoad ? 0.2 : 0.2}
+                baseDelay={isFirstLoad ? 0.2 : 0.1}
                 className={styles.titleText}
                 disablePointerEvents={
                   subText !== "DESIGN/R" && subText !== "ENTHUSIAST"
