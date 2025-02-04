@@ -14,40 +14,22 @@
 }
 
 .titleContainer {
-  font-family: 'Oswald';
-  font-size: 8rem;
+  font-family: "Oswald";
+  font-size: 6rem;
   font-weight: 800;
   line-height: 0.95;
   user-select: none;
   text-transform: uppercase;
-  /* color: #f3f3f3;
-  mix-blend-mode: difference; */
+  color: #dedede;
+  mix-blend-mode: difference;
 }
 
-.endTitle {
-  font-family: 'Oswald';
-  font-size: 4rem;
-  font-weight: 800;
-  line-height: 0.95;
-  user-select: none;
-  text-transform: uppercase;
-  white-space: pre-line;
-}
-
-.endSubtitle {
-  margin-top: 2rem;
-  font-size: 1.2rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05rem;
-}
-
-.titleLetter {
+.titleText {
   margin-left: -0.4rem;
   transition: opacity 0.3s ease-out;
 }
 
-.titleLetter:hover {
+.titleText:hover {
   opacity: 0.4;
   cursor: pointer;
 }
@@ -57,15 +39,29 @@
 }
 
 .descriptionHeader {
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 0.875rem;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.05rem;
 }
 
 .descriptionBody {
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 400;
   letter-spacing: 0.05rem;
+  line-height: 1.4;
   white-space: pre-line;
+}
+
+/* Breakpoints */
+@media (min-width: 1471px) and (min-height: 956px) {
+  .titleText {
+    font-size: 8rem;
+  }
+}
+
+@media (max-width: 1470px) or (max-height: 955px) {
+  .titleText {
+    font-size: 6rem;
+  }
 }

@@ -16,7 +16,10 @@ const sections = [
     title: "DIGITAL",
     secondTitle: "DESIGN/R",
     description: [
-      { header: "Jonathan Andrew", body: "// Design to connect, express, and inspire." },
+      {
+        header: "Jonathan Andrew",
+        body: "// Design to express, connect, and inspire.",
+      },
       { header: "", body: "" },
     ],
   },
@@ -27,7 +30,7 @@ const sections = [
     description: [
       {
         header: "Project Type:",
-        body: "Compassion-driven Mobile Application to help caregivers simplify their form-filling processes.",
+        body: "Compassion-driven Mobile Application helping caregivers simplify their form-filling processes.",
       },
       {
         header: "Involvement (Team):",
@@ -81,14 +84,27 @@ const sections = [
     src: "",
     title: "Website\u00A0currently",
     secondTitle: "in\u00A0development.",
-    description: [{ header: "More content coming soon!", body: "// Stayed tuned for updates and development." }],
+    description: [
+      {
+        header: "More content coming soon!",
+        body: "// Stayed tuned for updates and development.",
+      },
+    ],
   },
 ];
 
-const AnimatedText = ({ text, handleClick, baseDelay = 0, className, disablePointerEvents }) => {
+const AnimatedText = ({
+  text,
+  handleClick,
+  baseDelay = 0,
+  className,
+  disablePointerEvents,
+}) => {
   return (
     <div
-      className={classNames("row", className, { "pointer-events-none": disablePointerEvents })}
+      className={classNames("row", className, {
+        "pointer-events-none": disablePointerEvents,
+      })}
       onClick={handleClick}
     >
       {text.split("").map((letter, index) => (
@@ -268,15 +284,19 @@ export default function Home() {
                 text={mainText}
                 handleClick={handleMainTextClick}
                 baseDelay={isFirstLoad ? 0 : 0}
-                className={styles.titleLetter}
-                disablePointerEvents={mainText !== "DIGITAL" && mainText !== "VISUAL"}
+                className={styles.titleText}
+                disablePointerEvents={
+                  mainText !== "DIGITAL" && mainText !== "VISUAL"
+                }
               />
               <AnimatedText
                 text={subText}
                 handleClick={handleSubTextClick}
                 baseDelay={isFirstLoad ? 0.2 : 0.2}
-                className={styles.titleLetter}
-                disablePointerEvents={subText !== "DESIGN/R" && subText !== "ENTHUSIAST"}
+                className={styles.titleText}
+                disablePointerEvents={
+                  subText !== "DESIGN/R" && subText !== "ENTHUSIAST"
+                }
               />
             </div>
           </div>
