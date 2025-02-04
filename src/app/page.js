@@ -252,7 +252,7 @@ export default function Home() {
           <div
             className={classNames(
               styles.leftContainer,
-              "absolute top-0 h-full col-span-3 col-start-1 flex flex-grow flex-col justify-center"
+              "absolute top-0 h-full col-span-3 col-start-2 flex flex-grow flex-col justify-center"
             )}
           >
             <div className={styles.descriptionContainer}>
