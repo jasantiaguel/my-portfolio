@@ -30,15 +30,15 @@ const sections = [
     description: [
       {
         header: "Project Type:",
-        body: "Compassion-driven Mobile Application helping caregivers simplify their form-filling processes.",
+        body: "Mobile Application helping caregivers simplify\ntheir form-filling processes.",
       },
       {
         header: "Involvement (Team):",
-        body: "Research & Ideation\nWireframing & Prototyping\nUX/UI Design & Development",
+        body: "- Research & Ideation\n- Wireframing & Prototyping\n- UX/UI Design & Development",
       },
       {
         header: "Tools Used:",
-        body: "Figma\nVisual Studio Code\nReact / Next.js Framework",
+        body: "- Figma\n- Visual Studio Code\n- React / Next.js Framework",
       },
       { header: "Timeline:", body: "Sep—Dec 2024" },
       { header: "Learn More ⬎", body: "" },
@@ -51,15 +51,15 @@ const sections = [
     description: [
       {
         header: "Project Type:",
-        body: "Poster Graphic for a dynamic composition using diverse editing techniques.",
+        body: "Poster Graphic for a dynamic composition\nusing diverse editing techniques.",
       },
       {
         header: "Involvement (Solo):",
-        body: "Art Direction & Concept\nGraphical Editing",
+        body: "- Art Direction & Concept\n- Graphical Editing",
       },
       {
         header: "Tools Used:",
-        body: "Adobe Photoshop 2024\nAdobe Illustrator 2024",
+        body: "- Adobe Photoshop 2024\n- Adobe Illustrator 2024",
       },
       { header: "Timeline:", body: "—Nov 2024" },
       { header: "Learn More ⬎", body: "" },
@@ -72,13 +72,13 @@ const sections = [
     description: [
       {
         header: "Project Type:",
-        body: "Magazine Cover for the architectural showcase of the ARASAKA Estate in Cyberpunk 2077.",
+        body: "Magazine Cover for an architectural showcase of\nthe ARASAKA Estate within Cyberpunk 2077.",
       },
       {
         header: "Involvement (Solo):",
-        body: "Art Direction & Concept\nGraphical Editing",
+        body: "- Art Direction & Concept\n- Graphical Editing",
       },
-      { header: "Tools Used:", body: "Adobe Photoshop 2024" },
+      { header: "Tools Used:", body: "- Adobe Photoshop 2024" },
       { header: "Timeline:", body: "—Oct 2024" },
       { header: "Learn More ⬎", body: "" },
     ],
