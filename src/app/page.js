@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import gsap from "gsap";
 import { Observer } from "gsap/Observer";
 import Image from "next/image";
@@ -41,7 +42,7 @@ const sections = [
         body: "- Figma\n- Visual Studio Code\n- React / Next.js Framework",
       },
       { header: "Timeline:", body: "Sep—Dec 2024" },
-      { header: "Learn More ⬎", body: "" },
+      { header: "", body: "", button: true },
     ],
   },
   {
@@ -62,7 +63,7 @@ const sections = [
         body: "- Adobe Photoshop 2024\n- Adobe Illustrator 2024",
       },
       { header: "Timeline:", body: "—Nov 2024" },
-      { header: "Learn More ⬎", body: "" },
+      { header: "", body: "", button: true },
     ],
   },
   {
@@ -80,7 +81,7 @@ const sections = [
       },
       { header: "Tools Used:", body: "- Adobe Photoshop 2024" },
       { header: "Timeline:", body: "—Oct 2024" },
-      { header: "Learn More ⬎", body: "" },
+      { header: "", body: "", button: true },
     ],
   },
   {
@@ -144,6 +145,8 @@ const AnimatedParagraph = ({ text, baseDelay = 0, className }) => {
 export default function Home() {
   const containerRef = useRef(null);
   const sectionRefs = useRef([]);
+  const router = useRouter();
+  
   let currentIndex = -1;
   let animating = false;
   const wrap = gsap.utils.wrap(0, sections.length);
@@ -220,6 +223,24 @@ export default function Home() {
     }
   };
 
+  const handleLearnMoreClick = (title) => {
+    let path = "";
+    switch (title) {
+      case "AETHER":
+        path = "/projects/aether";
+        break;
+      case "RECKLESS":
+        path = "/projects/reckless";
+        break;
+      case "ARASAKA":
+        path = "/projects/arasaka";
+        break;
+      default:
+        path = "/";
+    }
+    router.push(path); // ✅ Correctly navigates using Next.js App Router
+  };
+
   return (
     <main
       ref={containerRef}
@@ -274,6 +295,23 @@ export default function Home() {
                     text={desc.body}
                     baseDelay={i * 0.1 + 0.05}
                   />
+                  {desc.button && (
+                    <AnimationRiseUp
+                      key={`button-${descKey}-${i}`}
+                      className={styles.descriptionButton}
+                      delay={i * 0.1 + 0.1}
+                    >
+                      <button
+                        className={styles.learnMoreButton}
+                        onClick={() => handleLearnMoreClick(section.title)}
+                      >
+                        {" "}
+                        {section.title.includes("AETHER")
+                          ? "Case study available ⬎"
+                          : "View showcase ⬎"}
+                      </button>
+                    </AnimationRiseUp>
+                  )}
                 </div>
               ))}
             </div>
