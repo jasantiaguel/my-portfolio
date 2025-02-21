@@ -1,15 +1,73 @@
-.container {
+.main {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  text-align: center;
+  width: 100%;
 }
 
-.goBackButton {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
+.container {
+  height: 100vh;
+  border: 1px solid red;
+  align-items: center;
+  position: relative;
+}
+
+.backButton {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.header {
+  font-family: "Oswald";
+  font-size: 12rem;
+  font-weight: 800;
+  line-height: 0.95;
+  user-select: none;
+  text-transform: uppercase;
+  color: #dedede;
+  mix-blend-mode: difference;
+}
+
+.sectionHeader {
+  font-family: "Oswald";
+  font-size: 6rem;
+  font-weight: 800;
+  line-height: 0.95;
+  user-select: none;
+  text-transform: uppercase;
+  color: #dedede;
+  mix-blend-mode: difference;
+  z-index: 2;
+  padding: 0 4rem;
+}
+
+.titleDescContainer {
+  position: absolute;
+  padding-bottom: 2rem;
+  bottom: 1.75rem;
+}
+
+.descriptionHeader {
+  font-size: 0.875rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  margin-bottom: 0.25rem;
+}
+
+.descriptionBody {
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.05rem;
+  line-height: 1.4;
+  white-space: pre-line;
+  margin-bottom: 0.5rem;
 }
