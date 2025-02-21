@@ -166,9 +166,14 @@ export default function Home() {
       tolerance: 10,
       preventDefault: true,
     });
-
-    gotoSection(0, 1);
+  
+    // ✅ Reset first section visibility when returning to home
+    gsap.set(sectionRefs.current[0], { clipPath: "inset(0% 0% 0% 0%)", zIndex: 2 });
+  
+    gotoSection(0, 1); // Keep this to trigger the animation
+  
     setIsFirstLoad(false);
+  
     return () => observer.kill();
   }, []);
 
@@ -194,11 +199,12 @@ export default function Home() {
       sectionRefs.current[index],
       { clipPath: fromTop ? "inset(0% 0% 100% 0%)" : "inset(100% 0% 0% 0%)" },
       { clipPath: "inset(0% 0% 0% 0%)" }
-    ).set(
-      sectionRefs.current[currentIndex],
-      { clipPath: "inset(100% 0% 0% 0%)" },
-      "+=0.2"
     );
+    
+    // ✅ Ensure first section remains visible when navigating back
+    if (currentIndex !== 0) {
+      tl.set(sectionRefs.current[currentIndex], { clipPath: "inset(100% 0% 0% 0%)" }, "+=0.2");
+    }
 
     // Update text content dynamically
     setMainText(sections[index].title);
