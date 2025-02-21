@@ -30,15 +30,17 @@ export default function AetherPage() {
     sections.forEach((section, index) => {
       ScrollTrigger.create({
         trigger: section,
-        start: "top center",
-        end: "bottom center",
+        start: "top 60%",
+        end: "bottom 60%",
         onEnter: () => updateHeader(index),
         onLeaveBack: () => updateHeader(index - 1),
+        markers: true,
       });
     });
 
     function updateHeader(index) {
       const header = headerRef.current;
+      if (!header) return;
       if (index < 0) {
         header.style.opacity = 0;
       } else {
@@ -47,17 +49,24 @@ export default function AetherPage() {
       }
     }
 
-    updateHeader(-1); // Initialize header as hidden
+    updateHeader(0);
   }, []);
 
   return (
     <main className={classNames(styles.main, "relative w-full")}>
-      <div ref={headerRef} className={classNames("fixed bottom-0 mb-7", styles.sectionHeader)}>
+      <div className={classNames("fixed w-full grid grid-cols-8 px-16", styles.sectionHeaderContainer)}>
+        <div
+          ref={headerRef}
+          className={classNames(
+            "w-full bottom-0 mb-7 col-start-2 col-span-6 self-end",
+            styles.sectionHeader
+          )}
+        ></div>
       </div>
       <div
         className={classNames(
           styles.container,
-          "w-full grid grid-cols-8 px-16 py-7"
+          "w-full grid grid-cols-8 px-16"
         )}
       >
         <div className="col-start-1">
