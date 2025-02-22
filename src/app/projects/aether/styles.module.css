@@ -6,7 +6,7 @@
 
 .container {
   height: 100vh;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   align-items: center;
   position: relative;
 }
@@ -25,23 +25,23 @@
   gap: 2rem;
 }
 
-.header {
+.projectTitle {
   font-family: "Oswald";
   font-size: 12rem;
   font-weight: 800;
   line-height: 0.95;
   user-select: none;
   text-transform: uppercase;
-  color: #dedede;
-  mix-blend-mode: difference;
+  margin-bottom: 3rem;
+  color: var(--foreground);
 }
 
 .sectionHeaderContainer {
-  color: #dedede;
+  color: var(--background);
   z-index: 2;
   mix-blend-mode: difference;
   height: 100vh;
-  user-select: none;
+  pointer-events: none;
 }
 
 .sectionHeader {
@@ -49,7 +49,7 @@
   font-size: 6rem;
   font-weight: 800;
   line-height: 0.95;
-  user-select: none;
+  pointer-events: none;
   text-transform: uppercase;
 }
 
@@ -73,5 +73,25 @@
   letter-spacing: 0.05rem;
   line-height: 1.4;
   white-space: pre-line;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.largeText {
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.largerText {
+  font-size: 4rem;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.userPersona {
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
 }
