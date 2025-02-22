@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import styles from "./styles.module.css";
 import classNames from "classnames";
 import gsap from "gsap";
@@ -17,6 +18,7 @@ export default function AetherPage() {
     "",
     "Problem",
     "Research",
+    "Insights",
     "Ideation",
     "Wireframing",
     "Refinement",
@@ -54,11 +56,16 @@ export default function AetherPage() {
 
   return (
     <main className={classNames(styles.main, "relative w-full")}>
-      <div className={classNames("fixed w-full grid grid-cols-8 px-16", styles.sectionHeaderContainer)}>
+      <div
+        className={classNames(
+          "fixed w-full grid grid-cols-8 px-16",
+          styles.sectionHeaderContainer
+        )}
+      >
         <div
           ref={headerRef}
           className={classNames(
-            "w-full bottom-0 mb-7 col-start-2 col-span-6 self-end",
+            "w-full bottom-0 mb-7 col-start-1 col-span-6 self-end",
             styles.sectionHeader
           )}
         ></div>
@@ -77,14 +84,14 @@ export default function AetherPage() {
             ⬅ Go Back
           </button>
         </div>
-        <div
+        {/* <div
           className={classNames(
             "col-start-2 col-span-6",
             styles.titleContainer
           )}
         >
           <h1 className={classNames("flex flex-col", styles.header)}>Aether</h1>
-        </div>
+        </div> */}
         <div
           className={classNames(
             "col-start-2 col-span-6",
@@ -92,8 +99,11 @@ export default function AetherPage() {
           )}
         >
           <div className="w-full grid grid-cols-6">
+            <h1 className={classNames("flex flex-col", styles.projectTitle)}>
+              Aether
+            </h1>
             <div className="col-start-1 col-span-3">
-              <h3 className={styles.descriptionHeader}>My Role</h3>
+              <h4 className={styles.descriptionHeader}>My Role</h4>
               <div className="flex flex-col">
                 <p className={styles.descriptionBody}>
                   <span className="font-extrabold">Research & Ideation:</span>{" "}
@@ -116,7 +126,7 @@ export default function AetherPage() {
               </div>
             </div>
             <div className="col-start-4 col-span-3">
-              <h3 className={styles.descriptionHeader}>Overview</h3>
+              <h4 className={styles.descriptionHeader}>Overview</h4>
               <div className="flex flex-col">
                 <p className={styles.descriptionBody}>
                   AETHER is a mobile application designed to ease the burden of
@@ -134,6 +144,101 @@ export default function AetherPage() {
         </div>
       </div>
 
+      {/* Problem */}
+      <div
+        className={classNames(
+          styles.container,
+          "w-full grid grid-cols-8 px-16 py-7"
+        )}
+      >
+        <div className="grid grid-cols-6 col-start-2 col-span-6 gap-y-20">
+          <p className={classNames("col-start-1 col-span-5", styles.largeText)}>
+            Caregivers spend up to an average of{" "}
+            <span className="font-light italic">15 hours a week</span> managing
+            forms and paperwork.
+          </p>
+          <p
+            className={classNames(
+              "col-start-2 col-span-5 text-right",
+              styles.largeText
+            )}
+          >
+            This equates to nearly{" "}
+            <span className="font-light italic">30 days a year</span> spent away
+            from things that{" "}
+            <span className="font-light italic">matter most</span>.
+          </p>
+        </div>
+      </div>
+
+      {/* Research */}
+      <div
+        className={classNames(
+          styles.container,
+          "w-full grid grid-cols-8 px-16 py-7"
+        )}
+      >
+        <div className="col-start-2 col-span-6">
+          <Image
+            src="/images/user_persona.jpg"
+            alt="User Persona"
+            layout="responsive"
+            width={700}
+            height={475}
+            className={classNames("w-full", styles.userPersona)}
+          />
+        </div>
+        <div className="col-start-2 col-span-3">
+          <h4 className={styles.descriptionHeader}>
+            Connecting with our audience
+          </h4>
+          <div className="flex flex-col">
+            <p className={styles.descriptionBody}>
+              To understand <span className="italic">how</span> and{" "}
+              <span className="italic">why</span> this time was spent, a handful
+              of caregivers were interviewed to uncover their daily struggles.
+              With the data collected, user personas were formed.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Insights */}
+      <div
+        className={classNames(
+          styles.container,
+          "w-full grid grid-cols-8 px-16 py-7"
+        )}
+      >
+        <div className="col-start-2 col-span-6 gap-y-12">
+          <div className="w-full flex flex-col gap-y-12">
+            <p className={classNames("", styles.largerText)}>Tiring</p>
+            <p className={classNames("text-center", styles.largerText)}>
+              Overwhelming
+            </p>
+            <p className={classNames("text-right", styles.largerText)}>
+              Confusing
+            </p>
+          </div>
+        </div>
+        <div className="col-start-2 col-span-3">
+          <h4 className={styles.descriptionHeader}>
+            Empathizing with our audience
+          </h4>
+          <div className="flex flex-col">
+            <p className={styles.descriptionBody}>
+              Based on research, three key challenges were identified: the
+              repetitive nature of form-filling was{" "}
+              <span className="italic">tiring</span>, understanding and
+              remembering complex jargon was{" "}
+              <span className="italic">overwhelming</span>, and managing volumes
+              of information was <span className="italic">confusing</span>.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Ideation */}
       <div
         className={classNames(
           styles.container,
@@ -143,6 +248,7 @@ export default function AetherPage() {
         <h1>Aether Project</h1>
       </div>
 
+      {/* Wireframing */}
       <div
         className={classNames(
           styles.container,
@@ -152,6 +258,7 @@ export default function AetherPage() {
         <h1>Aether Project</h1>
       </div>
 
+      {/* Refinement */}
       <div
         className={classNames(
           styles.container,
@@ -161,6 +268,7 @@ export default function AetherPage() {
         <h1>Aether Project</h1>
       </div>
 
+      {/* Final Product */}
       <div
         className={classNames(
           styles.container,
@@ -170,6 +278,7 @@ export default function AetherPage() {
         <h1>Aether Project</h1>
       </div>
 
+      {/* Key Takeaways */}
       <div
         className={classNames(
           styles.container,
@@ -179,40 +288,24 @@ export default function AetherPage() {
         <h1>Aether Project</h1>
       </div>
 
+      {/* Final Notes */}
       <div
         className={classNames(
           styles.container,
           "w-full grid grid-cols-8 px-16 py-7"
         )}
       >
-        <h1>Aether Project</h1>
+        <h1>bla bla</h1>
       </div>
 
+      {/* Last */}
       <div
         className={classNames(
           styles.container,
           "w-full grid grid-cols-8 px-16 py-7"
         )}
       >
-        <h1>Aether Project</h1>
-      </div>
-
-      <div
-        className={classNames(
-          styles.container,
-          "w-full grid grid-cols-8 px-16 py-7"
-        )}
-      >
-        <h1>Aether Project</h1>
-      </div>
-
-      <div
-        className={classNames(
-          styles.container,
-          "w-full grid grid-cols-8 px-16 py-7"
-        )}
-      >
-        <h1>Aether Project</h1>
+        <h1>footer</h1>
       </div>
     </main>
   );

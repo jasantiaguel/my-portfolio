@@ -4,39 +4,50 @@
 import Link from "next/link";
 import styles from "./Header.module.css";
 import classNames from "classnames";
+import { useRouter , usePathname } from "next/navigation";
 import { MdArrowRightAlt } from "react-icons/md";
 // Components
 import TimeDate from "./TimeDate";
 import AnimationRiseUp from "../animations/AnimationRiseUp";
 
 export default function Header() {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const handleHomeClick = (e) => {
+    if (pathname === "/") {
+      e.preventDefault();
+      window.location.reload();
+    } else {
+      router.push("/");
+    }
+  };
+
   return (
     <header className={styles.header}>
       <nav className="grid-8-column">
         <div className="col-span-1">
-          <div className={classNames(styles.logo, "row")}>
+          <Link href="/" onClick={handleHomeClick} className={classNames(styles.logo, "row")}>
             <AnimationRiseUp className={styles.navText} delay={2.2}>
-              <Link href="/">
-                <img
-                  src="/favicon-light.svg"
-                  alt="JA Logo Icon"
-                  className={styles.logoIcon}
-                />
-              </Link>
+              <img
+                src="/favicon-light.svg"
+                alt="JA Logo Icon"
+                className={styles.logoIcon}
+              />
             </AnimationRiseUp>
             <ul className={classNames(styles.logoWordmark, "stacked")}>
               <li className={styles.logoText}>
                 <AnimationRiseUp className={styles.navText} delay={2.2}>
-                  <Link href="/">JONATHAN</Link>
+                  Jonathan
                 </AnimationRiseUp>
               </li>
               <li className={styles.logoText}>
                 <AnimationRiseUp className={styles.navText} delay={2.3}>
-                  <Link href="/">ANDREW</Link>
+                  Andrew
                 </AnimationRiseUp>
               </li>
             </ul>
-          </div>
+          </Link>
         </div>
         <div className="col-span-3">
           <TimeDate />
@@ -47,7 +58,7 @@ export default function Header() {
               <AnimationRiseUp className={styles.navText} delay={2.6}>
                 <Link href="/" className="row">
                   <MdArrowRightAlt className={styles.icon} />
-                  INTERACTIVE DESIGN
+                  Interactive Design
                 </Link>
               </AnimationRiseUp>
             </li>
@@ -55,7 +66,7 @@ export default function Header() {
               <AnimationRiseUp className={styles.navText} delay={2.7}>
                 <Link href="/" className="row">
                   <MdArrowRightAlt className={styles.icon} />
-                  GRAPHIC DESIGN
+                  Graphic Design
                 </Link>
               </AnimationRiseUp>
             </li>
@@ -67,7 +78,7 @@ export default function Header() {
               <AnimationRiseUp className={styles.navText} delay={2.8}>
                 <Link href="/" className="row">
                   <MdArrowRightAlt className={styles.icon} />
-                  ABOUT ME
+                  About me
                 </Link>
               </AnimationRiseUp>
             </li>
@@ -86,7 +97,7 @@ export default function Header() {
                   )}
                 >
                   <MdArrowRightAlt className={styles.icon} />
-                  GET IN TOUCH
+                  Get in touch
                 </Link>
               </AnimationRiseUp>
             </li>
@@ -94,7 +105,7 @@ export default function Header() {
               <AnimationRiseUp className={styles.navText} delay={3.1}>
                 <Link href="/" className="row justify-end">
                   <MdArrowRightAlt className={styles.icon} />
-                  SOCIALS
+                  Socials
                 </Link>
               </AnimationRiseUp>
             </li>
