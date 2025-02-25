@@ -8,6 +8,7 @@ import classNames from "classnames";
 import gsap from "gsap";
 import LocomotiveScroll from "locomotive-scroll";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { CiLinkedin, CiMail, CiInstagram } from "react-icons/ci";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -64,18 +65,17 @@ export default function AetherPage() {
     const resizeObserver = new ResizeObserver(() => {
       ScrollTrigger.refresh();
     });
-  
+
     sections.forEach((section) => resizeObserver.observe(section));
-  
+
     return () => {
       resizeObserver.disconnect();
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
 
   return (
     <main className={classNames(styles.main, "relative w-full")}>
-
       <section
         className={classNames(
           "fixed w-full grid grid-cols-8 px-16",
@@ -102,56 +102,58 @@ export default function AetherPage() {
             onClick={() => router.push("/")}
             className={styles.backButton}
           >
-            ⬅ Go Back
+            ← Go Back
           </button>
         </div>
-        <h1 className={classNames("flex flex-col", styles.projectTitle)}>
-          Aether
-        </h1>
         <div
           className={classNames(
-            "col-start-2 col-span-6",
+            "col-start-2 col-span-6 grid grid-cols-6",
             styles.titleDescContainer
           )}
         >
-          <div className="w-full grid grid-cols-6">
-            <div className="col-start-1 col-span-3 pr-4">
-              <h4 className={styles.descriptionHeader}>My Role</h4>
-              <div className="flex flex-col">
-                <p className={styles.descriptionBody}>
-                  <span className="font-extrabold">Research & Ideation:</span>{" "}
-                  Conducted user research, interviews, and competitive analysis
-                  to identify caregiver pain points.
-                </p>
-                <p className={styles.descriptionBody}>
-                  <span className="font-extrabold">
-                    Wireframing & Prototyping:
-                  </span>{" "}
-                  Collaboratively designed user interfaces in Figma,
-                  prioritizing clarity and ease of use.
-                </p>
-                <p className={styles.descriptionBody}>
-                  <span className="font-extrabold">Development:</span>{" "}
-                  Implemented interactive components and smooth workflows using
-                  React and Next.js, ensuring a responsive and high-performance
-                  experience.
-                </p>
-              </div>
+          <h1
+            className={classNames(
+              "col-start-1 col-span-6",
+              styles.projectTitle
+            )}
+          >
+            Aether
+          </h1>
+          <div className="col-start-1 col-span-3 pr-4">
+            <h4 className={styles.descriptionHeader}>My Role</h4>
+            <div className="flex flex-col">
+              <p className={styles.descriptionBody}>
+                <span className="font-extrabold">Research & Ideation:</span>{" "}
+                Conducted user research, interviews, and competitive analysis to
+                identify caregiver pain points.
+              </p>
+              <p className={styles.descriptionBody}>
+                <span className="font-extrabold">
+                  Wireframing & Prototyping:
+                </span>{" "}
+                Collaboratively designed user interfaces in Figma, prioritizing
+                clarity and ease of use.
+              </p>
+              <p className={styles.descriptionBody}>
+                <span className="font-extrabold">Development:</span> Implemented
+                interactive components and smooth workflows using React and
+                Next.js, ensuring a responsive and high-performance experience.
+              </p>
             </div>
-            <div className="col-start-4 col-span-3 pr-4">
-              <h4 className={styles.descriptionHeader}>Overview</h4>
-              <div className="flex flex-col">
-                <p className={styles.descriptionBody}>
-                  AETHER is a mobile application designed to ease the burden of
-                  form-filling for caregivers by streamlining complex
-                  documentation into an intuitive and efficient experience.
-                </p>
-                <p className={styles.descriptionBody}>
-                  Built with compassion and accessibility in mind, Aether
-                  leverages AI-powered assistance to simplify data entry,
-                  reducing stress for those managing critical paperwork.
-                </p>
-              </div>
+          </div>
+          <div className="col-start-4 col-span-3 pr-4">
+            <h4 className={styles.descriptionHeader}>Overview</h4>
+            <div className="flex flex-col">
+              <p className={styles.descriptionBody}>
+                AETHER is a mobile application designed to ease the burden of
+                form-filling for caregivers by streamlining complex
+                documentation into an intuitive and efficient experience.
+              </p>
+              <p className={styles.descriptionBody}>
+                Built with compassion and accessibility in mind, AETHER
+                leverages AI-powered assistance to simplify data entry, reducing
+                stress for those managing critical paperwork.
+              </p>
             </div>
           </div>
         </div>
@@ -337,9 +339,9 @@ export default function AetherPage() {
               <h4 className={styles.descriptionHeader}>Proposed solution</h4>
               <div className="flex flex-col">
                 <p className={styles.descriptionBody}>
-                  With consideration to the key challenges, caregiver's journey
+                  With consideration to the key challenges, caregiver journeys
                   were mapped out by analyzing real workflows, identifying
-                  friction points, and prioritizing essential tasks. Using
+                  friction points, and prioritizing essential tasks. Using our
                   research insights, we structured AETHER to align with how
                   caregivers naturally manage documents, integrating our
                   proposed features in a way that enhances their existing
@@ -648,7 +650,7 @@ export default function AetherPage() {
             <div className="col-start-4 col-span-3 flex flex-col">
               <p className={classNames(styles.descriptionBody)}>
                 Every design decision was driven by real user needs. Continuous
-                testing and iteration helped refine Aether’s features, ensuring
+                testing and iteration helped refine AETHER’s features, ensuring
                 that the app not only functioned efficiently but also provided a
                 stress-free experience tailored to caregivers.
               </p>
@@ -703,7 +705,7 @@ export default function AetherPage() {
             team of hardworking individuals.
           </h3>
           <div className="col-start-1 col-span-3 pr-4">
-            <h4 className={styles.descriptionHeader}>User testing results</h4>
+            <h4 className={styles.descriptionHeader}>The result</h4>
             <div className="flex flex-col">
               <p className={styles.descriptionBody}>
                 Over the course of four months, our team came together to
@@ -736,19 +738,39 @@ export default function AetherPage() {
         )}
       >
         <div className="col-start-2 col-span-6 grid grid-cols-6 gap-y-16">
-        <div className="col-start-1 col-span-3 pr-4">
+          <div className="col-start-1 col-span-2 pr-4">
             <h4 className={classNames("", styles.descriptionHeader)}>
-              Header
+              Jonathan Andrew
             </h4>
-            <div className="flex flex-col">
-              <p className={styles.descriptionBody}>
-                Footer content
-              </p>
+            <p className={classNames("", styles.descriptionBody)}>Design to express, connect, and inspire.</p>
+          </div>
+          <div className="col-start-3 col-span-2 flex items-center">
+
+          </div>
+          <div className="col-start-5 col-span-2 flex flex-col items-end">
+            <h4 className={classNames("text-right", styles.descriptionHeader)}>
+              Get in touch
+            </h4>
+            <div className="flex flex-row gap-x-4">
+              <CiMail className="w-6 h-6 opacity-20" />
+              <a
+                href="https://www.linkedin.com/in/jonathan-andrew-santiaguel/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <CiLinkedin className="w-6 h-6" />
+              </a>
+              <a
+                href="https://www.instagram.com/jasantiaguel/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <CiInstagram className="w-6 h-6" />
+              </a>
             </div>
           </div>
         </div>
       </section>
-
     </main>
   );
 }

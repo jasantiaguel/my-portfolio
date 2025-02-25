@@ -3,7 +3,7 @@
 import { useRouter } from 'next/navigation';
 import styles from './styles.module.css';
 
-export default function AetherPage() {
+export default function ArasakaPage() {
   const router = useRouter(); // ✅ Import and use the router
 
   return (
