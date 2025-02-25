@@ -3,6 +3,8 @@
   overflow: hidden;
   height: 100%;
   z-index: 1000;
+  color: var(--background);
+  mix-blend-mode: difference;
 }
 
 .slider {

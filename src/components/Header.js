@@ -30,7 +30,7 @@ export default function Header() {
           <Link href="/" onClick={handleHomeClick} className={classNames(styles.logo, "row")}>
             <AnimationRiseUp className={styles.navText} delay={2.2}>
               <img
-                src="/favicon-light.svg"
+                src="/favicon-dark.svg"
                 alt="JA Logo Icon"
                 className={styles.logoIcon}
               />
