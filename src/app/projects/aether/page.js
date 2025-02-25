@@ -36,38 +36,40 @@ export default function AetherPage() {
       el: scrollRef.current,
       smooth: true,
     });
-
+  
     const sections = document.querySelectorAll(`.${styles.container}`);
     sections.forEach((section, index) => {
       ScrollTrigger.create({
         trigger: section,
-        start: "top 60%",
-        end: "bottom 60%",
+        start: "top 75%",
+        end: "bottom 75%",
         onEnter: () => updateHeader(index),
         onLeaveBack: () => updateHeader(index - 1),
         markers: true,
       });
     });
-
+  
     function updateHeader(index) {
       const header = headerRef.current;
       if (!header) return;
       if (index < 0) {
-        header.style.opacity = 0;
+        gsap.to(header, { opacity: 0, duration: 0.25 });
       } else {
-        header.style.opacity = 1;
-        header.textContent = headerTexts[index];
+        gsap.to(header, { opacity: 0, duration: 0.25, onComplete: () => {
+          header.textContent = headerTexts[index];
+          gsap.to(header, { opacity: 1, duration: 0.5 });
+        }});
       }
     }
-
+  
     updateHeader(0);
-
+  
     const resizeObserver = new ResizeObserver(() => {
       ScrollTrigger.refresh();
     });
-
+  
     sections.forEach((section) => resizeObserver.observe(section));
-
+  
     return () => {
       resizeObserver.disconnect();
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
@@ -91,6 +93,7 @@ export default function AetherPage() {
         ></div>
       </section>
 
+      {/* Header */}
       <section
         className={classNames(
           styles.container,
