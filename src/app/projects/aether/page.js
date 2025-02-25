@@ -211,8 +211,8 @@ export default function AetherPage() {
             <Image
               src="/images/user_persona.jpg"
               alt="User Persona"
-              width={700}
-              height={475}
+              width={1080}
+              height={1080}
               className={classNames("w-full col-span-6", styles.userPersona)}
             />
             <div className="col-start-1 col-span-3 pr-4">
@@ -328,7 +328,7 @@ export default function AetherPage() {
           <div className="w-full grid grid-cols-6 gap-y-16">
             <Image
               src="/images/journey_map.jpg"
-              alt="User Persona"
+              alt="User Journey Map"
               width={1080}
               height={1080}
               className={classNames("w-full col-span-6", styles.userPersona)}
