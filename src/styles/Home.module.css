@@ -54,11 +54,16 @@
 }
 
 .learnMoreButton {
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
   font-size: 0.875rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.05rem;
+}
+
+.disabledButton {
+  opacity: 0.2;
+  pointer-events: none;
 }
 
 /* Breakpoints */

@@ -4,8 +4,9 @@
 import Link from "next/link";
 import styles from "./Header.module.css";
 import classNames from "classnames";
-import { useRouter , usePathname } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { MdArrowRightAlt } from "react-icons/md";
+import { CiMail, CiLinkedin, CiInstagram } from "react-icons/ci";
 // Components
 import TimeDate from "./TimeDate";
 import AnimationRiseUp from "../animations/AnimationRiseUp";
@@ -27,7 +28,11 @@ export default function Header() {
     <header className={styles.header}>
       <nav className="grid-8-column">
         <div className="col-span-1">
-          <Link href="/" onClick={handleHomeClick} className={classNames(styles.logo, "row")}>
+          <Link
+            href="/"
+            onClick={handleHomeClick}
+            className={classNames(styles.logo, "row")}
+          >
             <AnimationRiseUp className={styles.navText} delay={2.2}>
               <img
                 src="/favicon-dark.svg"
@@ -88,25 +93,32 @@ export default function Header() {
           <ul className={classNames(styles.endList, "stacked")}>
             <li>
               <AnimationRiseUp className={styles.navText} delay={3.0}>
-                <Link
-                  href="/"
-                  className={classNames(
-                    styles.contactText,
-                    "row",
-                    "justify-end"
-                  )}
+                <div
+                  className={classNames(styles.contactText, "row justify-end")}
                 >
-                  <MdArrowRightAlt className={styles.icon} />
                   Get in touch
-                </Link>
+                </div>
               </AnimationRiseUp>
             </li>
             <li>
               <AnimationRiseUp className={styles.navText} delay={3.1}>
-                <Link href="/" className="row justify-end">
-                  <MdArrowRightAlt className={styles.icon} />
-                  Socials
-                </Link>
+                <div className="flex flex-row gap-x-4 justify-end">
+                  <CiMail className="w-4 h-4 opacity-20" />
+                  <a
+                    href="https://www.linkedin.com/in/jonathan-andrew-santiaguel/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <CiLinkedin className="w-4 h-4" />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/jasantiaguel/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <CiInstagram className="w-4 h-4" />
+                  </a>
+                </div>
               </AnimationRiseUp>
             </li>
           </ul>

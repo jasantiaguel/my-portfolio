@@ -19,7 +19,7 @@ const sections = [
     description: [
       {
         header: "Jonathan Andrew",
-        body: "// Design to express, connect, and inspire.",
+        body: "Design to express, connect, and inspire.",
       },
       { header: "", body: "" },
     ],
@@ -85,13 +85,34 @@ const sections = [
     ],
   },
   {
+    src: "/images/mockups/sha-tea/soda_mockup_01.png",
+    title: "SHA\u00A0TEA",
+    secondTitle: "",
+    description: [
+      {
+        header: "Project Type:",
+        body: "Product Design for SHA TEA—a deluxe canned tea brand\nwith refined branding and packaging.",
+      },
+      {
+        header: "Involvement (Solo):",
+        body: "- Art Direction & Concept\n- Graphical Editing",
+      },
+      {
+        header: "Tools Used:",
+        body: "- Adobe Photoshop 2024\n- Adobe Illustrator 2024",
+      },
+      { header: "Timeline:", body: "—Nov 2024" },
+      { header: "", body: "", button: true },
+    ],
+  },
+  {
     src: "",
     title: "Website\u00A0currently",
     secondTitle: "in\u00A0development.",
     description: [
       {
         header: "More content coming soon!",
-        body: "// Stayed tuned for updates and development.",
+        body: "Stayed tuned for updates and development.",
       },
     ],
   },
@@ -146,7 +167,7 @@ export default function Home() {
   const containerRef = useRef(null);
   const sectionRefs = useRef([]);
   const router = useRouter();
-  
+
   let currentIndex = -1;
   let animating = false;
   const wrap = gsap.utils.wrap(0, sections.length);
@@ -166,14 +187,17 @@ export default function Home() {
       tolerance: 10,
       preventDefault: true,
     });
-  
+
     // ✅ Reset first section visibility when returning to home
-    gsap.set(sectionRefs.current[0], { clipPath: "inset(0% 0% 0% 0%)", zIndex: 2 });
-  
+    gsap.set(sectionRefs.current[0], {
+      clipPath: "inset(0% 0% 0% 0%)",
+      zIndex: 2,
+    });
+
     gotoSection(0, 1); // Keep this to trigger the animation
-  
+
     setIsFirstLoad(false);
-  
+
     return () => observer.kill();
   }, []);
 
@@ -200,10 +224,14 @@ export default function Home() {
       { clipPath: fromTop ? "inset(0% 0% 100% 0%)" : "inset(100% 0% 0% 0%)" },
       { clipPath: "inset(0% 0% 0% 0%)" }
     );
-    
+
     // ✅ Ensure first section remains visible when navigating back
     if (currentIndex !== 0) {
-      tl.set(sectionRefs.current[currentIndex], { clipPath: "inset(100% 0% 0% 0%)" }, "+=0.2");
+      tl.set(
+        sectionRefs.current[currentIndex],
+        { clipPath: "inset(100% 0% 0% 0%)" },
+        "+=0.2"
+      );
     }
 
     // Update text content dynamically
@@ -240,6 +268,9 @@ export default function Home() {
         break;
       case "ARASAKA":
         path = "/projects/arasaka";
+        break;
+      case "SHA\u00A0TEA":
+        path = "/projects/sha-tea";
         break;
       default:
         path = "/";
@@ -308,13 +339,15 @@ export default function Home() {
                       delay={i * 0.1 + 0.1}
                     >
                       <button
-                        className={styles.learnMoreButton}
+                        className={classNames(styles.learnMoreButton, {
+                          [styles.disabledButton]: section.title !== "AETHER",
+                        })}
                         onClick={() => handleLearnMoreClick(section.title)}
+                        disabled={section.title !== "AETHER"}
                       >
-                        {" "}
-                        {section.title.includes("AETHER")
-                          ? "Case study available ⬎"
-                          : "View showcase ⬎"}
+                        {section.title === "AETHER"
+                          ? "[ View case study ]"
+                          : "[ Showcase coming soon ]"}
                       </button>
                     </AnimationRiseUp>
                   )}
