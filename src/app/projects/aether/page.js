@@ -45,7 +45,7 @@ export default function AetherPage() {
         end: "bottom 75%",
         onEnter: () => updateHeader(index),
         onLeaveBack: () => updateHeader(index - 1),
-        markers: true,
+        // markers: true,
       });
     });
   
