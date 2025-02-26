@@ -1,5 +1,7 @@
 .header {
-  color: var(--foreground);
+  /* color: var(--foreground); */
+  color: var(--background);
+  mix-blend-mode: difference;
   font-weight: 600;
   font-size: 0.75rem;
   letter-spacing: 0.05rem;
@@ -13,11 +15,11 @@
 
 .navText {
   line-height: 1;
+  text-transform: uppercase;
 }
 
 .list {
   position: relative;
-  /* left: -1rem; */
   gap: 0.25rem;
 }
 

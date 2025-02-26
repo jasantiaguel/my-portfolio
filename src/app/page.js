@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import gsap from "gsap";
 import { Observer } from "gsap/Observer";
 import Image from "next/image";
@@ -18,7 +19,7 @@ const sections = [
     description: [
       {
         header: "Jonathan Andrew",
-        body: "// Design to express, connect, and inspire.",
+        body: "Design to express, connect, and inspire.",
       },
       { header: "", body: "" },
     ],
@@ -41,7 +42,7 @@ const sections = [
         body: "- Figma\n- Visual Studio Code\n- React / Next.js Framework",
       },
       { header: "Timeline:", body: "Sep—Dec 2024" },
-      { header: "Learn More ⬎", body: "" },
+      { header: "", body: "", button: true },
     ],
   },
   {
@@ -62,7 +63,7 @@ const sections = [
         body: "- Adobe Photoshop 2024\n- Adobe Illustrator 2024",
       },
       { header: "Timeline:", body: "—Nov 2024" },
-      { header: "Learn More ⬎", body: "" },
+      { header: "", body: "", button: true },
     ],
   },
   {
@@ -80,7 +81,28 @@ const sections = [
       },
       { header: "Tools Used:", body: "- Adobe Photoshop 2024" },
       { header: "Timeline:", body: "—Oct 2024" },
-      { header: "Learn More ⬎", body: "" },
+      { header: "", body: "", button: true },
+    ],
+  },
+  {
+    src: "/images/mockups/sha-tea/soda_mockup_01.png",
+    title: "SHA\u00A0TEA",
+    secondTitle: "",
+    description: [
+      {
+        header: "Project Type:",
+        body: "Product Design for SHA TEA—a deluxe canned tea brand\nwith refined branding and packaging.",
+      },
+      {
+        header: "Involvement (Solo):",
+        body: "- Art Direction & Concept\n- Graphical Editing",
+      },
+      {
+        header: "Tools Used:",
+        body: "- Adobe Photoshop 2024\n- Adobe Illustrator 2024",
+      },
+      { header: "Timeline:", body: "—Nov 2024" },
+      { header: "", body: "", button: true },
     ],
   },
   {
@@ -90,7 +112,7 @@ const sections = [
     description: [
       {
         header: "More content coming soon!",
-        body: "// Stayed tuned for updates and development.",
+        body: "Stayed tuned for updates and development.",
       },
     ],
   },
@@ -144,6 +166,8 @@ const AnimatedParagraph = ({ text, baseDelay = 0, className }) => {
 export default function Home() {
   const containerRef = useRef(null);
   const sectionRefs = useRef([]);
+  const router = useRouter();
+
   let currentIndex = -1;
   let animating = false;
   const wrap = gsap.utils.wrap(0, sections.length);
@@ -164,8 +188,16 @@ export default function Home() {
       preventDefault: true,
     });
 
-    gotoSection(0, 1);
+    // ✅ Reset first section visibility when returning to home
+    gsap.set(sectionRefs.current[0], {
+      clipPath: "inset(0% 0% 0% 0%)",
+      zIndex: 2,
+    });
+
+    gotoSection(0, 1); // Keep this to trigger the animation
+
     setIsFirstLoad(false);
+
     return () => observer.kill();
   }, []);
 
@@ -191,11 +223,16 @@ export default function Home() {
       sectionRefs.current[index],
       { clipPath: fromTop ? "inset(0% 0% 100% 0%)" : "inset(100% 0% 0% 0%)" },
       { clipPath: "inset(0% 0% 0% 0%)" }
-    ).set(
-      sectionRefs.current[currentIndex],
-      { clipPath: "inset(100% 0% 0% 0%)" },
-      "+=0.2"
     );
+
+    // ✅ Ensure first section remains visible when navigating back
+    if (currentIndex !== 0) {
+      tl.set(
+        sectionRefs.current[currentIndex],
+        { clipPath: "inset(100% 0% 0% 0%)" },
+        "+=0.2"
+      );
+    }
 
     // Update text content dynamically
     setMainText(sections[index].title);
@@ -218,6 +255,27 @@ export default function Home() {
     if (subText === "DESIGN/R" || subText === "ENTHUSIAST") {
       setSubText(subText === "DESIGN/R" ? "ENTHUSIAST" : "DESIGN/R");
     }
+  };
+
+  const handleLearnMoreClick = (title) => {
+    let path = "";
+    switch (title) {
+      case "AETHER":
+        path = "/projects/aether";
+        break;
+      case "RECKLESS":
+        path = "/projects/reckless";
+        break;
+      case "ARASAKA":
+        path = "/projects/arasaka";
+        break;
+      case "SHA\u00A0TEA":
+        path = "/projects/sha-tea";
+        break;
+      default:
+        path = "/";
+    }
+    router.push(path); // ✅ Correctly navigates using Next.js App Router
   };
 
   return (
@@ -274,6 +332,25 @@ export default function Home() {
                     text={desc.body}
                     baseDelay={i * 0.1 + 0.05}
                   />
+                  {desc.button && (
+                    <AnimationRiseUp
+                      key={`button-${descKey}-${i}`}
+                      className={styles.descriptionButton}
+                      delay={i * 0.1 + 0.1}
+                    >
+                      <button
+                        className={classNames(styles.learnMoreButton, {
+                          [styles.disabledButton]: section.title !== "AETHER",
+                        })}
+                        onClick={() => handleLearnMoreClick(section.title)}
+                        disabled={section.title !== "AETHER"}
+                      >
+                        {section.title === "AETHER"
+                          ? "[ View case study ]"
+                          : "[ Showcase coming soon ]"}
+                      </button>
+                    </AnimationRiseUp>
+                  )}
                 </div>
               ))}
             </div>
