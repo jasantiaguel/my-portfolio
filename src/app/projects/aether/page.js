@@ -36,7 +36,7 @@ export default function AetherPage() {
       el: scrollRef.current,
       smooth: true,
     });
-  
+
     const sections = document.querySelectorAll(`.${styles.container}`);
     sections.forEach((section, index) => {
       ScrollTrigger.create({
@@ -48,28 +48,32 @@ export default function AetherPage() {
         // markers: true,
       });
     });
-  
+
     function updateHeader(index) {
       const header = headerRef.current;
       if (!header) return;
       if (index < 0) {
         gsap.to(header, { opacity: 0, duration: 0.25 });
       } else {
-        gsap.to(header, { opacity: 0, duration: 0.25, onComplete: () => {
-          header.textContent = headerTexts[index];
-          gsap.to(header, { opacity: 1, duration: 0.5 });
-        }});
+        gsap.to(header, {
+          opacity: 0,
+          duration: 0.25,
+          onComplete: () => {
+            header.textContent = headerTexts[index];
+            gsap.to(header, { opacity: 1, duration: 0.5 });
+          },
+        });
       }
     }
-  
+
     updateHeader(0);
-  
+
     const resizeObserver = new ResizeObserver(() => {
       ScrollTrigger.refresh();
     });
-  
+
     sections.forEach((section) => resizeObserver.observe(section));
-  
+
     return () => {
       resizeObserver.disconnect();
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
@@ -581,34 +585,37 @@ export default function AetherPage() {
           "w-full grid grid-cols-8 px-16 py-16"
         )}
       >
-        <Image
-          src="/images/mockups/aether/mobile_mockup_aether_01.jpg"
-          alt="Mockup of Aether Mobile App Home Screen"
-          layout="responsive"
-          width={1080}
-          height={1080}
-          className={classNames(
-            "col-start-1 col-span-4 w-full p-4",
-            styles.mobileMockup
-          )}
-        />
+        <div className="col-start-1 col-span-4 p-4">
+          <Image
+            src="/images/mockups/aether/mobile_mockup_aether_01.jpg"
+            alt="Mockup of Aether Mobile App Home Screen"
+            layout="responsive"
+            width={1080}
+            height={1080}
+            className={classNames("w-full", styles.mobileMockup)}
+          />
+        </div>
         <div className="col-start-5 col-span-4 w-full">
-          <Image
-            src="/images/mockups/aether/mobile_mockup_aether_02.jpg"
-            alt="Mockup of Aether Mobile App Library Screen"
-            layout="responsive"
-            width={1080}
-            height={1080}
-            className={classNames("w-full p-4", styles.mobileMockup)}
-          />
-          <Image
-            src="/images/mockups/aether/mobile_mockup_aether_03.jpg"
-            alt="Mockup of Aether Mobile App Form Screen"
-            layout="responsive"
-            width={1080}
-            height={1080}
-            className={classNames("w-full p-4", styles.mobileMockup)}
-          />
+          <div className="w-full p-4">
+            <Image
+              src="/images/mockups/aether/mobile_mockup_aether_02.jpg"
+              alt="Mockup of Aether Mobile App Library Screen"
+              layout="responsive"
+              width={1080}
+              height={1080}
+              className={classNames("w-full", styles.mobileMockup)}
+            />
+          </div>
+          <div className="w-full p-4">
+            <Image
+              src="/images/mockups/aether/mobile_mockup_aether_03.jpg"
+              alt="Mockup of Aether Mobile App Form Screen"
+              layout="responsive"
+              width={1080}
+              height={1080}
+              className={classNames("w-full", styles.mobileMockup)}
+            />
+          </div>
         </div>
       </section>
 
@@ -704,7 +711,7 @@ export default function AetherPage() {
             )}
           >
             Through research, testing, and iteration, AETHER evolved into an
-            intuitive and efficient tool that empowers caregivesr thanks to a
+            intuitive and efficient tool that empowers caregivers thanks to a
             team of hardworking individuals.
           </h3>
           <div className="col-start-1 col-span-3 pr-4">
@@ -745,11 +752,11 @@ export default function AetherPage() {
             <h4 className={classNames("", styles.descriptionHeader)}>
               Jonathan Andrew
             </h4>
-            <p className={classNames("", styles.descriptionBody)}>Design to express, connect, and inspire.</p>
+            <p className={classNames("", styles.descriptionBody)}>
+              Design to express, connect, and inspire.
+            </p>
           </div>
-          <div className="col-start-3 col-span-2 flex items-center">
-
-          </div>
+          <div className="col-start-3 col-span-2 flex items-center"></div>
           <div className="col-start-5 col-span-2 flex flex-col items-end">
             <h4 className={classNames("text-right", styles.descriptionHeader)}>
               Get in touch
