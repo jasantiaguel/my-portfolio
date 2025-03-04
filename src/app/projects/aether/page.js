@@ -231,11 +231,11 @@ export default function AetherPage() {
               <div className="flex flex-col">
                 <p className={styles.descriptionBody}>
                   To understand <span className="italic">how</span> and{" "}
-                  <span className="italic">why</span> this time was spent, a
-                  handful of caregivers were interviewed to uncover their daily
-                  struggles. Analyzing the data collected, user personas were
-                  formed with consideration to their unique needs and
-                  challenges.
+                  <span className="italic">why</span> this time was spent, we
+                  interviewed family caregivers and healthcare aides to capture
+                  the daily struggles from both personal and professional caregiving
+                  roles. Analyzing the data collected, user personas were then formed
+                  with consideration to their unique needs and challenges.
                 </p>
               </div>
             </div>
@@ -567,7 +567,7 @@ export default function AetherPage() {
                 <p className={styles.descriptionBody}>
                   To address the functionality concerns, AETHER was further
                   refined with clearer instructions and a more intuitive display
-                  of saved documents. By enhancing the user interface and
+                  of saved documents. Furthermore, by enhancing the user interface and
                   providing additional guidance, we ensured that caregivers
                   could navigate the app effortlessly and fully utilize its
                   features.
@@ -643,7 +643,7 @@ export default function AetherPage() {
                 inclusion of contextual tool-tips.
               </p>
               <p className={classNames(styles.descriptionBody)}>
-                Furthermore, by prioritizing clarity, we ensured a easier
+                By prioritizing clarity, we ensured a easier
                 learning curve for first-time and repeat users.
               </p>
             </div>
