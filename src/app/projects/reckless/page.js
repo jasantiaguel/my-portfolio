@@ -181,7 +181,7 @@ export default function ArasakaPage() {
                 This project was a personal challenge adhering to specific
                 editing techniques, pushing my creative boundaries to express a
                 word through design. While the primary focus of this work was
-                meant to practice my editing techniques, this project pushed me
+                meant as a creative practice, this project pushed me
                 to recognize the importance of intentional expression in design.
               </p>
               <p className={styles.descriptionBody}>
