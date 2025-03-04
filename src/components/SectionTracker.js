@@ -16,7 +16,21 @@ export default function SectionTracker({
   const filteredSections = sections.slice(0, -1);
 
   useEffect(() => {
-    if (previewRefs.current[currentIndex]) {
+    const totalSections = sections.length;
+    const isFooter = currentIndex === totalSections - 1;
+
+    if (isFooter) {
+      // Handle the case when the current section is the footer
+      filteredSections.forEach((_, index) => {
+        if (previewRefs.current[index]) {
+          gsap.to(previewRefs.current[index], {
+            opacity: 0.3,
+            duration: 0.4,
+            ease: "power2.out",
+          });
+        }
+      });
+    } else if (previewRefs.current[currentIndex]) {
       gsap.to(previewRefs.current[currentIndex], {
         opacity: 1,
         duration: 0.8,
@@ -33,7 +47,7 @@ export default function SectionTracker({
         }
       });
     }
-  }, [currentIndex, filteredSections]);
+  }, [currentIndex, sections, filteredSections]);
 
   const handleMouseEnter = (index) => {
     if (previewRefs.current[index]) {
