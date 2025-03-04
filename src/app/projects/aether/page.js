@@ -127,7 +127,7 @@ export default function AetherPage() {
             Aether
           </h1>
           <div className="col-start-1 col-span-3 pr-4">
-            <h4 className={styles.descriptionHeader}>My Role</h4>
+            <h4 className={styles.descriptionHeader}>Involvement (Team)</h4>
             <div className="flex flex-col">
               <p className={styles.descriptionBody}>
                 <span className="font-extrabold">Research & Ideation:</span>{" "}
