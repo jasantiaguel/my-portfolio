@@ -95,7 +95,7 @@ const sections = [
     description: [
       {
         header: "Project Type:",
-        body: "Product Design for SHA TEA—a deluxe canned tea brand\nwith refined branding and packaging.",
+        body: "Product Design for SHA TEA—a deluxe canned tea brand.",
       },
       {
         header: "Involvement (Solo):",
