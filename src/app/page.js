@@ -8,6 +8,7 @@ import Image from "next/image";
 import styles from "@/styles/Home.module.css";
 import classNames from "classnames";
 import AnimationRiseUp from "../animations/AnimationRiseUp";
+import SectionTracker from "@/components/SectionTracker";
 
 gsap.registerPlugin(Observer);
 
@@ -25,7 +26,7 @@ const sections = [
     ],
   },
   {
-    src: "/images/mobile_mockup_02.png",
+    src: "/images/mockups/aether/mobile_mockup_02.png",
     title: "AETHER",
     secondTitle: "",
     description: [
@@ -46,13 +47,13 @@ const sections = [
     ],
   },
   {
-    src: "/images/poster_mockup_02.png",
+    src: "/images/mockups/reckless/poster_mockup_02.png",
     title: "RECKLESS",
     secondTitle: "",
     description: [
       {
         header: "Project Type:",
-        body: "Poster Graphic for a dynamic composition\nusing diverse editing techniques.",
+        body: "Experimental Poster Graphic practicing diverse\nediting techniques.",
       },
       {
         header: "Involvement (Solo):",
@@ -67,7 +68,7 @@ const sections = [
     ],
   },
   {
-    src: "/images/magazine_mockup_01.png",
+    src: "/images/mockups/arasaka/magazine_mockup_01.png",
     title: "ARASAKA",
     secondTitle: "ESTATE",
     description: [
@@ -79,7 +80,10 @@ const sections = [
         header: "Involvement (Solo):",
         body: "- Art Direction & Concept\n- Graphical Editing",
       },
-      { header: "Tools Used:", body: "- Adobe Photoshop 2024" },
+      {
+        header: "Tools Used:",
+        body: "- Adobe Photoshop 2024\n- Adobe InDesign 2024",
+      },
       { header: "Timeline:", body: "—Oct 2024" },
       { header: "", body: "", button: true },
     ],
@@ -168,7 +172,10 @@ export default function Home() {
   const sectionRefs = useRef([]);
   const router = useRouter();
 
-  let currentIndex = -1;
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const currentIndexRef = useRef(0);
+
+  // let currentIndex = -1;
   let animating = false;
   const wrap = gsap.utils.wrap(0, sections.length);
 
@@ -182,13 +189,14 @@ export default function Home() {
     const observer = Observer.create({
       type: "wheel,touch,pointer",
       wheelSpeed: -1,
-      onDown: () => !animating && gotoSection(currentIndex - 1, -1),
-      onUp: () => !animating && gotoSection(currentIndex + 1, 1),
+      // onDown: () => !animating && gotoSection(currentIndex - 1, -1),
+      // onUp: () => !animating && gotoSection(currentIndex + 1, 1),
+      onDown: () => !animating && gotoSection(currentIndexRef.current - 1, -1),
+      onUp: () => !animating && gotoSection(currentIndexRef.current + 1, 1),
       tolerance: 10,
       preventDefault: true,
     });
 
-    // ✅ Reset first section visibility when returning to home
     gsap.set(sectionRefs.current[0], {
       clipPath: "inset(0% 0% 0% 0%)",
       zIndex: 2,
@@ -214,7 +222,7 @@ export default function Home() {
     });
 
     if (currentIndex >= 0) {
-      gsap.set(sectionRefs.current[currentIndex], { zIndex: 1 });
+      gsap.set(sectionRefs.current[currentIndexRef.current], { zIndex: 1 });
     }
 
     gsap.set(sectionRefs.current[index], { zIndex: 2 });
@@ -225,7 +233,6 @@ export default function Home() {
       { clipPath: "inset(0% 0% 0% 0%)" }
     );
 
-    // ✅ Ensure first section remains visible when navigating back
     if (currentIndex !== 0) {
       tl.set(
         sectionRefs.current[currentIndex],
@@ -234,15 +241,15 @@ export default function Home() {
       );
     }
 
-    // Update text content dynamically
+    currentIndexRef.current = index;
+    setCurrentIndex(index);
+
     setMainText(sections[index].title);
     setSubText(sections[index].secondTitle);
     setDescription(sections[index].description);
-
-    // Force reanimation of both descriptions
     setDescKey((prevKey) => prevKey + 1);
 
-    currentIndex = index;
+    // currentIndex = index;
   }
 
   const handleMainTextClick = () => {
@@ -275,113 +282,126 @@ export default function Home() {
       default:
         path = "/";
     }
-    router.push(path); // ✅ Correctly navigates using Next.js App Router
+    router.push(path);
   };
 
   return (
-    <main
-      ref={containerRef}
-      className={classNames(
-        styles.main,
-        "relative w-full h-screen overflow-hidden"
-      )}
-    >
-      {sections.map((section, index) => (
-        <div
-          key={index}
-          ref={(el) => (sectionRefs.current[index] = el)}
-          className={classNames(
-            styles.container,
-            "absolute top-0 w-full h-full grid-8-column px-16"
-          )}
-          style={{
-            clipPath:
-              index === 0 ? "inset(0% 0% 0% 0%)" : "inset(100% 0% 0% 0%)",
-          }}
-        >
-          <div className="col-span-3 col-start-5 flex items-center justify-center">
-            {section.src && (
-              <Image
-                className={styles.image}
-                src={section.src}
-                alt={`Section ${index + 1}`}
-                width={1000}
-                height={1000}
-              />
-            )}
-          </div>
+    <>
+      <SectionTracker sections={sections} currentIndex={currentIndex} />
+      <main
+        ref={containerRef}
+        className={classNames(
+          styles.main,
+          "relative w-full h-screen overflow-hidden"
+        )}
+      >
+        {sections.map((section, index) => (
           <div
+            key={index}
+            ref={(el) => (sectionRefs.current[index] = el)}
             className={classNames(
-              styles.leftContainer,
-              "absolute top-0 h-full col-span-3 col-start-2 flex flex-grow flex-col justify-center"
+              styles.container,
+              "absolute top-0 w-full h-full grid-8-column px-16"
             )}
+            style={{
+              clipPath:
+                index === 0 ? "inset(0% 0% 0% 0%)" : "inset(100% 0% 0% 0%)",
+            }}
           >
-            <div className={styles.descriptionContainer}>
-              {description.map((desc, i) => (
-                <div key={`desc-${descKey}-${i}`} className="mb-4">
-                  <AnimationRiseUp
-                    key={`header-${descKey}-${i}`}
-                    className={styles.descriptionHeader}
-                    delay={i * 0.1}
-                  >
-                    <h3>{desc.header}</h3>
-                  </AnimationRiseUp>
-                  <AnimatedParagraph
-                    key={`body-${descKey}-${i}`}
-                    className={styles.descriptionBody}
-                    text={desc.body}
-                    baseDelay={i * 0.1 + 0.05}
-                  />
-                  {desc.button && (
-                    <AnimationRiseUp
-                      key={`button-${descKey}-${i}`}
-                      className={styles.descriptionButton}
-                      delay={i * 0.1 + 0.1}
-                    >
-                      <button
-                        className={classNames(styles.learnMoreButton, {
-                          [styles.disabledButton]: section.title !== "AETHER",
-                        })}
-                        onClick={() => handleLearnMoreClick(section.title)}
-                        disabled={section.title !== "AETHER"}
-                      >
-                        {section.title === "AETHER"
-                          ? "[ View case study ]"
-                          : "[ Showcase coming soon ]"}
-                      </button>
-                    </AnimationRiseUp>
-                  )}
-                </div>
-              ))}
+            <div className="col-span-3 col-start-5 flex items-center justify-center">
+              {section.src && (
+                <Image
+                  className={styles.image}
+                  src={section.src}
+                  alt={`Section ${index + 1}`}
+                  width={1000}
+                  height={1000}
+                />
+              )}
             </div>
             <div
               className={classNames(
-                styles.titleContainer,
-                "absolute bottom-0 mb-7"
+                styles.leftContainer,
+                "absolute top-0 h-full col-span-3 col-start-2 flex flex-grow flex-col justify-center"
               )}
             >
-              <AnimatedText
-                text={mainText}
-                handleClick={handleMainTextClick}
-                baseDelay={isFirstLoad ? 0 : 0}
-                className={styles.titleText}
-                disablePointerEvents={
-                  mainText !== "DIGITAL" && mainText !== "VISUAL"
-                }
-              />
-              <AnimatedText
-                text={subText}
-                handleClick={handleSubTextClick}
-                baseDelay={isFirstLoad ? 0.2 : 0.1}
-                className={styles.titleText}
-                disablePointerEvents={
-                  subText !== "DESIGN/R" && subText !== "ENTHUSIAST"
-                }
-              />
+              <div className={styles.descriptionContainer}>
+                {description.map((desc, i) => (
+                  <div key={`desc-${descKey}-${i}`} className="mb-4">
+                    <AnimationRiseUp
+                      key={`header-${descKey}-${i}`}
+                      className={styles.descriptionHeader}
+                      delay={i * 0.1}
+                    >
+                      <h3>{desc.header}</h3>
+                    </AnimationRiseUp>
+                    <AnimatedParagraph
+                      key={`body-${descKey}-${i}`}
+                      className={styles.descriptionBody}
+                      text={desc.body}
+                      baseDelay={i * 0.1 + 0.05}
+                    />
+                    {desc.button && (
+                      <AnimationRiseUp
+                        key={`button-${descKey}-${i}`}
+                        className={styles.descriptionButton}
+                        delay={i * 0.1 + 0.1}
+                      >
+                        <button
+                          className={classNames(styles.learnMoreButton, {
+                            [styles.disabledButton]:
+                              section.title !== "AETHER" &&
+                              section.title !== "ARASAKA" &&
+                              section.title !== "RECKLESS",
+                          })}
+                          onClick={() => handleLearnMoreClick(section.title)}
+                          disabled={
+                            section.title !== "AETHER" &&
+                            section.title !== "ARASAKA" &&
+                            section.title !== "RECKLESS"
+                          }
+                        >
+                          {section.title === "AETHER"
+                            ? "[ View case study ]"
+                            : section.title === "ARASAKA" ||
+                              section.title === "RECKLESS"
+                            ? "[ View showcase ]"
+                            : "[ Showcase coming soon ]"}
+                        </button>
+                      </AnimationRiseUp>
+                    )}
+                  </div>
+                ))}
+              </div>
+              <div
+                className={classNames(
+                  styles.titleContainer,
+                  "absolute bottom-0 mb-7"
+                )}
+              >
+                <AnimatedText
+                  text={mainText}
+                  handleClick={handleMainTextClick}
+                  baseDelay={isFirstLoad ? 0 : 0}
+                  className={styles.titleText}
+                  disablePointerEvents={
+                    mainText !== "DIGITAL" && mainText !== "VISUAL"
+                  }
+                />
+                <AnimatedText
+                  text={subText}
+                  handleClick={handleSubTextClick}
+                  baseDelay={isFirstLoad ? 0.2 : 0.1}
+                  className={styles.titleText}
+                  disablePointerEvents={
+                    subText !== "DESIGN/R" && subText !== "ENTHUSIAST"
+                  }
+                />
+              </div>
             </div>
           </div>
-        </div>
-      ))}
-    </main>
+        ))}
+      </main>
+    </>
   );
 }

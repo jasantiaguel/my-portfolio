@@ -1,15 +1,95 @@
-.container {
+.main {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  text-align: center;
+  width: 100%;
+  overflow: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-.goBackButton {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
+.main::-webkit-scrollbar {
+  display: none;
+}
+
+.container {
+  min-height: 90vh;
+  height: max-content;
+  align-items: center;
+  position: relative;
+  /* border: 1px solid red; */
+}
+
+.backButton {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  top: 50%;
+}
+
+.projectTitle {
+  font-family: "Oswald";
+  font-size: 12rem;
+  font-weight: 800;
+  line-height: 0.95;
+  user-select: none;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  color: var(--foreground);
+}
+
+.sectionHeaderContainer {
+  color: var(--background);
+  z-index: 2;
+  mix-blend-mode: difference;
+  height: 100vh;
+  pointer-events: none;
+}
+
+.sectionHeader {
+  font-family: "Oswald";
+  font-size: 6rem;
+  font-weight: 800;
+  line-height: 0.95;
+  pointer-events: none;
+  text-transform: uppercase;
+}
+
+.titleDescContainer {
+  position: absolute;
+  padding-bottom: 2rem;
+  bottom: 1.75rem;
+}
+
+.descriptionHeader {
+  font-size: 0.875rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  margin-bottom: 0.25rem;
+}
+
+.descriptionBody {
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.05rem;
+  line-height: 1.4;
+  white-space: pre-line;
+  margin-bottom: 0.75rem;
+}
+
+.container:nth-of-type(2n + 1) {
+  background-color: var(--foreground);
+  color: var(--background);
+}
+
+.image {
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
 }
