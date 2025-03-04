@@ -171,7 +171,7 @@ export default function ArasakaPage() {
             <div className="flex flex-col">
               <p className={styles.descriptionBody}>
                 Rather than showcasing the ARASAKA Estate itself, the cover was
-                intentionally designed to display the emobidment of ARASAKA,
+                intentionally designed to display the embodiment of ARASAKA,
                 Hanako Arasaka.
               </p>
               <p className={styles.descriptionBody}>
