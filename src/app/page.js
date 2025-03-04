@@ -47,27 +47,6 @@ const sections = [
     ],
   },
   {
-    src: "/images/mockups/reckless/poster_mockup_02.png",
-    title: "RECKLESS",
-    secondTitle: "",
-    description: [
-      {
-        header: "Project Type:",
-        body: "Experimental Poster Graphic practicing diverse\nediting techniques.",
-      },
-      {
-        header: "Involvement (Solo):",
-        body: "- Art Direction & Concept\n- Graphical Editing",
-      },
-      {
-        header: "Tools Used:",
-        body: "- Adobe Photoshop 2024\n- Adobe Illustrator 2024",
-      },
-      { header: "Timeline:", body: "—Nov 2024" },
-      { header: "", body: "", button: true },
-    ],
-  },
-  {
     src: "/images/mockups/arasaka/magazine_mockup_01.png",
     title: "ARASAKA",
     secondTitle: "ESTATE",
@@ -85,6 +64,27 @@ const sections = [
         body: "- Adobe Photoshop 2024\n- Adobe InDesign 2024",
       },
       { header: "Timeline:", body: "—Oct 2024" },
+      { header: "", body: "", button: true },
+    ],
+  },
+  {
+    src: "/images/mockups/reckless/poster_mockup_02.png",
+    title: "RECKLESS",
+    secondTitle: "",
+    description: [
+      {
+        header: "Project Type:",
+        body: "Experimental Poster Graphic practicing diverse\nediting techniques.",
+      },
+      {
+        header: "Involvement (Solo):",
+        body: "- Art Direction & Concept\n- Graphical Editing",
+      },
+      {
+        header: "Tools Used:",
+        body: "- Adobe Photoshop 2024\n- Adobe Illustrator 2024",
+      },
+      { header: "Timeline:", body: "—Nov 2024" },
       { header: "", body: "", button: true },
     ],
   },
@@ -219,10 +219,10 @@ export default function Home() {
 
     if (prevIndex >= 0 && prevIndex !== index) {
       gsap.set(sectionRefs.current[prevIndex], {
-          zIndex: 1,
-          clipPath: "inset(0% 0% 0% 0%)",
+        zIndex: 1,
+        clipPath: "inset(0% 0% 0% 0%)",
       });
-  }
+    }
 
     gsap.set(sectionRefs.current[index], { zIndex: 2 });
 
@@ -284,7 +284,13 @@ export default function Home() {
 
   return (
     <>
-      <SectionTracker sections={sections} currentIndex={currentIndex} />
+      <SectionTracker
+        sections={sections}
+        currentIndex={currentIndex}
+        onSectionClick={(index) =>
+          gotoSection(index, index > currentIndex ? 1 : -1)
+        }
+      />
       <main
         ref={containerRef}
         className={classNames(

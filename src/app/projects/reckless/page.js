@@ -138,7 +138,7 @@ export default function ArasakaPage() {
             <h4 className={styles.descriptionHeader}>Overview</h4>
             <div className="flex flex-col">
               <p className={styles.descriptionBody}>
-                An experimental graphic design project that explores the
+                An experimental graphic design project that explores
                 different digital design techniques, pushing my personal
                 creative boundaries to practice composition, typography, and
                 visual design.
@@ -188,7 +188,7 @@ export default function ArasakaPage() {
                 clear purpose, this challenge pushed me to reconsider how I
                 approach design narratives. In future projects, I plan to refine
                 my process by establishing a stronger conceptual foundation from
-                the start, ensuring that my all design decisions are purposeful.
+                the start, ensuring that all my design decisions are purposeful.
               </p>
             </div>
           </div>
