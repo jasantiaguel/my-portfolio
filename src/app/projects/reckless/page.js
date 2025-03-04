@@ -180,15 +180,14 @@ export default function ArasakaPage() {
               <p className={styles.descriptionBody}>
                 This project was a personal challenge adhering to specific
                 editing techniques, pushing my creative boundaries to express a
-                word through design.
+                word through design. While the primary focus of this work was
+                meant to practice my editing techniques, this project pushed me
+                to recognize the importance of intentional expression in design.
               </p>
               <p className={styles.descriptionBody}>
-                While the final outcome lacked a clearly defined purpose, this
-                project pushed me to recognize the importance of intentional
-                expression in design. Moving forward, this project serves as a
-                reminder for myself, to build a stronger conceptual foundation
-                that guides my design decisions towards clearer purpose and
-                impact.
+                Moving forward, this project serves as a reminder for myself, to
+                build a stronger conceptual foundation that guides my design
+                decisions towards clearer purpose and impact.
               </p>
             </div>
           </div>
