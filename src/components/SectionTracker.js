@@ -16,21 +16,7 @@ export default function SectionTracker({
   const filteredSections = sections.slice(0, -1);
 
   useEffect(() => {
-    const totalSections = sections.length;
-    const isFooter = currentIndex === totalSections - 1;
-
-    if (isFooter) {
-      // Handle the case when the current section is the footer
-      filteredSections.forEach((_, index) => {
-        if (previewRefs.current[index]) {
-          gsap.to(previewRefs.current[index], {
-            opacity: 0.3,
-            duration: 0.4,
-            ease: "power2.out",
-          });
-        }
-      });
-    } else if (previewRefs.current[currentIndex]) {
+    if (previewRefs.current[currentIndex]) {
       gsap.to(previewRefs.current[currentIndex], {
         opacity: 1,
         duration: 0.8,
@@ -47,7 +33,27 @@ export default function SectionTracker({
         }
       });
     }
-  }, [currentIndex, sections, filteredSections]);
+  }, [currentIndex, filteredSections]);
+
+  const handleMouseEnter = (index) => {
+    if (previewRefs.current[index]) {
+      gsap.to(previewRefs.current[index], {
+        opacity: 1,
+        duration: 0.4,
+        ease: "power2.out",
+      });
+    }
+  };
+
+  const handleMouseLeave = (index) => {
+    if (previewRefs.current[index] && index !== currentIndex) {
+      gsap.to(previewRefs.current[index], {
+        opacity: 0.3,
+        duration: 0.4,
+        ease: "power2.out",
+      });
+    }
+  };
 
   return (
     <div className="absolute top-0 w-full h-full grid-8-column px-16">
@@ -67,6 +73,8 @@ export default function SectionTracker({
               [styles.nonCurrent]: index !== currentIndex,
             })}
             onClick={() => onSectionClick(index)}
+            onMouseEnter={() => handleMouseEnter(index)}
+            onMouseLeave={() => handleMouseLeave(index)}
           >
             {section.src && (
               <Image
