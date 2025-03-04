@@ -17,8 +17,12 @@
   border: 1px solid transparent;
 }
 
-.current {
+.previewItem.current {
   border-color: black;
+}
+
+.previewItem.nonCurrent .previewImage {
+  opacity: 0.4;
 }
 
 .previewImage {

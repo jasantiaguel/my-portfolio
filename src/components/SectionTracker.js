@@ -3,7 +3,7 @@ import Image from "next/image";
 import classNames from "classnames";
 import styles from "./SectionTracker.module.css";
 
-export default function SectionTracker({ sections , currentIndex }) {
+export default function SectionTracker({ sections, currentIndex }) {
   const trackerRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -29,6 +29,7 @@ export default function SectionTracker({ sections , currentIndex }) {
           key={index}
           className={classNames(styles.previewItem, {
             [styles.current]: index === currentIndex,
+            [styles.nonCurrent]: index !== currentIndex,
           })}
         >
           {section.src && (
