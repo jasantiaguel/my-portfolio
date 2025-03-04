@@ -3,7 +3,6 @@
 // Imports
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "./SlidingText.module.css";
 
 export default function SlidingText() {
@@ -15,7 +14,6 @@ export default function SlidingText() {
   let direction = -1;
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
     gsap.fromTo(
       sliderContainer.current,
       { opacity: 0 },
@@ -29,18 +27,17 @@ export default function SlidingText() {
 
     requestAnimationFrame(animation);
 
-    gsap.to(slider.current, {
-      scrollTrigger: {
-        trigger: document.documentElement,
-        start: 0,
-        end: document.documentElement.scrollHeight,
-        scrub: true,
-        onUpdate: (e) => {
-          direction = e.direction * 1;
-        },
-      },
-      y: "-=200px",
-    });
+    const handleScroll = () => {
+      direction = window.scrollY > lastScrollY ? 1 : -1;
+      lastScrollY = window.scrollY;
+    };
+
+    let lastScrollY = window.scrollY;
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const animation = () => {
