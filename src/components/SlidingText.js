@@ -35,7 +35,7 @@ export default function SlidingText() {
         start: "top top",
         end: "bottom bottom",
         scrub: true,
-        markers: true,
+        // markers: true,
         onUpdate: (e) => {
           direction = e.direction * 1;
         },
