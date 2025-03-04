@@ -116,30 +116,23 @@ export default function ArasakaPage() {
               styles.projectTitle
             )}
           >
-            Arasaka
+            Arasaka<br/>Estate
           </h1>
-          <h1
-            className={classNames(
-              "col-start-1 col-span-6",
-              styles.projectTitle
-            )}
-          >
-            Estate
-          </h1>
+        
           <div className="col-start-1 col-span-3 pr-4">
             <h4 className={styles.descriptionHeader}>Involvement (Solo)</h4>
             <div className="flex flex-col">
               <p className={styles.descriptionBody}>
                 <span className="font-extrabold">Art Direction & Concept:</span>{" "}
                 Developed the visual direction and approach, ensuring the
-                magazine cover captured the essence of the ARASAKA ESTATE within
+                magazine cover captured the essence of the ARASAKA Estate within
                 Cyberpunk 2077.
               </p>
               <p className={styles.descriptionBody}>
                 <span className="font-extrabold">Graphical Editing:</span>{" "}
                 Manipulated photos, balanced colors, and refined a composition
                 to create a visually striking cover, embodying the ARASAKA
-                ESTATE.
+                Estate.
               </p>
             </div>
           </div>
@@ -180,11 +173,14 @@ export default function ArasakaPage() {
               <p className={styles.descriptionBody}>
                 Rather than showcasing the ARASAKA ESTATE itself, the cover was
                 intentionally designed to display the emobidment of ARASAKA,
-                Hanako Arasaka. This choice was made to push the estate's
-                authority and mystique, while shifting the emphasis from a
-                traditional architectural showcase to a narrative-driven
-                composition. By doing so, the viewer experiences the power, exclusivity,
-                and controlled presence that defines the ARASAKA legacy.
+                Hanako Arasaka.
+              </p>
+              <p className={styles.descriptionBody}>
+                This choice was made to push the estate's authority and
+                mystique, while shifting the emphasis from a traditional
+                architectural showcase to a narrative-driven composition. By
+                doing so, the viewer experiences the power, exclusivity, and
+                controlled presence that defines the ARASAKA legacy.
               </p>
             </div>
           </div>
@@ -194,9 +190,8 @@ export default function ArasakaPage() {
             </h4>
             <div className="flex flex-col">
               <p className={styles.descriptionBody}>
-              - Adobe Photoshop 2024
-              <br/>
-              - Adobe InDesign 2024
+                - Adobe Photoshop 2024
+                <br />- Adobe InDesign 2024
               </p>
             </div>
           </div>
@@ -205,9 +200,7 @@ export default function ArasakaPage() {
               Timeline:
             </h4>
             <div className="flex flex-col text-right">
-              <p className={styles.descriptionBody}>
-              —Oct 2024
-              </p>
+              <p className={styles.descriptionBody}>—Oct 2024</p>
             </div>
           </div>
         </div>
