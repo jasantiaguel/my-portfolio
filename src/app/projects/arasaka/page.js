@@ -131,8 +131,7 @@ export default function ArasakaPage() {
               <p className={styles.descriptionBody}>
                 <span className="font-extrabold">Graphical Editing:</span>{" "}
                 Manipulated photos, balanced colors, and refined a composition
-                to create a visually striking cover, embodying the ARASAKA
-                Estate.
+                to enhance the cover's visual impact.
               </p>
             </div>
           </div>
