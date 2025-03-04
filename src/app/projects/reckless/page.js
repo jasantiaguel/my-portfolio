@@ -180,15 +180,15 @@ export default function ArasakaPage() {
               <p className={styles.descriptionBody}>
                 This project was a personal challenge adhering to specific
                 editing techniques, pushing my creative boundaries to express a
-                narrative through design. Admittedly, it was a struggle to find
-                a balance between visual appeal and a design mission.
+                word through design.
               </p>
               <p className={styles.descriptionBody}>
-                While the final outcome lacked a clearly defined purpose, the
-                process highlighted the importance of intentional storytelling
-                in design. Moving forward, this project serves as a reminder for myself, to
-                build a stronger conceptual foundation that guides my design
-                decisions towards clearer purpose and impact.
+                While the final outcome lacked a clearly defined purpose, this
+                project pushed me to recognize the importance of intentional
+                expression in design. Moving forward, this project serves as a
+                reminder for myself, to build a stronger conceptual foundation
+                that guides my design decisions towards clearer purpose and
+                impact.
               </p>
             </div>
           </div>
