@@ -22,9 +22,9 @@
   border-color: black;
 }
 
-.previewItem.nonCurrent .previewImage {
+/* .previewItem.nonCurrent .previewImage {
   opacity: 0.3;
-}
+} */
 
 .previewImage {
   width: 100%;

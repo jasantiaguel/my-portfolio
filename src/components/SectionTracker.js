@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import gsap from "gsap";
 import classNames from "classnames";
 import styles from "./SectionTracker.module.css";
 
@@ -9,19 +10,27 @@ export default function SectionTracker({
   onSectionClick,
 }) {
   const trackerRef = useRef(null);
-  const [activeIndex, setActiveIndex] = useState(0);
+  const previewRefs = useRef([]);
 
   useEffect(() => {
-    function updateTracker(event) {
-      setActiveIndex(event.detail);
+    if (previewRefs.current[currentIndex]) {
+      gsap.to(previewRefs.current[currentIndex], {
+        opacity: 1,
+        duration: 0.8, 
+        ease: "power2.out",
+      });
+
+      sections.forEach((_, index) => {
+        if (index !== currentIndex && previewRefs.current[index]) {
+          gsap.to(previewRefs.current[index], {
+            opacity: 0.3,
+            duration: 0.4,
+            ease: "power2.out",
+          });
+        }
+      });
     }
-
-    document.addEventListener("sectionChange", updateTracker);
-
-    return () => {
-      document.removeEventListener("sectionChange", updateTracker);
-    };
-  }, []);
+  }, [currentIndex]);
 
   return (
     <div className="absolute top-0 w-full h-full grid-8-column px-16">
@@ -35,6 +44,7 @@ export default function SectionTracker({
         {sections.map((section, index) => (
           <div
             key={index}
+            ref={(el) => (previewRefs.current[index] = el)}
             className={classNames(styles.previewItem, {
               [styles.current]: index === currentIndex,
               [styles.nonCurrent]: index !== currentIndex,
