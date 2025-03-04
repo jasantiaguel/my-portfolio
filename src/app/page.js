@@ -171,11 +171,9 @@ export default function Home() {
   const containerRef = useRef(null);
   const sectionRefs = useRef([]);
   const router = useRouter();
-
   const [currentIndex, setCurrentIndex] = useState(0);
   const currentIndexRef = useRef(0);
 
-  // let currentIndex = -1;
   let animating = false;
   const wrap = gsap.utils.wrap(0, sections.length);
 
@@ -189,8 +187,6 @@ export default function Home() {
     const observer = Observer.create({
       type: "wheel,touch,pointer",
       wheelSpeed: -1,
-      // onDown: () => !animating && gotoSection(currentIndex - 1, -1),
-      // onUp: () => !animating && gotoSection(currentIndex + 1, 1),
       onDown: () => !animating && gotoSection(currentIndexRef.current - 1, -1),
       onUp: () => !animating && gotoSection(currentIndexRef.current + 1, 1),
       tolerance: 10,
@@ -202,8 +198,7 @@ export default function Home() {
       zIndex: 2,
     });
 
-    gotoSection(0, 1); // Keep this to trigger the animation
-
+    gotoSection(0, 1);
     setIsFirstLoad(false);
 
     return () => observer.kill();
@@ -213,6 +208,7 @@ export default function Home() {
     index = wrap(index);
     animating = true;
     let fromTop = direction === -1;
+    const prevIndex = currentIndexRef.current;
 
     const tl = gsap.timeline({
       defaults: { duration: 1.6, ease: "power2.out" },
@@ -221,9 +217,12 @@ export default function Home() {
       },
     });
 
-    if (currentIndex >= 0) {
-      gsap.set(sectionRefs.current[currentIndexRef.current], { zIndex: 1 });
-    }
+    if (prevIndex >= 0 && prevIndex !== index) {
+      gsap.set(sectionRefs.current[prevIndex], {
+          zIndex: 1,
+          clipPath: "inset(0% 0% 0% 0%)",
+      });
+  }
 
     gsap.set(sectionRefs.current[index], { zIndex: 2 });
 
@@ -233,9 +232,9 @@ export default function Home() {
       { clipPath: "inset(0% 0% 0% 0%)" }
     );
 
-    if (currentIndex !== 0) {
+    if (prevIndex !== index) {
       tl.set(
-        sectionRefs.current[currentIndex],
+        sectionRefs.current[prevIndex],
         { clipPath: "inset(100% 0% 0% 0%)" },
         "+=0.2"
       );
@@ -248,8 +247,6 @@ export default function Home() {
     setSubText(sections[index].secondTitle);
     setDescription(sections[index].description);
     setDescKey((prevKey) => prevKey + 1);
-
-    // currentIndex = index;
   }
 
   const handleMainTextClick = () => {
