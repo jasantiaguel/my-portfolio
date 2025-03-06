@@ -32,9 +32,10 @@ export default function SlidingText() {
     gsap.to(slider.current, {
       scrollTrigger: {
         trigger: document.documentElement,
-        start: 0,
-        end: document.documentElement.scrollHeight,
+        start: "top top",
+        end: "bottom bottom",
         scrub: true,
+        // markers: true,
         onUpdate: (e) => {
           direction = e.direction * 1;
         },
