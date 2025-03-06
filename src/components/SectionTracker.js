@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import classNames from "classnames";
@@ -12,15 +12,32 @@ export default function SectionTracker({
   const trackerRef = useRef(null);
   const previewRefs = useRef([]);
 
+  // Filter out the last section
+  const filteredSections = sections.slice(0, -1);
+
   useEffect(() => {
-    if (previewRefs.current[currentIndex]) {
+    const totalSections = sections.length;
+    const isFooter = currentIndex === totalSections - 1;
+
+    if (isFooter) {
+      // Handle the case when the current section is the footer
+      filteredSections.forEach((_, index) => {
+        if (previewRefs.current[index]) {
+          gsap.to(previewRefs.current[index], {
+            opacity: 0.3,
+            duration: 0.4,
+            ease: "power2.out",
+          });
+        }
+      });
+    } else if (previewRefs.current[currentIndex]) {
       gsap.to(previewRefs.current[currentIndex], {
         opacity: 1,
-        duration: 0.8, 
+        duration: 0.8,
         ease: "power2.out",
       });
 
-      sections.forEach((_, index) => {
+      filteredSections.forEach((_, index) => {
         if (index !== currentIndex && previewRefs.current[index]) {
           gsap.to(previewRefs.current[index], {
             opacity: 0.3,
@@ -30,7 +47,27 @@ export default function SectionTracker({
         }
       });
     }
-  }, [currentIndex]);
+  }, [currentIndex, sections, filteredSections]);
+
+  const handleMouseEnter = (index) => {
+    if (previewRefs.current[index]) {
+      gsap.to(previewRefs.current[index], {
+        opacity: 1,
+        duration: 0.4,
+        ease: "power2.out",
+      });
+    }
+  };
+
+  const handleMouseLeave = (index) => {
+    if (previewRefs.current[index] && index !== currentIndex) {
+      gsap.to(previewRefs.current[index], {
+        opacity: 0.3,
+        duration: 0.4,
+        ease: "power2.out",
+      });
+    }
+  };
 
   return (
     <div className="absolute top-0 w-full h-full grid-8-column px-16">
@@ -41,7 +78,7 @@ export default function SectionTracker({
           styles.previewContainer
         )}
       >
-        {sections.map((section, index) => (
+        {filteredSections.map((section, index) => (
           <div
             key={index}
             ref={(el) => (previewRefs.current[index] = el)}
@@ -50,6 +87,8 @@ export default function SectionTracker({
               [styles.nonCurrent]: index !== currentIndex,
             })}
             onClick={() => onSectionClick(index)}
+            onMouseEnter={() => handleMouseEnter(index)}
+            onMouseLeave={() => handleMouseLeave(index)}
           >
             {section.src && (
               <Image
