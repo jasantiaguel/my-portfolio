@@ -104,20 +104,20 @@ export default function ArasakaPage() {
             ← Go Back
           </button>
         </div>
+          <h1
+            className={classNames(
+              "col-start-2 col-span-6",
+              styles.projectTitle
+            )}
+          >
+            Arasaka<br/>Estate
+          </h1>
         <div
           className={classNames(
             "col-start-2 col-span-6 grid grid-cols-6",
             styles.titleDescContainer
           )}
         >
-          <h1
-            className={classNames(
-              "col-start-1 col-span-6",
-              styles.projectTitle
-            )}
-          >
-            Arasaka<br/>Estate
-          </h1>
         
           <div className="col-start-1 col-span-3 pr-4">
             <h4 className={styles.descriptionHeader}>Involvement (Solo)</h4>
