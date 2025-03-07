@@ -3,6 +3,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import classNames from "classnames";
 import styles from "./SectionTracker.module.css";
+import AnimationRiseUp from "../animations/AnimationRiseUp";
 
 export default function SectionTracker({
   sections,
@@ -79,27 +80,32 @@ export default function SectionTracker({
         )}
       >
         {filteredSections.map((section, index) => (
-          <div
+          <AnimationRiseUp
             key={index}
-            ref={(el) => (previewRefs.current[index] = el)}
-            className={classNames(styles.previewItem, {
-              [styles.current]: index === currentIndex,
-              [styles.nonCurrent]: index !== currentIndex,
-            })}
-            onClick={() => onSectionClick(index)}
-            onMouseEnter={() => handleMouseEnter(index)}
-            onMouseLeave={() => handleMouseLeave(index)}
+            uniqueKey={`preview-${index}`}
+            delay={index * 0.1} // Adjust the delay as needed
           >
-            {section.src && (
-              <Image
-                src={section.src}
-                alt={`Preview ${index + 1}`}
-                width={100}
-                height={100}
-                className={styles.previewImage}
-              />
-            )}
-          </div>
+            <div
+              ref={(el) => (previewRefs.current[index] = el)}
+              className={classNames(styles.previewItem, {
+                [styles.current]: index === currentIndex,
+                [styles.nonCurrent]: index !== currentIndex,
+              })}
+              onClick={() => onSectionClick(index)}
+              onMouseEnter={() => handleMouseEnter(index)}
+              onMouseLeave={() => handleMouseLeave(index)}
+            >
+              {section.src && (
+                <Image
+                  src={section.src}
+                  alt={`Preview ${index + 1}`}
+                  width={100}
+                  height={100}
+                  className={styles.previewImage}
+                />
+              )}
+            </div>
+          </AnimationRiseUp>
         ))}
       </div>
     </div>

@@ -2,6 +2,7 @@
 
 // Imports
 import Link from "next/link";
+import { useState, useEffect } from "react";
 import styles from "./Header.module.css";
 import classNames from "classnames";
 import { useRouter, usePathname } from "next/navigation";
@@ -14,6 +15,7 @@ import AnimationRiseUp from "../animations/AnimationRiseUp";
 export default function Header() {
   const router = useRouter();
   const pathname = usePathname();
+  const [copied, setCopied] = useState(false);
 
   const handleHomeClick = (e) => {
     if (pathname === "/") {
@@ -23,6 +25,18 @@ export default function Header() {
       router.push("/");
     }
   };
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText("santiaguel.ja@gmail.com");
+    setCopied(true);
+  };
+
+  useEffect(() => {
+    if (copied) {
+      const timer = setTimeout(() => setCopied(false), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [copied]);
 
   return (
     <header className={styles.header}>
@@ -59,22 +73,6 @@ export default function Header() {
         </div>
         <div className="col-span-2">
           <ul className={classNames(styles.list, "stacked invisible")}>
-            {/* <li>
-              <AnimationRiseUp className={styles.navText} delay={2.6}>
-                <Link href="/" className="row">
-                  <MdArrowRightAlt className={styles.icon} />
-                  Interactive Design
-                </Link>
-              </AnimationRiseUp>
-            </li>
-            <li>
-              <AnimationRiseUp className={styles.navText} delay={2.7}>
-                <Link href="/" className="row">
-                  <MdArrowRightAlt className={styles.icon} />
-                  Graphic Design
-                </Link>
-              </AnimationRiseUp>
-            </li> */}
             <li>
               <AnimationRiseUp className={styles.navText} delay={2.6}>
                 <div
@@ -125,7 +123,7 @@ export default function Header() {
             <li>
               <AnimationRiseUp className={styles.navText} delay={3.1}>
                 <div className="flex flex-row gap-x-4 justify-end">
-                  <CiMail className="w-4 h-4 opacity-20" />
+                  <CiMail className="w-4 h-4 cursor-pointer" onClick={handleCopyEmail} />
                   <a
                     href="https://www.linkedin.com/in/jonathan-andrew-santiaguel/"
                     target="_blank"
@@ -143,6 +141,15 @@ export default function Header() {
                 </div>
               </AnimationRiseUp>
             </li>
+            {copied && (
+              <li>
+                <div className="flex flex-row gap-x-4 justify-end">
+                  <p className={classNames("row justify-end text-end", styles.navText, styles.copiedText)}>
+                  Email copied to clipboard!
+                  </p>
+                </div>
+              </li>
+            )}
           </ul>
         </div>
       </nav>
