@@ -164,7 +164,7 @@ export default function AboutMePage() {
               </p>
               <p className={classNames("italic", styles.descriptionBody)}>
                 Moving forward, I am excited to continue my journey in the world
-                of Digital Design, where I can push the boundaries of creativity
+                of Digital Design, where I can push my boundaries of creativity
                 and create meaningful experiences that inspire and connect with
                 others.
               </p>
