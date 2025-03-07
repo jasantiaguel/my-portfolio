@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import SlidingText from "@/components/SlidingText";
 
 export const metadata = {
-  title: "Jonathan Andrew - Digital Designer",
+  title: "(WIP) Jonathan Andrew - Digital Designer",
   description:
     "Portfolio of Jonathan Andrew, a Digital Designer based in Greater Vancouver, British Columbia.",
 };
