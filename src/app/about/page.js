@@ -123,7 +123,7 @@ export default function AboutMePage() {
         )}
       >
         <div className="col-start-2 col-span-6 grid grid-cols-6 gap-y-16">
-          <div className="col-start-1 col-span-3 pr-4">
+          <div className="col-start-1 col-span-4 pr-4">
             <h4 className={styles.descriptionHeader}>My Story</h4>
             <div className="flex flex-col">
               <p className={styles.descriptionBody}>
@@ -146,7 +146,7 @@ export default function AboutMePage() {
               </p>
             </div>
           </div>
-          <div className="col-start-2 col-span-3 pr-4">
+          <div className="col-start-3 col-span-4 pr-4">
             <h4 className={styles.descriptionHeader}>Why I Design</h4>
             <div className="flex flex-col">
               <p className={styles.descriptionBody}>
