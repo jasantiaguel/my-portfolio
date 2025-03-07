@@ -12,7 +12,7 @@
 }
 
 .container {
-  min-height: 100vh;
+  min-height: 90vh;
   height: max-content;
   align-items: center;
   position: relative;
@@ -95,7 +95,7 @@
 }
 
 .image {
-  height: 100vh;
+  height: 90vh;
   width: 100%;
   object-fit: cover;
   /* box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25); */

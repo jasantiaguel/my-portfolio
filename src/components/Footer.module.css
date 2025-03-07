@@ -8,13 +8,15 @@
   letter-spacing: 0.05rem;
   text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.05);
   z-index: 1000;
-  pointer-events: none;
   color: var(--background);
   mix-blend-mode: difference;
+  pointer-events: none;
 }
 
 .footerText {
   line-height: 1;
+  pointer-events: auto;
+  user-select: none;
 }
 
 .primaryText {
