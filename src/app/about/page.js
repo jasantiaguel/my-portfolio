@@ -16,6 +16,7 @@ export default function AboutMePage() {
   const router = useRouter();
   const headerRef = useRef(null);
   const scrollRef = useRef(null);
+  const imageRef = useRef(null);
 
   const headerTexts = [
     "",
@@ -66,6 +67,13 @@ export default function AboutMePage() {
 
     sections.forEach((section) => resizeObserver.observe(section));
 
+    // Clip path animation for the image
+    gsap.fromTo(
+      imageRef.current,
+      { clipPath: "inset(100% 0% 0% 0%)" },
+      { clipPath: "inset(0% 0% 0% 0%)", duration: 1.6, ease: "power2.out" }
+    );
+
     return () => {
       resizeObserver.disconnect();
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
@@ -106,6 +114,7 @@ export default function AboutMePage() {
         </h1>
         <div className="col-start-5 col-span-3">
           <Image
+            ref={imageRef}
             src="/images/portrait_02.png"
             alt="Photo of myself, Jonathan Andrew Santiaguel"
             width={1440}
