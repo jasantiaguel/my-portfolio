@@ -58,8 +58,8 @@ export default function Header() {
           <TimeDate />
         </div>
         <div className="col-span-2">
-          <ul className={classNames(styles.list, "stacked")}>
-            <li>
+          <ul className={classNames(styles.list, "stacked invisible")}>
+            {/* <li>
               <AnimationRiseUp className={styles.navText} delay={2.6}>
                 <Link href="/" className="row">
                   <MdArrowRightAlt className={styles.icon} />
@@ -74,6 +74,28 @@ export default function Header() {
                   Graphic Design
                 </Link>
               </AnimationRiseUp>
+            </li> */}
+            <li>
+              <AnimationRiseUp className={styles.navText} delay={2.6}>
+                <div
+                  className="row"
+                  style={{ opacity: 0.2, pointerEvents: "none" }}
+                >
+                  <MdArrowRightAlt className={styles.icon} />
+                  Interactive Design
+                </div>
+              </AnimationRiseUp>
+            </li>
+            <li>
+              <AnimationRiseUp className={styles.navText} delay={2.7}>
+                <div
+                  className="row"
+                  style={{ opacity: 0.2, pointerEvents: "none" }}
+                >
+                  <MdArrowRightAlt className={styles.icon} />
+                  Graphic Design
+                </div>
+              </AnimationRiseUp>
             </li>
           </ul>
         </div>
@@ -81,7 +103,7 @@ export default function Header() {
           <ul className={classNames(styles.list, "stacked")}>
             <li>
               <AnimationRiseUp className={styles.navText} delay={2.8}>
-                <Link href="/" className="row">
+                <Link href="/about" className="row">
                   <MdArrowRightAlt className={styles.icon} />
                   About me
                 </Link>
