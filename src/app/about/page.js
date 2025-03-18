@@ -136,7 +136,7 @@ export default function AboutMePage() {
             <h4 className={styles.descriptionHeader}>My Story</h4>
             <div className="flex flex-col">
               <p className={styles.descriptionBody}>
-                An Architect student, turned Chef, turned Digital Designer—life has
+                An Architecture student, turned Junior Sous Chef, turned Digital Designer—life has
                 taken me on a journey of exploration and self-discovery, leading
                 me to where I am today. As a believer in crafting your own
                 destiny, I have always been driven by the desire to create and
