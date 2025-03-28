@@ -14,7 +14,8 @@ gsap.registerPlugin(Observer);
 
 const sections = [
   {
-    src: "/images/portrait_01.png",
+    src: "/images/hover_assets/portrait_01_bg.png",
+    foregroundSrc: "/images/hover_assets/portrait_01_fg_crop.png",
     title: "DIGITAL",
     secondTitle: "DESIGN/R",
     description: [
@@ -26,7 +27,8 @@ const sections = [
     ],
   },
   {
-    src: "/images/mockups/aether/mobile_mockup_02.png",
+    src: "/images/hover_assets/mobile_mockup_02.png",
+    // foregroundSrc: "/images/hover_assets/mobile_mockup_02_fg.png",
     title: "AETHER",
     secondTitle: "",
     description: [
@@ -183,6 +185,31 @@ export default function Home() {
   const [isFirstLoad, setIsFirstLoad] = useState(true);
   const [descKey, setDescKey] = useState(0);
 
+  const foregroundRefs = useRef([]);
+
+  const handleMouseMove = (e, index) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left; // Mouse X position relative to the element
+    const y = e.clientY - rect.top; // Mouse Y position relative to the element
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = ((y - centerY) / centerY) * -15; // Adjust tilt intensity
+    const rotateY = ((x - centerX) / centerX) * 15; // Positive to tilt towards the cursor
+
+    const foregroundImage = foregroundRefs.current[index];
+    if (foregroundImage) {
+      foregroundImage.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    }
+  };
+
+  const resetTilt = (index) => {
+    const foregroundImage = foregroundRefs.current[index];
+    if (foregroundImage) {
+      foregroundImage.style.transform = `rotateX(0deg) rotateY(0deg)`;
+    }
+  };
+
   useEffect(() => {
     const observer = Observer.create({
       type: "wheel,touch,pointer",
@@ -312,7 +339,7 @@ export default function Home() {
             }}
           >
             <div className="col-span-3 col-start-5 flex items-center justify-center">
-              {section.src && (
+              {/* {section.src && (
                 <Image
                   className={styles.image}
                   src={section.src}
@@ -320,6 +347,39 @@ export default function Home() {
                   width={1000}
                   height={1000}
                 />
+              )} */}
+              {section.src && (
+                <div
+                  className={styles.imageWrapper}
+                  onMouseMove={
+                    index === 0 ? (e) => handleMouseMove(e, index) : null
+                  } // Apply hover effect only to the first item for now
+                  onMouseLeave={index === 0 ? () => resetTilt(index) : null}
+                >
+                  {/* Background Image */}
+                  <Image
+                    className={classNames(styles.image, styles.backgroundImage)}
+                    src={section.src}
+                    alt={`Section ${index + 1} Background`}
+                    width={1000}
+                    height={1000}
+                  />
+                  {/* Foreground Image */}
+                  {index === 0 && (
+                    <Image
+                      className={classNames(
+                        styles.foregroundImage,
+                        `${styles.foregroundImage}${index + 1}`
+                      )} // Dynamically add unique class
+                      src={section.foregroundSrc || section.src} // Use a separate foreground image if available
+                      alt={`Section ${index + 1} Foreground`}
+                      width={1000}
+                      height={1000}
+                      style={{ transform: `rotateX(0deg) rotateY(0deg)` }} // Default transform
+                      ref={(el) => (foregroundRefs.current[index] = el)}
+                    />
+                  )}
+                </div>
               )}
             </div>
             <div
