@@ -371,7 +371,7 @@ export default function Home() {
                         styles.foregroundImage,
                         `${styles.foregroundImage}${index + 1}`
                       )} // Dynamically add unique class
-                      src={section.foregroundSrc || section.src} // Use a separate foreground image if available
+                      src={section.foregroundSrc || section.src}
                       alt={`Section ${index + 1} Foreground`}
                       width={1000}
                       height={1000}
